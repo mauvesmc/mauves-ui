@@ -16,7 +16,7 @@
     'group',
     `group_position-${position}`,
     `group_spacing-${spacing}`,
-    grow ? 'group_grow' : '',
+    grow && 'group_grow',
     $$restProps.class,
   )}
 >

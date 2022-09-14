@@ -2,6 +2,21 @@
   import { buildClass, ripple } from '../core/index';
   import type { MauvesSize } from '../core/theme';
   import type { IconButtonColor, IconButtonVariant } from './IconButton';
+  import Loader from './Loader.svelte';
+
+  const LOADER_SIZES = {
+    sm: '2rem',
+    md: '2.5rem',
+    lg: '3rem',
+    xl: '3.5rem',
+  };
+
+  const LOADER_INNER_SIZES = {
+    sm: '1.25rem',
+    md: '1.5rem',
+    lg: '2rem',
+    xl: '2.5rem',
+  };
 </script>
 
 <script lang="ts">
@@ -14,20 +29,13 @@
 </script>
 
 {#if loading}
-  <div
+  <Loader
     {...$$restProps}
-    class={buildClass(
-      'icon-button',
-      'icon-button_loading',
-      `icon-button_color-${color}`,
-      `icon-button_size-${size}`,
-      `icon-button_radius-${radius}`,
-      $$restProps.class,
-    )}
-  >
-    <span class="icon-button__loader" />
-    <span class="icon-button__loader" />
-  </div>
+    class="icon-button"
+    size={LOADER_SIZES[size]}
+    loaderSize={LOADER_INNER_SIZES[size]}
+    {color}
+  />
 {:else}
   <svelte:element
     this={tag}
@@ -49,11 +57,11 @@
   </svelte:element>
 {/if}
 
-<style lang="postcss">
+<style lang="postcss" global>
   .icon-button {
     --icon-button-background: transparent;
     --icon-button-foreground: transparent;
-    --ripple-color: transparent;
+    --ripple-color: var(--icon-button-foreground);
     outline: none;
     border: none;
     display: flex;
@@ -63,16 +71,11 @@
     position: relative;
   }
 
-  .icon-button_loading {
-    cursor: not-allowed;
-  }
-
   .icon-button:enabled {
     cursor: pointer;
     outline-width: 0;
     outline-offset: 2px;
     outline-style: solid;
-    --ripple-color: var(--icon-button-foreground);
   }
 
   .icon-button_variant-solid:enabled {
@@ -230,41 +233,5 @@
 
   .icon-button_radius-full {
     border-radius: 9999px;
-  }
-
-  .icon-button_size-sm .icon-button__loader {
-    width: 1.25rem;
-    height: 1.25rem;
-  }
-
-  .icon-button_size-md .icon-button__loader {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  .icon-button_size-lg .icon-button__loader {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  .icon-button_size-xl .icon-button__loader {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-
-  .icon-button__loader {
-    border: 2px solid currentColor;
-    border-radius: 1rem;
-    color: var(--icon-button-background);
-    animation-name: loader;
-    animation-duration: 2s;
-    animation-timing-function: ease;
-    animation-iteration-count: infinite;
-    position: absolute;
-    opacity: 0;
-  }
-
-  .icon-button__loader:nth-child(2) {
-    animation-delay: 1s;
   }
 </style>

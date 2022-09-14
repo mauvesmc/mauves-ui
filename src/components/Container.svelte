@@ -8,11 +8,7 @@
 
 <div
   {...$$restProps}
-  class={buildClass(
-    'container',
-    fluid ? 'container_fluid' : '',
-    $$restProps.class,
-  )}
+  class={buildClass('container', fluid && 'container_fluid', $$restProps.class)}
 >
   <slot />
 </div>

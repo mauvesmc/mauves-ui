@@ -99,18 +99,4 @@
       'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
       'Segoe UI Symbol', 'Noto Color Emoji' !important;
   }
-
-  :global(@keyframes loader {
-    0% {
-      transform: scale(0) rotate(45deg);
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      transform: scale(1) rotate(225deg);
-      opacity: 0;
-    }
-  })
 </style>

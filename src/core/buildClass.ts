@@ -1,4 +1,4 @@
-const buildClass = (...classes: string[]) => {
+const buildClass = (...classes: (string | boolean | number)[]) => {
   return classes.filter(Boolean).join(' ');
 };
 

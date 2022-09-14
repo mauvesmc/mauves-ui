@@ -8,7 +8,7 @@
 
 <div
   {...$$restProps}
-  class={buildClass('center', inline ? 'center_inline' : '', $$restProps.class)}
+  class={buildClass('center', inline && 'center_inline', $$restProps.class)}
 >
   <slot />
 </div>
