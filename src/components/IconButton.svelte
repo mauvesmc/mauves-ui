@@ -267,18 +267,4 @@
   .icon-button__loader:nth-child(2) {
     animation-delay: 1s;
   }
-
-  @keyframes loader {
-    0% {
-      transform: scale(0) rotate(45deg);
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      transform: scale(1) rotate(225deg);
-      opacity: 0;
-    }
-  }
 </style>
