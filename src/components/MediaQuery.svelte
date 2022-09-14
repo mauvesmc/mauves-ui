@@ -24,6 +24,3 @@
 </script>
 
 <slot {matches} />
-
-<style lang="postcss">
-</style>

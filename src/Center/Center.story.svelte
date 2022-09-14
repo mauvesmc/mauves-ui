@@ -28,6 +28,3 @@
     </h1>
   </Variant>
 </StoryWrapper>
-
-<style lang="postcss">
-</style>

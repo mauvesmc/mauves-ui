@@ -20,7 +20,6 @@
 
   theme.subscribe((t) => {
     nextTheme = getNextTheme(t.theme);
-    console.log(t.theme);
   });
 </script>
 
@@ -52,6 +51,15 @@
     font-weight: 400;
   }
 
+  .story-wrapper :global(*),
+  .story-wrapper :global(*):after,
+  .story-wrapper :global(*):before {
+    transition-property: background-color, color, border-color, fill, stroke,
+      text-decoration-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+  }
+
   .story-wrapper > :global(*),
   .story-wrapper > :global(*):after,
   .story-wrapper > :global(*):before {
@@ -64,10 +72,6 @@
     border: none;
     box-sizing: border-box;
     font-family: var(--theme-font-sans);
-    transition-property: background-color, color, border-color, fill, stroke,
-      text-decoration-color;
-    transition-duration: 0.15s;
-    transition-timing-function: ease;
   }
 
   .story-wrapper__theme-switcher {

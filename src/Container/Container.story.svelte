@@ -63,6 +63,3 @@
     </Container>
   </Variant>
 </StoryWrapper>
-
-<style lang="postcss">
-</style>

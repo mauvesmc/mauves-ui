@@ -168,8 +168,8 @@ const theme = createTheme({
       },
       divider: 'base.5',
       disabled: {
-        background: 'base.6',
-        foreground: 'base.4',
+        background: 'base.4',
+        foreground: 'base.6',
       },
     },
     light: {
@@ -221,8 +221,8 @@ const theme = createTheme({
       },
       divider: 'base.5',
       disabled: {
-        background: 'base.6',
-        foreground: 'base.4',
+        background: 'base.4',
+        foreground: 'base.6',
       },
     },
   },
