@@ -1,0 +1,53 @@
+html {
+  font-size: 16px;
+}
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+  background: none;
+  border: none;
+  box-sizing: border-box;
+  font-family: var(--theme-font-sans);
+  transition-property: background-color, color, border-color, fill, stroke,
+    text-decoration-color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+html,
+body {
+  min-height: 100vh;
+  background: var(--theme-base-1);
+  color: var(--theme-text-default);
+  scroll-behavior: smooth;
+  font-size: var(--theme-font-size-b1);
+  line-height: var(--theme-line-height-b1);
+  font-weight: 400;
+}
+
+::selection {
+  background-color: rgba(var(--theme-primary-default-rgb), 0.5);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+ul,
+ol {
+  list-style-position: inside;
+}
