@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
   import { Variant } from '@vitebook/client';
 
-  import ScrollArea from '../components/ScrollArea.svelte';
+  import ScrollArea from '../../components/ScrollArea.svelte';
   import StoryWrapper from '../StoryWrapper.svelte';
 </script>
 

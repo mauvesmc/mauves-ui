@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
   import { Variant } from '@vitebook/client';
 
-  import AspectRatio from '../components/AspectRatio.svelte';
+  import AspectRatio from '../../components/AspectRatio.svelte';
   import StoryWrapper from '../StoryWrapper.svelte';
 </script>
 

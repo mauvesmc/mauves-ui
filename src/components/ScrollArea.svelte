@@ -2,7 +2,7 @@
   import { onDestroy } from 'svelte';
   import { tweened } from 'svelte/motion';
   import { fade } from 'svelte/transition';
-  import { buildClass, debounce } from '../core/index';
+  import { buildClass, debounce } from '../core';
 
   type ScrollType = 'auto' | 'always' | 'scroll' | 'hover' | 'never';
 </script>

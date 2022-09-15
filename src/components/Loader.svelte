@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-  import { buildClass } from '../core/index';
+  import { buildClass } from '../core';
   import type { LoaderColor } from './Loader';
 </script>
 

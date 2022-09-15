@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
-  import { buildClass, buildStyle } from '../core/index';
-  import type { MauvesSize } from '../core/theme';
+  import type { MauvesSize } from '../core';
+  import { buildClass, buildStyle } from '../core';
 </script>
 
 <script lang="ts">

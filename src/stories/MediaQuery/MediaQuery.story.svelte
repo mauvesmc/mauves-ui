@@ -1,9 +1,9 @@
 <script lang="ts" context="module">
   import { Variant } from '@vitebook/client';
-  import Center from '../components/Center.svelte';
+  import Center from '../../components/Center.svelte';
 
-  import MediaQuery from '../components/MediaQuery.svelte';
-  import { buildStyle } from '../core/index';
+  import MediaQuery from '../../components/MediaQuery.svelte';
+  import { buildStyle } from '../../core';
   import StoryWrapper from '../StoryWrapper.svelte';
 </script>
 

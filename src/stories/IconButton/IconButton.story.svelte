@@ -1,9 +1,9 @@
 <script lang="ts" context="module">
   import { Variant } from '@vitebook/client';
-  import Group from '../components/Group.svelte';
+  import Group from '../../components/Group.svelte';
 
   import { Cloud, Icon } from 'svelte-hero-icons';
-  import IconButton from '../components/IconButton.svelte';
+  import IconButton from '../../components/IconButton.svelte';
   import StoryWrapper from '../StoryWrapper.svelte';
 </script>
 

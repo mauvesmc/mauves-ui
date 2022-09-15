@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
+  import type { MauvesSize } from '../core';
   import { buildClass, ripple } from '../core';
-  import type { MauvesSize } from '../core/theme';
   import type { ButtonColor, ButtonVariant } from './Button';
   import Loader from './Loader.svelte';
 
@@ -34,7 +34,9 @@
     `button_size-${size}`,
     `button_radius-${radius}`,
     loading && 'button_loading',
-    `button_loader-${loaderPosition}`,
+    loading && `button_icon-${loaderPosition}`,
+    $$slots.start && 'button_icon-left',
+    $$slots.end && 'button_icon-right',
     fullWidth && 'button_full-width',
     uppercase && 'button_uppercase',
     $$restProps.class,
@@ -46,7 +48,7 @@
 >
   {#if loading && loaderPosition === 'left'}
     <Loader size={LOADER_SIZES[size]} loaderSize={LOADER_SIZES[size]} />
-  {:else}
+  {:else if $$slots.start}
     <slot name="start" />
   {/if}
   <div class="button__content">
@@ -54,7 +56,7 @@
   </div>
   {#if loading && loaderPosition === 'right'}
     <Loader size={LOADER_SIZES[size]} loaderSize={LOADER_SIZES[size]} />
-  {:else}
+  {:else if $$slots.end}
     <slot name="end" />
   {/if}
 </svelte:element>
@@ -241,11 +243,11 @@
     margin-right: 0.375rem;
   }
 
-  .button_size-sm.button_loading.button_loader-left {
+  .button_size-sm.button_icon-left {
     padding-left: 0.5rem;
   }
 
-  .button_size-sm.button_loading.button_loader-right {
+  .button_size-sm.button_icon-right {
     padding-right: 0.5rem;
   }
 
@@ -261,11 +263,11 @@
     margin-right: 0.5rem;
   }
 
-  .button_size-md.button_loading.button_loader-left {
+  .button_size-md.button_icon-left {
     padding-left: 0.75rem;
   }
 
-  .button_size-md.button_loading.button_loader-right {
+  .button_size-md.button_icon-right {
     padding-right: 0.75rem;
   }
 
@@ -281,11 +283,11 @@
     margin-right: 0.625rem;
   }
 
-  .button_size-lg.button_loading.button_loader-left {
+  .button_size-lg.button_icon-left {
     padding-left: 1rem;
   }
 
-  .button_size-lg.button_loading.button_loader-right {
+  .button_size-lg.button_icon-right {
     padding-right: 1rem;
   }
 
@@ -301,11 +303,11 @@
     margin-right: 0.75rem;
   }
 
-  .button_size-xl.button_loading.button_loader-left {
+  .button_size-xl.button_icon-left {
     padding-left: 1.25rem;
   }
 
-  .button_size-xl.button_loading.button_loader-right {
+  .button_size-xl.button_icon-right {
     padding-right: 1.25rem;
   }
 

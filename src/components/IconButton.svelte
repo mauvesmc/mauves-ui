@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
-  import { buildClass, ripple } from '../core/index';
-  import type { MauvesSize } from '../core/theme';
+  import type { MauvesSize } from '../core';
+  import { buildClass, ripple } from '../core';
   import type { IconButtonColor, IconButtonVariant } from './IconButton';
   import Loader from './Loader.svelte';
 

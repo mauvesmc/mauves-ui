@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
   import { Variant } from '@vitebook/client';
-  import Center from '../components/Center.svelte';
-  import Group from '../components/Group.svelte';
+  import Center from '../../components/Center.svelte';
+  import Group from '../../components/Group.svelte';
 
   import StoryWrapper from '../StoryWrapper.svelte';
 </script>

@@ -1,13 +1,13 @@
 <script lang="ts" context="module">
   import { Variant } from '@vitebook/client';
-  import Group from '../components/Group.svelte';
+  import Group from '../../components/Group.svelte';
 
-  import Button from '../components/Button.svelte';
+  import Button from '../../components/Button.svelte';
+  import ButtonGroup from '../../components/ButtonGroup.svelte';
   import StoryWrapper from '../StoryWrapper.svelte';
 </script>
 
 <script lang="ts">
-  import ButtonGroup from '../components/ButtonGroup.svelte';
 </script>
 
 <StoryWrapper>

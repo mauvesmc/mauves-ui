@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
-  import { theme } from './core/index';
-  import type { MauvesTheme } from './core/theme';
-  import getStyleElementFromTheme from './utils/getStyleElementFromTheme';
+  import type { MauvesTheme } from '../core';
+  import { theme } from '../core';
+  import getStyleElementFromTheme from '../utils/getStyleElementFromTheme';
 </script>
 
 <script lang="ts">
