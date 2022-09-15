@@ -2,7 +2,7 @@
   import { onDestroy } from 'svelte';
   import { tweened } from 'svelte/motion';
   import { fade } from 'svelte/transition';
-  import { buildClass, debounce } from '../core';
+  import { buildClass, debouncedState } from '../core';
 
   type ScrollType = 'auto' | 'always' | 'scroll' | 'hover' | 'never';
 </script>
@@ -17,16 +17,6 @@
   export let offsetX = false;
   export let offsetY = false;
 
-  const { start: startDebounceX, destroy: destroyX } =
-    debounce(scrollHideDelay);
-  const { start: startDebounceY, destroy: destroyY } =
-    debounce(scrollHideDelay);
-
-  onDestroy(() => {
-    destroyX();
-    destroyY();
-  });
-
   $: finalTypeX = typeX ? typeX : type;
   $: finalTypeY = typeY ? typeY : type;
 
@@ -34,8 +24,21 @@
   let thumbXPosition = tweened(0, { duration: 150 });
   let thumbYSize = 0;
   let thumbYPosition = tweened(0, { duration: 150 });
-  let showX = false;
-  let showY = false;
+  let {
+    state: showX,
+    debounce: debounceShowX,
+    destroy: destroyShowX,
+  } = debouncedState(false, scrollHideDelay);
+  let {
+    state: showY,
+    debounce: debounceShowY,
+    destroy: destroyShowY,
+  } = debouncedState(false, scrollHideDelay);
+
+  onDestroy(() => {
+    destroyShowX();
+    destroyShowY();
+  });
 
   let scrollable: HTMLDivElement;
 
@@ -65,22 +68,22 @@
 
     if (finalTypeX === 'scroll') {
       showX = true;
-      startDebounceX(() => (showX = false));
+      debounceShowX(() => (showX = false));
     }
     if (finalTypeY === 'scroll') {
       showY = true;
-      startDebounceY(() => (showY = false));
+      debounceShowY(() => (showY = false));
     }
   };
 
   const handleMouseOver = () => {
-    if (finalTypeX === 'hover') {
+    if (finalTypeX === 'hover' || finalTypeX === 'auto') {
       showX = true;
-      startDebounceX(() => (showX = false));
+      debounceShowX(() => (showX = false));
     }
-    if (finalTypeY === 'hover') {
+    if (finalTypeY === 'hover' || finalTypeY === 'auto') {
       showY = true;
-      startDebounceY(() => (showY = false));
+      debounceShowY(() => (showY = false));
     }
   };
 
@@ -137,10 +140,6 @@
       showX = thumbXSize < 100;
     } else if (finalTypeX === 'always') {
       showX = true;
-    } else if (finalTypeX === 'scroll') {
-      showX = false;
-    } else if (finalTypeX === 'hover') {
-      showX = false;
     } else {
       showX = false;
     }
@@ -151,10 +150,6 @@
       showY = thumbYSize < 100;
     } else if (finalTypeY === 'always') {
       showY = true;
-    } else if (finalTypeY === 'scroll') {
-      showY = false;
-    } else if (finalTypeY === 'hover') {
-      showY = false;
     } else {
       showY = false;
     }
@@ -246,7 +241,7 @@
 
   .scroll-area__scrollbar::after {
     content: '';
-    background-color: var(--theme-secondary-default);
+    background-color: var(--theme-secondary-active);
     position: absolute;
     top: 50%;
     left: 50%;

@@ -12,7 +12,7 @@
   <Variant name="Скролл">
     <ScrollArea
       style="width: 480px; height: 50vh; max-width: 100%; max-height: 100%;"
-      typeY="auto"
+      typeY="hover"
       offsetY
     >
       <span>

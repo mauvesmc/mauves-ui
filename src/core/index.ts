@@ -1,6 +1,6 @@
 export { default as buildClass } from './buildClass';
 export { default as buildStyle } from './buildStyle';
-export { default as debounce } from './debounce';
+export { default as debouncedState } from './debouncedState';
 export { default as id } from './id';
 export { default as ripple } from './ripple';
 export {
