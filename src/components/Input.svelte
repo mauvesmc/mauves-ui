@@ -42,6 +42,7 @@
     name={$$restProps.name}
     disabled={$$restProps.disabled}
     placeholder={$$restProps.placeholder}
+    readonly={$$restProps.readonly}
     {id}
     on:change
     on:input

@@ -76,6 +76,99 @@
       </label>
     </Stack>
   </Variant>
+  <Variant name="Стейты" description="Все стейты">
+    <Stack>
+      <label
+        for="default"
+        style="display: flex; align-items: center; user-select: none;"
+      >
+        <Checkbox
+          id="default"
+          size="md"
+          group={[]}
+          value="default"
+          style="margin-right: 0.25rem"
+          readonly
+        />
+        <span class="typography-b2">Обычный</span>
+      </label>
+      <label
+        for="indeterminate"
+        style="display: flex; align-items: center; user-select: none;"
+      >
+        <Checkbox
+          size="md"
+          id="indeterminate"
+          group={[]}
+          indeterminate
+          value="indeterminate"
+          style="margin-right: 0.25rem"
+          readonly
+        />
+        <span class="typography-b2">Неопределённый</span>
+      </label>
+      <label
+        for="checked"
+        style="display: flex; align-items: center; user-select: none;"
+      >
+        <Checkbox
+          size="md"
+          id="checked"
+          group={['checked']}
+          value="checked"
+          style="margin-right: 0.25rem"
+          readonly
+        />
+        <span class="typography-b2">Выбранный</span>
+      </label>
+      <label
+        for="default-disabled"
+        style="display: flex; align-items: center; user-select: none;"
+      >
+        <Checkbox
+          id="default-disabled"
+          size="md"
+          group={[]}
+          value="default-disabled"
+          style="margin-right: 0.25rem"
+          readonly
+          disabled
+        />
+        <span class="typography-b2">Обычный + выключенный</span>
+      </label>
+      <label
+        for="indeterminate-disabled"
+        style="display: flex; align-items: center; user-select: none;"
+      >
+        <Checkbox
+          size="md"
+          id="indeterminate-disabled"
+          group={[]}
+          indeterminate
+          value="indeterminate-disabled"
+          style="margin-right: 0.25rem"
+          readonly
+          disabled
+        />
+        <span class="typography-b2">Неопределённый + выключенный</span>
+      </label>
+      <label
+        for="checked"
+        style="display: flex; align-items: center; user-select: none;"
+      >
+        <Checkbox
+          size="md"
+          id="checked"
+          group={['checked']}
+          value="checked"
+          style="margin-right: 0.25rem"
+          readonly
+          disabled
+        />
+        <span class="typography-b2">Выбранный + выключенный</span>
+      </label>
+    </Stack>
+  </Variant>
 </StoryWrapper>
 
 <style lang="postcss">

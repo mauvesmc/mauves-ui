@@ -11,10 +11,12 @@
   export let radius: MauvesSize | 'full' | 'none' = 'md';
   export let group: string[] = [];
   export let indeterminate = false;
+  export let readonly = false;
 
   $: selected = group.includes(value);
 
   const handleClick = () => {
+    if (readonly) return;
     if (selected) {
       group = group.filter((v) => v !== value);
     } else {
@@ -42,6 +44,7 @@
     name={$$restProps.name}
     disabled={$$restProps.disabled}
     class={buildClass('visually-hidden', 'checkbox__input')}
+    {readonly}
     on:change
     on:click={handleClick}
     checked={selected}
@@ -76,25 +79,32 @@
     cursor: pointer;
   }
 
+  .checkbox[data-enabled='true']:hover {
+    --checkbox-color: var(--theme-secondary-hover);
+  }
+
+  .checkbox[data-enabled='true']:active {
+    --checkbox-color: var(--theme-secondary-active);
+  }
+
   .checkbox[data-enabled='false'] {
     --checkbox-color: var(--theme-disabled-background);
     cursor: not-allowed;
   }
 
-  .checkbox.checkbox_selected[data-enabled='true'] {
-    --checkbox-color: var(--theme-primary-default);
-  }
-
-  .checkbox.checkbox_selected[data-enabled='false'] {
-    --checkbox-color: var(--theme-disabled-background);
-  }
-
+  .checkbox.checkbox_selected[data-enabled='true'],
   .checkbox.checkbox_indeterminate[data-enabled='true'] {
     --checkbox-color: var(--theme-primary-default);
   }
 
-  .checkbox.checkbox_indeterminate[data-enabled='false'] {
-    --checkbox-color: var(--theme-disabled-background);
+  .checkbox.checkbox_selected[data-enabled='true']:hover,
+  .checkbox.checkbox_indeterminate[data-enabled='true']:hover {
+    --checkbox-color: var(--theme-primary-hover);
+  }
+
+  .checkbox.checkbox_selected[data-enabled='true']:active,
+  .checkbox.checkbox_indeterminate[data-enabled='true']:active {
+    --checkbox-color: var(--theme-primary-active);
   }
 
   .checkbox__indeterminate {
