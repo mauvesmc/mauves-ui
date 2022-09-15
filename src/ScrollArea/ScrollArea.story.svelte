@@ -10,7 +10,11 @@
 
 <StoryWrapper>
   <Variant name="Скролл">
-    <ScrollArea style="width: 480px; height: 50vh" typeY="auto" offsetY>
+    <ScrollArea
+      style="width: 480px; height: 50vh; max-width: 100%; max-height: 100%;"
+      typeY="auto"
+      offsetY
+    >
       <span>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis
         repudiandae, dolorem expedita quae unde aliquid magni ducimus sed qui

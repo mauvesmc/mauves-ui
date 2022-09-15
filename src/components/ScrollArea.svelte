@@ -11,7 +11,8 @@
   export let type: ScrollType = 'scroll';
   export let typeY: ScrollType | undefined = undefined;
   export let typeX: ScrollType | undefined = 'never';
-  export let scrollbarSize = 8;
+  export let scrollbarSize = 16;
+  export let thumbSize = 4;
   export let scrollHideDelay = 1000;
   export let offsetX = false;
   export let offsetY = false;
@@ -186,6 +187,7 @@
         'scroll-area__scrollbar-horizontal',
       )}
       style:--scrollbar-width={`${scrollbarSize}px`}
+      style:--scrollbar-thumb-width={`${thumbSize}px`}
       style:--scrollbar-thumb-position={`${$thumbXPosition}%`}
       style:--scrollbar-thumb-size={`${thumbXSize}%`}
       draggable
@@ -201,6 +203,7 @@
         'scroll-area__scrollbar-vertical',
       )}
       style:--scrollbar-width={`${scrollbarSize}px`}
+      style:--scrollbar-thumb-width={`${thumbSize}px`}
       style:--scrollbar-thumb-position={`${$thumbYPosition}%`}
       style:--scrollbar-thumb-size={`${thumbYSize}%`}
       on:mousedown={handleMouseDownY}
@@ -216,8 +219,13 @@
     overflow: hidden;
   }
 
+  .scroll-area__inner::-webkit-scrollbar {
+    display: none;
+  }
+
   .scroll-area__inner {
     overflow: scroll;
+    -ms-overflow-style: none;
     scrollbar-width: none;
     width: 100%;
     height: 100%;
@@ -233,9 +241,17 @@
 
   .scroll-area__scrollbar {
     position: absolute;
-    background-color: var(--theme-secondary-default);
-    border-radius: 9999px;
     cursor: pointer;
+  }
+
+  .scroll-area__scrollbar::after {
+    content: '';
+    background-color: var(--theme-secondary-default);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 9999px;
   }
 
   .scroll-area__scrollbar-horizontal {
@@ -245,10 +261,20 @@
     bottom: 0;
   }
 
+  .scroll-area__scrollbar-horizontal::after {
+    height: var(--scrollbar-thumb-width);
+    width: calc(100% - 0.25rem);
+  }
+
   .scroll-area__scrollbar-vertical {
     height: var(--scrollbar-thumb-size);
     width: var(--scrollbar-width);
     top: var(--scrollbar-thumb-position);
     right: 0;
+  }
+
+  .scroll-area__scrollbar-vertical::after {
+    width: var(--scrollbar-thumb-width);
+    height: calc(100% - 0.25rem);
   }
 </style>

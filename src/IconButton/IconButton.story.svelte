@@ -14,38 +14,38 @@
   <Variant name="Primary Full" description="Все размеры primary цвета">
     <Group position="center">
       <IconButton variant="solid" size="sm">
-        <Icon src={Cloud} size="1.25rem" />
+        <Icon src={Cloud} size="20" />
       </IconButton>
       <IconButton variant="solid" size="md">
-        <Icon src={Cloud} size="1.5rem" />
+        <Icon src={Cloud} size="24" />
       </IconButton>
       <IconButton variant="solid" size="lg" loading>
-        <Icon src={Cloud} size="2rem" />
+        <Icon src={Cloud} size="32" />
       </IconButton>
       <IconButton variant="solid" size="xl" disabled>
-        <Icon src={Cloud} size="2.5rem" />
+        <Icon src={Cloud} size="40" />
       </IconButton>
       <IconButton variant="subtle" size="sm">
-        <Icon src={Cloud} size="1.25rem" />
+        <Icon src={Cloud} size="20" />
       </IconButton>
       <IconButton variant="subtle" size="md">
-        <Icon src={Cloud} size="1.5rem" />
+        <Icon src={Cloud} size="24" />
       </IconButton>
       <IconButton variant="subtle" size="lg">
-        <Icon src={Cloud} size="2rem" />
+        <Icon src={Cloud} size="32" />
       </IconButton>
       <IconButton variant="subtle" size="xl" disabled>
-        <Icon src={Cloud} size="2.5rem" />
+        <Icon src={Cloud} size="40" />
       </IconButton>
     </Group>
   </Variant>
   <Variant name="Secondary XL" description="Все размеры secondary цвета">
     <Group position="center">
       <IconButton color="secondary" variant="solid" size="sm" radius="xl">
-        <Icon src={Cloud} size="1.25rem" />
+        <Icon src={Cloud} size="20" />
       </IconButton>
       <IconButton color="secondary" variant="solid" size="md" radius="xl">
-        <Icon src={Cloud} size="1.5rem" />
+        <Icon src={Cloud} size="24" />
       </IconButton>
       <IconButton
         color="secondary"
@@ -54,7 +54,7 @@
         radius="xl"
         loading
       >
-        <Icon src={Cloud} size="2rem" />
+        <Icon src={Cloud} size="32" />
       </IconButton>
       <IconButton
         color="secondary"
@@ -63,16 +63,16 @@
         radius="xl"
         disabled
       >
-        <Icon src={Cloud} size="2.5rem" />
+        <Icon src={Cloud} size="40" />
       </IconButton>
       <IconButton color="secondary" variant="subtle" size="sm" radius="xl">
-        <Icon src={Cloud} size="1.25rem" />
+        <Icon src={Cloud} size="20" />
       </IconButton>
       <IconButton color="secondary" variant="subtle" size="md" radius="xl">
-        <Icon src={Cloud} size="1.5rem" />
+        <Icon src={Cloud} size="24" />
       </IconButton>
       <IconButton color="secondary" variant="subtle" size="lg" radius="xl">
-        <Icon src={Cloud} size="2rem" />
+        <Icon src={Cloud} size="32" />
       </IconButton>
       <IconButton
         color="secondary"
@@ -81,20 +81,20 @@
         radius="xl"
         disabled
       >
-        <Icon src={Cloud} size="2.5rem" />
+        <Icon src={Cloud} size="40" />
       </IconButton>
     </Group>
   </Variant>
   <Variant name="Success LG" description="Все размеры success цвета">
     <Group position="center">
       <IconButton color="success" variant="solid" size="sm" radius="lg">
-        <Icon src={Cloud} size="1.25rem" />
+        <Icon src={Cloud} size="20" />
       </IconButton>
       <IconButton color="success" variant="solid" size="md" radius="lg">
-        <Icon src={Cloud} size="1.5rem" />
+        <Icon src={Cloud} size="24" />
       </IconButton>
       <IconButton color="success" variant="solid" size="lg" radius="lg" loading>
-        <Icon src={Cloud} size="2rem" />
+        <Icon src={Cloud} size="32" />
       </IconButton>
       <IconButton
         color="success"
@@ -103,16 +103,16 @@
         radius="lg"
         disabled
       >
-        <Icon src={Cloud} size="2.5rem" />
+        <Icon src={Cloud} size="40" />
       </IconButton>
       <IconButton color="success" variant="subtle" size="sm" radius="lg">
-        <Icon src={Cloud} size="1.25rem" />
+        <Icon src={Cloud} size="20" />
       </IconButton>
       <IconButton color="success" variant="subtle" size="md" radius="lg">
-        <Icon src={Cloud} size="1.5rem" />
+        <Icon src={Cloud} size="24" />
       </IconButton>
       <IconButton color="success" variant="subtle" size="lg" radius="lg">
-        <Icon src={Cloud} size="2rem" />
+        <Icon src={Cloud} size="32" />
       </IconButton>
       <IconButton
         color="success"
@@ -121,20 +121,20 @@
         radius="lg"
         disabled
       >
-        <Icon src={Cloud} size="2.5rem" />
+        <Icon src={Cloud} size="40" />
       </IconButton>
     </Group>
   </Variant>
   <Variant name="Warning MD" description="Все размеры warning цвета">
     <Group position="center">
       <IconButton color="warning" variant="solid" size="sm" radius="md">
-        <Icon src={Cloud} size="1.25rem" />
+        <Icon src={Cloud} size="20" />
       </IconButton>
       <IconButton color="warning" variant="solid" size="md" radius="md">
-        <Icon src={Cloud} size="1.5rem" />
+        <Icon src={Cloud} size="24" />
       </IconButton>
       <IconButton color="warning" variant="solid" size="lg" radius="md" loading>
-        <Icon src={Cloud} size="2rem" />
+        <Icon src={Cloud} size="32" />
       </IconButton>
       <IconButton
         color="warning"
@@ -143,16 +143,16 @@
         radius="md"
         disabled
       >
-        <Icon src={Cloud} size="2.5rem" />
+        <Icon src={Cloud} size="40" />
       </IconButton>
       <IconButton color="warning" variant="subtle" size="sm" radius="md">
-        <Icon src={Cloud} size="1.25rem" />
+        <Icon src={Cloud} size="20" />
       </IconButton>
       <IconButton color="warning" variant="subtle" size="md" radius="md">
-        <Icon src={Cloud} size="1.5rem" />
+        <Icon src={Cloud} size="24" />
       </IconButton>
       <IconButton color="warning" variant="subtle" size="lg" radius="md">
-        <Icon src={Cloud} size="2rem" />
+        <Icon src={Cloud} size="32" />
       </IconButton>
       <IconButton
         color="warning"
@@ -161,32 +161,32 @@
         radius="md"
         disabled
       >
-        <Icon src={Cloud} size="2.5rem" />
+        <Icon src={Cloud} size="40" />
       </IconButton>
     </Group>
   </Variant>
   <Variant name="Danger SM" description="Все размеры danger цвета">
     <Group position="center">
       <IconButton color="danger" variant="solid" size="sm" radius="sm">
-        <Icon src={Cloud} size="1.25rem" />
+        <Icon src={Cloud} size="20" />
       </IconButton>
       <IconButton color="danger" variant="solid" size="md" radius="sm">
-        <Icon src={Cloud} size="1.5rem" />
+        <Icon src={Cloud} size="24" />
       </IconButton>
       <IconButton color="danger" variant="solid" size="lg" radius="sm" loading>
-        <Icon src={Cloud} size="2rem" />
+        <Icon src={Cloud} size="32" />
       </IconButton>
       <IconButton color="danger" variant="solid" size="xl" radius="sm" disabled>
-        <Icon src={Cloud} size="2.5rem" />
+        <Icon src={Cloud} size="40" />
       </IconButton>
       <IconButton color="danger" variant="subtle" size="sm" radius="sm">
-        <Icon src={Cloud} size="1.25rem" />
+        <Icon src={Cloud} size="20" />
       </IconButton>
       <IconButton color="danger" variant="subtle" size="md" radius="sm">
-        <Icon src={Cloud} size="1.5rem" />
+        <Icon src={Cloud} size="24" />
       </IconButton>
       <IconButton color="danger" variant="subtle" size="lg" radius="sm">
-        <Icon src={Cloud} size="2rem" />
+        <Icon src={Cloud} size="32" />
       </IconButton>
       <IconButton
         color="danger"
@@ -195,32 +195,32 @@
         radius="sm"
         disabled
       >
-        <Icon src={Cloud} size="2.5rem" />
+        <Icon src={Cloud} size="40" />
       </IconButton>
     </Group>
   </Variant>
   <Variant name="Info NONE" description="Все размеры info цвета">
     <Group position="center">
       <IconButton color="info" variant="solid" size="sm" radius="none">
-        <Icon src={Cloud} size="1.25rem" />
+        <Icon src={Cloud} size="20" />
       </IconButton>
       <IconButton color="info" variant="solid" size="md" radius="none">
-        <Icon src={Cloud} size="1.5rem" />
+        <Icon src={Cloud} size="24" />
       </IconButton>
       <IconButton color="info" variant="solid" size="lg" radius="none" loading>
-        <Icon src={Cloud} size="2rem" />
+        <Icon src={Cloud} size="32" />
       </IconButton>
       <IconButton color="info" variant="solid" size="xl" radius="none" disabled>
-        <Icon src={Cloud} size="2.5rem" />
+        <Icon src={Cloud} size="40" />
       </IconButton>
       <IconButton color="info" variant="subtle" size="sm" radius="none">
-        <Icon src={Cloud} size="1.25rem" />
+        <Icon src={Cloud} size="20" />
       </IconButton>
       <IconButton color="info" variant="subtle" size="md" radius="none">
-        <Icon src={Cloud} size="1.5rem" />
+        <Icon src={Cloud} size="24" />
       </IconButton>
       <IconButton color="info" variant="subtle" size="lg" radius="none">
-        <Icon src={Cloud} size="2rem" />
+        <Icon src={Cloud} size="32" />
       </IconButton>
       <IconButton
         color="info"
@@ -229,7 +229,7 @@
         radius="none"
         disabled
       >
-        <Icon src={Cloud} size="2.5rem" />
+        <Icon src={Cloud} size="40" />
       </IconButton>
     </Group>
   </Variant>
