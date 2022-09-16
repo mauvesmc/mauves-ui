@@ -47,6 +47,7 @@
     {readonly}
     on:change
     on:click={handleClick}
+    {value}
     checked={selected}
   />
   {#if selected}

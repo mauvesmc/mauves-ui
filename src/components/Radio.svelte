@@ -32,6 +32,8 @@
     on:change
     on:click
     checked={selected}
+    {value}
+    bind:group
   />
   {#if selected}
     <div transition:fade={{ duration: 150 }} class="radio__check" />
