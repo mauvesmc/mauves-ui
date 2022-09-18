@@ -14,6 +14,9 @@ const getStyleElementFromTheme = (
   target: string = 'html',
 ): string => {
   const targetStyles = [
+    '--theme-transition-property: background-color, color, border-color, fill, stroke, text-decoration-color',
+    '--theme-transition-duration: 0.15s',
+    '--theme-transition-timing-function: ease',
     getTypographyVariables(theme.typography),
     getShadowsVariables(theme.shadows),
     getColorsCSSVariables(theme.colors),

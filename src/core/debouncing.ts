@@ -1,12 +1,9 @@
-const debouncedState = <T>(
-  initialState: T,
+const debouncing = <T>(
   duration: number = 500,
 ): {
-  state: T;
   debounce: (callback: () => void) => void;
   destroy: () => void;
 } => {
-  let state: T = initialState;
   let timeout: NodeJS.Timeout | undefined = undefined;
 
   const destroy = () => {
@@ -18,7 +15,7 @@ const debouncedState = <T>(
     timeout = setTimeout(callback, duration);
   };
 
-  return { state, debounce, destroy };
+  return { debounce, destroy };
 };
 
-export default debouncedState;
+export default debouncing;

@@ -1,8 +1,7 @@
 <script lang="ts" context="module">
   import { onDestroy } from 'svelte';
-  import { tweened } from 'svelte/motion';
   import { fade } from 'svelte/transition';
-  import { buildClass, debouncedState } from '../core';
+  import { buildClass, debouncing } from '../core';
 
   type ScrollType = 'auto' | 'always' | 'scroll' | 'hover' | 'never';
 </script>
@@ -21,19 +20,16 @@
   $: finalTypeY = typeY ? typeY : type;
 
   let thumbXSize = 0;
-  let thumbXPosition = tweened(0, { duration: 150 });
+  let thumbXPosition = 0;
   let thumbYSize = 0;
-  let thumbYPosition = tweened(0, { duration: 150 });
-  let {
-    state: showX,
-    debounce: debounceShowX,
-    destroy: destroyShowX,
-  } = debouncedState(false, scrollHideDelay);
-  let {
-    state: showY,
-    debounce: debounceShowY,
-    destroy: destroyShowY,
-  } = debouncedState(false, scrollHideDelay);
+  let thumbYPosition = 0;
+  let showX = false;
+  let { debounce: debounceShowX, destroy: destroyShowX } =
+    debouncing(scrollHideDelay);
+
+  let showY = false;
+  let { debounce: debounceShowY, destroy: destroyShowY } =
+    debouncing(scrollHideDelay);
 
   onDestroy(() => {
     destroyShowX();
@@ -52,25 +48,31 @@
     thumbXSize = (width / contentWidth) * 100;
   };
 
-  const handleScroll = (event: any) => {
+  const handleScroll = () => {
     updateThumb();
 
-    thumbXPosition.set(
+    thumbXPosition =
       (scrollable.scrollLeft /
         ((scrollable as any).scrollLeftMax + scrollable.clientWidth)) *
-        100 ?? 0,
-    );
-    thumbYPosition.set(
+        100 ?? 0;
+    thumbYPosition =
       (scrollable.scrollTop /
         ((scrollable as any).scrollTopMax + scrollable.clientHeight)) *
-        100 ?? 0,
-    );
+        100 ?? 0;
 
-    if (finalTypeX === 'scroll') {
+    if (
+      finalTypeX === 'scroll' ||
+      finalTypeX === 'hover' ||
+      finalTypeX === 'auto'
+    ) {
       showX = true;
       debounceShowX(() => (showX = false));
     }
-    if (finalTypeY === 'scroll') {
+    if (
+      finalTypeY === 'scroll' ||
+      finalTypeY === 'hover' ||
+      finalTypeY === 'auto'
+    ) {
       showY = true;
       debounceShowY(() => (showY = false));
     }
@@ -90,17 +92,21 @@
   const handleMouseDownY = (event: MouseEvent) => {
     event.preventDefault();
 
+    const boundingTarget = (
+      event.target as HTMLElement
+    ).getBoundingClientRect();
+    let shift = event.y - boundingTarget.top;
+
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
 
     function onMouseMove(e: MouseEvent) {
-      const bouning = scrollable.getBoundingClientRect();
-      const offset = e.y - bouning.top;
+      const bounding = scrollable.getBoundingClientRect();
+      const offset = e.y - bounding.top - shift;
+      const scrollableSize = bounding.height - boundingTarget.height;
+
       const maxScroll = (scrollable as any).scrollTopMax;
-      scrollable.scrollTo({
-        left: 0,
-        top: (maxScroll * offset) / scrollable.clientHeight,
-      });
+      scrollable.scrollTop = maxScroll * (offset / scrollableSize);
     }
 
     function onMouseUp() {
@@ -112,17 +118,21 @@
   const handleMouseDownX = (event: MouseEvent) => {
     event.preventDefault();
 
+    const boundingTarget = (
+      event.target as HTMLElement
+    ).getBoundingClientRect();
+    let shift = event.x - boundingTarget.left;
+
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
 
     function onMouseMove(e: MouseEvent) {
-      const bouning = scrollable.getBoundingClientRect();
-      const offset = e.x - bouning.left;
+      const bounding = scrollable.getBoundingClientRect();
+      const offset = e.x - bounding.left - shift;
+      const scrollableSize = bounding.width - boundingTarget.width;
+
       const maxScroll = (scrollable as any).scrollLeftMax;
-      scrollable.scrollTo({
-        left: (maxScroll * offset) / scrollable.clientWidth,
-        top: 0,
-      });
+      scrollable.scrollLeft = maxScroll * (offset / scrollableSize);
     }
 
     function onMouseUp() {
@@ -183,7 +193,7 @@
       )}
       style:--scrollbar-width={`${scrollbarSize}px`}
       style:--scrollbar-thumb-width={`${thumbSize}px`}
-      style:--scrollbar-thumb-position={`${$thumbXPosition}%`}
+      style:--scrollbar-thumb-position={`${thumbXPosition}%`}
       style:--scrollbar-thumb-size={`${thumbXSize}%`}
       draggable
       on:mousedown={handleMouseDownX}
@@ -199,7 +209,7 @@
       )}
       style:--scrollbar-width={`${scrollbarSize}px`}
       style:--scrollbar-thumb-width={`${thumbSize}px`}
-      style:--scrollbar-thumb-position={`${$thumbYPosition}%`}
+      style:--scrollbar-thumb-position={`${thumbYPosition}%`}
       style:--scrollbar-thumb-size={`${thumbYSize}%`}
       on:mousedown={handleMouseDownY}
       on:dragstart={() => {}}

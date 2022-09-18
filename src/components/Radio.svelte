@@ -1,7 +1,7 @@
 <script lang="ts" context="module">
   import { fade } from 'svelte/transition';
   import type { MauvesSize } from '../core';
-  import { buildClass, id as randomId } from '../core';
+  import { buildClass, randomId } from '../core';
 </script>
 
 <script lang="ts">

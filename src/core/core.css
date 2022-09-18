@@ -13,10 +13,9 @@ html {
   border: none;
   box-sizing: border-box;
   font-family: var(--theme-font-sans);
-  transition-property: background-color, color, border-color, fill, stroke,
-    text-decoration-color;
-  transition-duration: 0.15s;
-  transition-timing-function: ease;
+  transition-property: var(--theme-transition-property);
+  transition-duration: var(--theme-transition-duration);
+  transition-timing-function: var(--theme-transition-timing-function);
 }
 
 html,

@@ -54,10 +54,9 @@
   .story-wrapper :global(*),
   .story-wrapper :global(*):after,
   .story-wrapper :global(*):before {
-    transition-property: background-color, color, border-color, fill, stroke,
-      text-decoration-color;
-    transition-duration: 0.15s;
-    transition-timing-function: ease;
+    transition-property: var(--theme-transition-property);
+    transition-duration: var(--theme-transition-duration);
+    transition-timing-function: var(--theme-transition-timing-function);
   }
 
   .story-wrapper > :global(*),
