@@ -3,13 +3,13 @@
 
   import Radio from '../../components/Radio.svelte';
   import Stack from '../../components/Stack.svelte';
-  import { id } from '../../core';
+  import { randomId } from '../../core';
   import StoryWrapper from '../StoryWrapper.svelte';
 </script>
 
 <script lang="ts">
-  let catId = id();
-  let dogId = id();
+  let catId = randomId();
+  let dogId = randomId();
   let group = 'dog';
 </script>
 

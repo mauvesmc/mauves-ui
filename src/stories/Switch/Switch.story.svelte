@@ -3,15 +3,15 @@
 
   import Stack from '../../components/Stack.svelte';
   import Switch from '../../components/Switch.svelte';
-  import { id } from '../../core';
+  import { randomId } from '../../core';
   import StoryWrapper from '../StoryWrapper.svelte';
 </script>
 
 <script lang="ts">
-  let catId = id();
-  let dogId = id();
-  let elephantId = id();
-  let ratId = id();
+  let catId = randomId();
+  let dogId = randomId();
+  let elephantId = randomId();
+  let ratId = randomId();
   let group: string[] = ['dog', 'rat'];
 </script>
 
