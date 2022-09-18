@@ -122,7 +122,7 @@
     padding-left: 1rem;
     padding-right: 1rem;
     font-size: var(--theme-font-size-ht);
-    line-height: var(--theme-font-size-ht);
+    line-height: var(--theme-line-height-ht);
   }
 
   .input_size-sm > :global(*) {
@@ -142,7 +142,7 @@
     padding-left: 1.25rem;
     padding-right: 1.25rem;
     font-size: var(--theme-font-size-b2);
-    line-height: var(--theme-font-size-b2);
+    line-height: var(--theme-line-height-b2);
   }
 
   .input_size-md > :global(*) {
@@ -162,7 +162,7 @@
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     font-size: var(--theme-font-size-st2);
-    line-height: var(--theme-font-size-st2);
+    line-height: var(--theme-line-height-st2);
   }
 
   .input_size-lg > :global(*) {
@@ -182,7 +182,7 @@
     padding-left: 1.75rem;
     padding-right: 1.75rem;
     font-size: var(--theme-font-size-h4);
-    line-height: var(--theme-font-size-h4);
+    line-height: var(--theme-line-height-h4);
   }
 
   .input_size-xl > :global(*) {

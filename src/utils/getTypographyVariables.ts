@@ -33,7 +33,7 @@ const getTypographyVariables = (typography: MauvesTypography) => {
     `--theme-font-sans:${typography.sans.join(',')}`,
     `--theme-font-mono:${typography.mono.join(',')}`,
     getFontSizeVariables(typography.fontSize),
-    getLineHeightVariables(typography.fontSize),
+    getLineHeightVariables(typography.lineHeight),
   ];
 
   return variables.join(';');
