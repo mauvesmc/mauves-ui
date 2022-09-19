@@ -86,6 +86,7 @@
     cursor: pointer;
     background-color: transparent;
     color: var(--theme-text-defualt);
+    --ripple-color: currentColor;
   }
 
   .segmented-control__button:enabled:hover {

@@ -233,6 +233,7 @@
 
   .button_size-sm {
     height: 2rem;
+    min-height: 2rem;
     padding-left: 1rem;
     padding-right: 1rem;
     font-size: var(--theme-font-size-ht);
@@ -253,6 +254,7 @@
 
   .button_size-md {
     height: 2.5rem;
+    min-height: 2.5rem;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
     font-size: var(--theme-font-size-b2);
@@ -273,6 +275,7 @@
 
   .button_size-lg {
     height: 3rem;
+    min-height: 3rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     font-size: var(--theme-font-size-st2);
@@ -293,6 +296,7 @@
 
   .button_size-xl {
     height: 3.5rem;
+    min-height: 3.5rem;
     padding-left: 1.75rem;
     padding-right: 1.75rem;
     font-size: var(--theme-font-size-h4);
