@@ -31,7 +31,7 @@
   )}
 >
   {#if !error}
-    <img alt="" {...$$restProps} class="avatar__image" {src} />
+    <img alt="" loading="lazy" {...$$restProps} class="avatar__image" {src} />
   {:else if $$slots.default}
     <div class="avatar__placeholder">
       <slot />

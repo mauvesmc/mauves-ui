@@ -58,6 +58,7 @@
 
 <style lang="postcss">
   .input {
+    box-sizing: border-box;
     display: flex;
     outline: none;
     border: none;

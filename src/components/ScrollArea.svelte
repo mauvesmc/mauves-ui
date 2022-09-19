@@ -7,6 +7,7 @@
 </script>
 
 <script lang="ts">
+  export let tag = 'div';
   export let type: ScrollType = 'scroll';
   export let typeY: ScrollType | undefined = undefined;
   export let typeX: ScrollType | undefined = 'never';
@@ -168,7 +169,11 @@
 
 <svelte:window on:resize={updateThumb} />
 
-<div {...$$restProps} class={buildClass('scroll-area', $$restProps.class)}>
+<svelte:element
+  this={tag}
+  {...$$restProps}
+  class={buildClass('scroll-area', $$restProps.class)}
+>
   <!-- svelte-ignore a11y-mouse-events-have-key-events -->
   <div
     class={buildClass(
@@ -216,7 +221,7 @@
       transition:fade={{ duration: 150 }}
     />
   {/if}
-</div>
+</svelte:element>
 
 <style lang="postcss">
   .scroll-area {
