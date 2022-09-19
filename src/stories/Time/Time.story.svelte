@@ -7,11 +7,33 @@
 </script>
 
 <script lang="ts">
+  import Stack from '../../components/Stack.svelte';
 </script>
 
 <StoryWrapper>
   <Variant name="В реальном времени" description="Обновляется все время">
-    <Time live />
+    <Stack>
+      <Time live />
+      <Time live let:final>
+        {`${final.getHours().toString().padStart(2, '0')}:${final
+          .getMinutes()
+          .toString()
+          .padStart(2, '0')}:${final
+          .getSeconds()
+          .toString()
+          .padStart(2, '0')} ${final
+          .getDate()
+          .toString()
+          .padStart(2, '0')}.${final
+          .getMonth()
+          .toString()
+          .padStart(2, '0')}.${final
+          .getFullYear()
+          .toString()
+          .substring(2)
+          .padEnd(2, '0')}`}
+      </Time>
+    </Stack>
   </Variant>
   <Variant name="±1 секунду">
     <Group>

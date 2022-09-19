@@ -92,6 +92,7 @@
     outline-offset: 2px;
     outline-style: solid;
     outline-color: rgba(var(--theme-primary-default-rgb), 0.5);
+    border: 1px solid var(--theme-secondary-active);
     line-height: var(--line-height) !important;
   }
 
@@ -112,6 +113,7 @@
   .textarea[data-enabled='false'] {
     background-color: var(--theme-disabled-background);
     color: var(--theme-disabled-foreground);
+    border-color: currentColor;
   }
 
   .textarea[data-enabled='false'] .textarea__inner::placeholder {
@@ -119,8 +121,8 @@
   }
 
   .textarea_size-sm {
-    padding-top: 0.421875rem;
-    padding-bottom: 0.421875rem;
+    padding-top: 0.40625rem;
+    padding-bottom: 0.40625rem;
     padding-left: 1rem;
     padding-right: 1rem;
     font-size: var(--theme-font-size-ht);
@@ -128,8 +130,8 @@
   }
 
   .textarea_size-md {
-    padding-top: 0.59375rem;
-    padding-bottom: 0.59375rem;
+    padding-top: 0.5625rem;
+    padding-bottom: 0.5625rem;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
     font-size: var(--theme-font-size-b2);
@@ -137,8 +139,8 @@
   }
 
   .textarea_size-lg {
-    padding-top: 0.625rem;
-    padding-bottom: 0.625rem;
+    padding-top: 0.6875rem;
+    padding-bottom: 0.6875rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     font-size: var(--theme-font-size-st2);
@@ -146,8 +148,8 @@
   }
 
   .textarea_size-xl {
-    padding-top: 0.734375rem;
-    padding-bottom: 0.734375rem;
+    padding-top: 0.78125rem;
+    padding-bottom: 0.78125rem;
     padding-left: 1.75rem;
     padding-right: 1.75rem;
     font-size: var(--theme-font-size-h4);

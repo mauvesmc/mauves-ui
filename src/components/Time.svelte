@@ -198,6 +198,8 @@
   {#if relative}
     {rtf.format(relativeValue, relativeUnit)}
   {:else}
-    {finalDate.toLocaleString(locale, options)}
+    <slot final={finalDate}>
+      {finalDate.toLocaleString(locale, options)}
+    </slot>
   {/if}
 </time>

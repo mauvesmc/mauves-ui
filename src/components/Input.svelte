@@ -4,6 +4,7 @@
 </script>
 
 <script lang="ts">
+  export let ref: HTMLElement | null = null;
   export let size: MauvesSize = 'md';
   export let radius: MauvesSize | 'full' | 'none' = 'md';
   export let id = randomId();
@@ -11,10 +12,13 @@
   export let type = 'text';
   export let fullWidth = false;
 
-  const inputType = (node: HTMLInputElement) => {
+  const inputType = (node: HTMLInputElement, type: string) => {
     node.type = type;
 
     return {
+      update(type: string) {
+        node.type = type;
+      },
       destroy() {},
     };
   };
@@ -22,6 +26,7 @@
 
 <label
   {...$$restProps}
+  bind:this={ref}
   for={id}
   class={buildClass(
     'input',
@@ -48,7 +53,7 @@
     on:input
     on:focus
     on:blur
-    use:inputType
+    use:inputType={type}
     bind:value
   />
   {#if $$slots.end}
@@ -61,7 +66,6 @@
     box-sizing: border-box;
     display: flex;
     outline: none;
-    border: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -73,6 +77,7 @@
     outline-offset: 2px;
     outline-style: solid;
     outline-color: rgba(var(--theme-primary-default-rgb), 0.5);
+    border: 1px solid var(--theme-secondary-active);
   }
 
   .input_full-width {
@@ -92,6 +97,7 @@
   .input[data-enabled='false'] {
     background-color: var(--theme-disabled-background);
     color: var(--theme-disabled-foreground);
+    border-color: currentColor;
   }
 
   .input[data-enabled='false'] .input__inner::placeholder {

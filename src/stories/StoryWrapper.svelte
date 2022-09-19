@@ -54,6 +54,7 @@
   .story-wrapper :global(*),
   .story-wrapper :global(*):after,
   .story-wrapper :global(*):before {
+    font-family: inherit;
     transition-property: var(--theme-transition-property);
     transition-duration: var(--theme-transition-duration);
     transition-timing-function: var(--theme-transition-timing-function);
