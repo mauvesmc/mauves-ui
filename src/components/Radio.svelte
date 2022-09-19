@@ -20,7 +20,7 @@
     `radio_size-${size}`,
     selected && 'radio_selected',
   )}
-  data-enabled={$$restProps.disabled === undefined}
+  data-enabled={!$$restProps.disabled}
   for={id}
 >
   <input

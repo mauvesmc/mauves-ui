@@ -19,12 +19,7 @@
       useWrapper
       style="position: relative"
     >
-      <Input
-        bind:ref
-        placholder="Еблан"
-        on:focus={() => (isOpened = true)}
-        style="width: 200px"
-      />
+      <Input bind:ref on:focus={() => (isOpened = true)} style="width: 200px" />
       <Dropdown {ref} opened={isOpened}>
         <Button fullWidth color="secondary">Тест</Button>
         <Button fullWidth color="secondary">Тест</Button>

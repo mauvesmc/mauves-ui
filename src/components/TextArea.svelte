@@ -35,7 +35,7 @@
     fullWidth && 'textarea_full-width',
     $$restProps.class,
   )}
-  data-enabled={$$restProps.disabled === undefined}
+  data-enabled={!$$restProps.disabled}
 >
   <textarea
     class="textarea__inner"

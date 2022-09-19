@@ -35,7 +35,7 @@
     selected && 'checkbox_selected',
     indeterminate && 'checkbox_indeterminate',
   )}
-  data-enabled={$$restProps.disabled === undefined}
+  data-enabled={!$$restProps.disabled}
   for={id}
 >
   <input

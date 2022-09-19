@@ -2,6 +2,7 @@
   import { onDestroy, onMount } from 'svelte';
   import type { TransitionConfig } from 'svelte/transition';
   import { fade } from 'svelte/transition';
+  import type { MauvesSize } from '../core';
   import { buildClass } from '../core';
 </script>
 
@@ -12,6 +13,7 @@
   export let options: any = { duration: 150 };
   export let zIndex = 50;
   export let fullWidth = true;
+  export let radius: MauvesSize | 'none' = 'md';
 
   let onTop = true;
 
@@ -41,7 +43,7 @@
 
 {#if opened}
   <div
-    class={buildClass('dropdown shadow-sm')}
+    class={buildClass('dropdown shadow-sm', `dropdown_radius-${radius}`)}
     transition:animation={options}
     style:top={!onTop ? '100%' : 'auto'}
     style:bottom={onTop ? '100%' : 'auto'}
@@ -69,7 +71,19 @@
     border: 1px solid var(--theme-secondary-active);
   }
 
-  .dropdown__wrapper {
-    position: relative;
+  .dropdown_radius-sm {
+    border-radius: 0.5rem;
+  }
+
+  .dropdown_radius-md {
+    border-radius: 0.75rem;
+  }
+
+  .dropdown_radius-lg {
+    border-radius: 1rem;
+  }
+
+  .dropdown_radius-xl {
+    border-radius: 1.25rem;
   }
 </style>

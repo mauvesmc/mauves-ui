@@ -37,7 +37,7 @@
     fullWidth && 'input_full-width',
     $$restProps.class,
   )}
-  data-enabled={$$restProps.disabled === undefined}
+  data-enabled={!$$restProps.disabled}
 >
   {#if $$slots.start}
     <slot name="start" />

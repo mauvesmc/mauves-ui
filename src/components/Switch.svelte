@@ -26,7 +26,7 @@
 <label
   {...$$restProps}
   class={buildClass('switch', `switch_size-${size}`, isOn && 'switch_on')}
-  data-enabled={$$restProps.disabled === undefined}
+  data-enabled={!$$restProps.disabled}
   for={id}
 >
   <input

@@ -1,11 +1,9 @@
 <script lang="ts" context="module">
   import { createEventDispatcher } from 'svelte';
-  import { buildClass } from '../core';
+  import { buildClass, buildStyle } from '../core';
 </script>
 
 <script lang="ts">
-  import { buildStyle } from '../core';
-
   const dispatch = createEventDispatcher();
 
   export let excludeByDOMNode: HTMLElement[] = [];
