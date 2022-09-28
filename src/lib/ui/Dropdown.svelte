@@ -1,5 +1,4 @@
 <script lang="ts" context="module">
-	import { onDestroy, onMount } from 'svelte';
 	import type { TransitionConfig } from 'svelte/transition';
 	import { fade } from 'svelte/transition';
 	import type { MauvesSize } from '../core';
@@ -29,17 +28,9 @@
 		ref;
 		update();
 	}
-
-	onMount(() => {
-		window.addEventListener('resize', update);
-		window.addEventListener('scroll', update);
-	});
-
-	onDestroy(() => {
-		window.removeEventListener('resize', update);
-		window.removeEventListener('scroll', update);
-	});
 </script>
+
+<svelte:window on:resize={update} on:scroll={update} />
 
 {#if opened}
 	<div

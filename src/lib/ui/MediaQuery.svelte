@@ -19,6 +19,7 @@
 	});
 
 	onDestroy(() => {
+		if (!mediaQueryList) return;
 		mediaQueryList.removeEventListener('change', mediaQueryListener);
 	});
 </script>
