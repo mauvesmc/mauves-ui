@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-  import { buildClass } from '../core';
+  import buildClass from '../core/buildClass';
 </script>
 
 <script lang="ts">

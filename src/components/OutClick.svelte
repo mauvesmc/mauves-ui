@@ -1,6 +1,7 @@
 <script lang="ts" context="module">
   import { createEventDispatcher } from 'svelte';
-  import { buildClass, buildStyle } from '../core';
+  import buildClass from '../core/buildClass';
+  import buildStyle from '../core/buildStyle';
 </script>
 
 <script lang="ts">

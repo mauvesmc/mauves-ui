@@ -3,7 +3,7 @@
 
   import Checkbox from '../../components/Checkbox.svelte';
   import Stack from '../../components/Stack.svelte';
-  import { randomId } from '../../core';
+  import randomId from '../../core/randomId';
   import StoryWrapper from '../StoryWrapper.svelte';
 </script>
 

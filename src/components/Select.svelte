@@ -4,7 +4,8 @@
 
   import { createEventDispatcher } from 'svelte';
   import type { MauvesSize } from '../core';
-  import { buildClass, randomId } from '../core';
+  import buildClass from '../core/buildClass';
+  import randomId from '../core/randomId';
   import OutClick from './OutClick.svelte';
 </script>
 

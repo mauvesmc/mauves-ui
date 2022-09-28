@@ -3,7 +3,7 @@
 
   import Stack from '../../components/Stack.svelte';
   import Switch from '../../components/Switch.svelte';
-  import { randomId } from '../../core';
+  import randomId from '../../core/randomId';
   import StoryWrapper from '../StoryWrapper.svelte';
 </script>
 

@@ -1,6 +1,6 @@
 <script lang="ts" context="module">
   import { fade, fly } from 'svelte/transition';
-  import { buildClass } from '../core';
+  import buildClass from '../core/buildClass';
   import OutClick from './OutClick.svelte';
 </script>
 

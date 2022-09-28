@@ -1,7 +1,8 @@
 <script lang="ts" context="module">
   import { onDestroy } from 'svelte';
   import { fade } from 'svelte/transition';
-  import { buildClass, debouncing } from '../core';
+  import buildClass from '../core/buildClass';
+  import debouncing from '../core/debouncing';
 
   type ScrollType = 'auto' | 'always' | 'scroll' | 'hover' | 'never';
 </script>

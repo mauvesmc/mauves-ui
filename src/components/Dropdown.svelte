@@ -3,7 +3,7 @@
   import type { TransitionConfig } from 'svelte/transition';
   import { fade } from 'svelte/transition';
   import type { MauvesSize } from '../core';
-  import { buildClass } from '../core';
+  import buildClass from '../core/buildClass';
 </script>
 
 <script lang="ts">

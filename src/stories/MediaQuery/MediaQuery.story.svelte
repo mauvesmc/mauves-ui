@@ -3,7 +3,7 @@
   import Center from '../../components/Center.svelte';
 
   import MediaQuery from '../../components/MediaQuery.svelte';
-  import { buildStyle } from '../../core';
+  import buildStyle from '../../core/buildStyle';
   import StoryWrapper from '../StoryWrapper.svelte';
 </script>
 
