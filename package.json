@@ -1,7 +1,7 @@
 {
-  "name": "@mauves-ui",
+  "name": "mauves-ui",
   "description": "UI for Mauves sites",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "svelte": "src/index.ts",
   "main": "src/index.ts",
