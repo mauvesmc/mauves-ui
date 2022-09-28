@@ -1,4 +1,4 @@
-import { MauvesThemeBase, Theme } from '../core/theme';
+import type { MauvesThemeBase, Theme } from '../core/theme';
 import getColorsCSSVariables from './getColorsCSSVariables';
 import getShadowsVariables, { shadowStyles } from './getShadowsVariables';
 import getThemeStyles, { darkThemeStyles, lightThemeStyles } from './getThemeStyles';

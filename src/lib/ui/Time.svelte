@@ -21,8 +21,8 @@
 
 	let rtf = new Intl.RelativeTimeFormat(locale, rtfOptions);
 	let finalDate = new Date(date);
-	let liveInterval: number | undefined = undefined;
-	let relativeInterval: number | undefined = undefined;
+	let liveInterval: number | any = undefined;
+	let relativeInterval: number | any = undefined;
 	let relativeValue = 0;
 	let relativeUnit: Intl.RelativeTimeFormatUnit = 'second';
 
