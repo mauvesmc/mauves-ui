@@ -54,6 +54,7 @@
 		on:focus
 		on:blur
 		use:ripple={{ disabled: disabledRipple }}
+		data-enabled={!$$restProps.disabled}
 	>
 		<slot />
 	</svelte:element>
@@ -73,42 +74,42 @@
 		position: relative;
 	}
 
-	.icon-button:enabled {
+	.icon-button[data-enabled='true'] {
 		cursor: pointer;
 		outline-width: 0;
 		outline-offset: 2px;
 		outline-style: solid;
 	}
 
-	.icon-button_variant-solid:enabled {
+	.icon-button_variant-solid[data-enabled='true'] {
 		background-color: var(--icon-button-background);
 		color: var(--icon-button-foreground);
 	}
 
-	.icon-button_variant-subtle:enabled {
+	.icon-button_variant-subtle[data-enabled='true'] {
 		background-color: transparent;
 		color: var(--theme-text-default);
 	}
 
-	.icon-button_variant-subtle:enabled:hover {
+	.icon-button_variant-subtle[data-enabled='true']:hover {
 		background-color: var(--icon-button-background);
 		color: var(--icon-button-foreground);
 	}
 
-	.icon-button:enabled:focus {
+	.icon-button[data-enabled='true']:focus {
 		outline-width: 2px;
 	}
 
-	.icon-button:disabled {
+	.icon-button[data-enabled='false'] {
 		cursor: not-allowed;
 	}
 
-	.icon-button_variant-solid:disabled {
+	.icon-button_variant-solid[data-enabled='false'] {
 		background-color: var(--theme-disabled-background);
 		color: var(--theme-disabled-foreground);
 	}
 
-	.icon-button_variant-subtle:disabled {
+	.icon-button_variant-subtle[data-enabled='false'] {
 		background-color: transparent;
 		color: var(--theme-disabled-background);
 	}
