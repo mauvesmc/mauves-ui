@@ -34,7 +34,8 @@
 
 {#if opened}
 	<div
-		class={buildClass('dropdown shadow-sm', `dropdown_radius-${radius}`)}
+		{...$$restProps}
+		class={buildClass('dropdown shadow-sm', `dropdown_radius-${radius}`, $$restProps.class)}
 		transition:animation={options}
 		style:top={!onTop ? '100%' : 'auto'}
 		style:bottom={onTop ? '100%' : 'auto'}
