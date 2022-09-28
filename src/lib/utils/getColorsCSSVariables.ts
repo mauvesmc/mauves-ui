@@ -1,4 +1,3 @@
-import { MauvesColors } from '../core/theme';
 import hexToRgb from './hexToRgb';
 
 const getColorCSSVariable = (key: string, color: string) => {
@@ -7,7 +6,7 @@ const getColorCSSVariable = (key: string, color: string) => {
 	return [`${key}:${color}`, `${key}-rgb:${rgb}`].join(';');
 };
 
-const getColorsCSSVariables = (colors: MauvesColors) => {
+const getColorsCSSVariables = (colors: any) => {
 	const variables: string[] = [];
 
 	Object.keys(colors).forEach((theme) => {

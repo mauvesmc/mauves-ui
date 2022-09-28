@@ -2,61 +2,43 @@ import { writable } from 'svelte/store';
 
 export type MauvesThemeBase = 'dark' | 'light';
 export type MauvesTheme = 'auto' | MauvesThemeBase;
+export type VariatedColor = {
+	1: string;
+	2: string;
+	3: string;
+	4: string;
+	5: string;
+	6: string;
+	7: string;
+	8: string;
+	9: string;
+};
+export type StateColor = {
+	default: string;
+	hover: string;
+	active: string;
+};
+export type GroundColor = {
+	background: string;
+	foreground: string;
+};
+
+export type MauvesColorPalette = {
+	base: VariatedColor;
+	primary: StateColor;
+	secondary: StateColor;
+	text: StateColor;
+	green: StateColor;
+	yellow: StateColor;
+	red: StateColor;
+	blue: StateColor;
+	divider: string;
+	disabled: GroundColor;
+	[key: string]: VariatedColor | StateColor | GroundColor | string;
+};
 
 export type MauvesColors = {
-	[key in MauvesThemeBase]: {
-		base: {
-			1: string;
-			2: string;
-			3: string;
-			4: string;
-			5: string;
-			6: string;
-			7: string;
-			8: string;
-			9: string;
-		};
-		primary: {
-			default: string;
-			hover: string;
-			active: string;
-		};
-		secondary: {
-			default: string;
-			hover: string;
-			active: string;
-		};
-		text: {
-			default: string;
-			hover: string;
-			active: string;
-		};
-		green: {
-			default: string;
-			hover: string;
-			active: string;
-		};
-		yellow: {
-			default: string;
-			hover: string;
-			active: string;
-		};
-		red: {
-			default: string;
-			hover: string;
-			active: string;
-		};
-		blue: {
-			default: string;
-			hover: string;
-			active: string;
-		};
-		divider: string;
-		disabled: {
-			background: string;
-			foreground: string;
-		};
-	};
+	[key in MauvesThemeBase]: MauvesColorPalette;
 };
 
 export type MauvesTypographySize = 'h1' | 'h2' | 'h3' | 'h4' | 'st1' | 'st2' | 'b1' | 'b2' | 'ht';
