@@ -10,6 +10,7 @@
   export let radius: MauvesSize | 'full' | 'none' = 'md';
   export let disabled = false;
   export let fullWidth = false;
+  export let disabledRipple = false;
 </script>
 
 <div
@@ -31,7 +32,7 @@
       )}
       on:click={() => (value = item.value)}
       disabled={disabled || item.disabled}
-      use:ripple
+      use:ripple={{ disabled: disabledRipple }}
     >
       {item.label ?? item.value}
     </button>

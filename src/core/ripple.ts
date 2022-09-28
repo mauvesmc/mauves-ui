@@ -1,7 +1,19 @@
+type RippleOptions = { disabled: boolean; duration: number };
+
+const defaultRippleOptions: RippleOptions = {
+  disabled: false,
+  duration: 300,
+};
+
 const ripple = (
   node: HTMLElement,
-  { duration }: { duration: number } = { duration: 300 },
+  opts: Partial<RippleOptions> = defaultRippleOptions,
 ) => {
+  const options = {
+    ...defaultRippleOptions,
+    ...opts,
+  };
+
   const clickHandler = (event: any) => {
     if (event.currentTarget.disabled) return;
     const e = event as MouseEvent & { layerX: number; layerY: number };
@@ -35,19 +47,19 @@ const ripple = (
           opacity: '0%',
         },
       ],
-      { duration, iterations: 1, easing: 'ease' },
+      { duration: options.duration, iterations: 1, easing: 'ease' },
     );
 
     setTimeout(() => {
       circle.remove();
-    }, duration + 50);
+    }, options.duration + 50);
   };
 
-  node.addEventListener('click', clickHandler);
+  if (!options.disabled) node.addEventListener('click', clickHandler);
 
   return {
     destroy() {
-      node.removeEventListener('click', clickHandler);
+      if (!options.disabled) node.removeEventListener('click', clickHandler);
     },
   };
 };

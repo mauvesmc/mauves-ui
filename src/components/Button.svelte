@@ -22,6 +22,7 @@
   export let loaderPosition: 'left' | 'right' = 'left';
   export let uppercase = false;
   export let fullWidth = false;
+  export let disabledRipple = false;
 </script>
 
 <svelte:element
@@ -44,7 +45,8 @@
   on:click
   on:focus
   on:blur
-  use:ripple
+  use:ripple={{ disabled: disabledRipple }}
+  data-enabled={!$$restProps.disabled}
 >
   {#if loading && loaderPosition === 'left'}
     <Loader size={LOADER_SIZES[size]} loaderSize={LOADER_SIZES[size]} />
@@ -88,7 +90,7 @@
     text-transform: uppercase;
   }
 
-  .button:enabled {
+  .button[data-enabled='true'] {
     cursor: pointer;
     outline-width: 0;
     outline-offset: 2px;
@@ -102,43 +104,43 @@
     align-items: center;
   }
 
-  .button_variant-solid:enabled,
+  .button_variant-solid[data-enabled='true'],
   :global(div.button_variant-solid) {
     background-color: var(--button-background);
     color: var(--button-foreground);
   }
 
-  .button_variant-subtle:enabled,
+  .button_variant-subtle[data-enabled='true'],
   :global(div.button_variant-subtle) {
     background-color: transparent;
     color: var(--theme-text-default);
   }
 
-  .button_variant-subtle:enabled:hover,
+  .button_variant-subtle[data-enabled='true']:hover,
   :global(div.button_variant-subtle:hover) {
     background-color: var(--button-background);
     color: var(--button-foreground);
   }
 
-  .button:enabled:focus {
+  .button[data-enabled='true']:focus {
     outline-width: 2px;
   }
 
-  .button:disabled {
+  .button[data-enabled='false'] {
     cursor: not-allowed;
   }
 
-  .button_variant-solid:disabled {
+  .button_variant-solid[data-enabled='false'] {
     background-color: var(--theme-disabled-background);
     color: var(--theme-disabled-foreground);
   }
 
-  .button_variant-subtle:disabled {
+  .button_variant-subtle[data-enabled='false'] {
     background-color: transparent;
     color: var(--theme-disabled-background);
   }
 
-  .button_variant-subtle:disabled {
+  .button_variant-subtle[data-enabled='false'] {
     background-color: transparent;
     color: var(--theme-disabled-background);
   }

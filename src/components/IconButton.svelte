@@ -26,6 +26,7 @@
   export let size: MauvesSize = 'md';
   export let radius: MauvesSize | 'full' | 'none' = 'full';
   export let loading = false;
+  export let disabledRipple = false;
 </script>
 
 {#if loading}
@@ -51,7 +52,7 @@
     on:click
     on:focus
     on:blur
-    use:ripple
+    use:ripple={{ disabled: disabledRipple }}
   >
     <slot />
   </svelte:element>
