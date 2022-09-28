@@ -1,4 +1,5 @@
 <script lang="ts" context="module">
+	import { onMount } from 'svelte';
 	import type { MauvesSize } from '../core';
 	import buildClass from '../core/buildClass';
 </script>
@@ -11,14 +12,14 @@
 
 	let error = false;
 
-	$: {
+	onMount(() => {
 		const tester = new Image();
 		tester.onerror = () => {
 			error = true;
 			tester.remove();
 		};
 		tester.src = src;
-	}
+	});
 </script>
 
 <svelte:element
