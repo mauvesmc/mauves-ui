@@ -5,7 +5,6 @@ export { default as debouncing } from './core/debouncing';
 export { default as randomId } from './core/randomId';
 export { default as ripple } from './core/ripple';
 export { default as theme } from './core/theme';
-export { default as css } from './index.css';
 export { default as AspectRatio } from './ui/AspectRatio.svelte';
 export { default as Avatar } from './ui/Avatar.svelte';
 export { default as Breadcrumbs } from './ui/Breadcrumbs.svelte';
