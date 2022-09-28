@@ -11,7 +11,7 @@
 	export let animation: (node: Element, params: any) => TransitionConfig = fade;
 	export let options: any = { duration: 150 };
 	export let zIndex = 50;
-	export let fullWidth = true;
+	export let fullWidth = false;
 	export let radius: MauvesSize | 'none' = 'md';
 
 	let onTop = true;
