@@ -3,6 +3,7 @@
 </script>
 
 <script lang="ts">
+	export let tag = 'div';
 	export let column = 'span 1 / span 1';
 	export let sm: string = column;
 	export let md: string = sm;
@@ -10,7 +11,8 @@
 	export let xl: string = lg;
 </script>
 
-<div
+<svelte:element
+	this={tag}
 	{...$$restProps}
 	class={buildClass('column', $$restProps.class)}
 	style:--column={column}
@@ -20,7 +22,7 @@
 	style:--column-xl={xl}
 >
 	<slot />
-</div>
+</svelte:element>
 
 <style lang="postcss">
 	.column {
