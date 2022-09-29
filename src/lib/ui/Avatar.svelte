@@ -24,10 +24,11 @@
 
 <svelte:element
 	this={tag}
+	{...$$restProps}
 	class={buildClass('avatar', `avatar_size-${size}`, `avatar_radius-${radius}`, $$restProps.class)}
 >
 	{#if !error}
-		<img alt="" loading="lazy" {...$$restProps} class="avatar__image" {src} />
+		<img alt="" loading="lazy" class="avatar__image" {src} />
 	{:else if $$slots.default}
 		<div class="avatar__placeholder">
 			<slot />
