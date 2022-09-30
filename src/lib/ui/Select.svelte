@@ -50,7 +50,7 @@
 		{readonly}
 		fullWidth
 		on:focus={() => (isOpened = true)}
-		style="width: 200px"
+		style={$$restProps.style}
 	/>
 	<Dropdown {ref} opened={isOpened}>
 		<slot />
