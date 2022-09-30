@@ -27,6 +27,8 @@ export { default as ScrollArea } from './ui/ScrollArea.svelte';
 export { default as SegmentedControl } from './ui/SegmentedControl.svelte';
 export { default as Select } from './ui/Select.svelte';
 export { default as Stack } from './ui/Stack.svelte';
+export { default as Step } from './ui/Step.svelte';
+export { default as Stepper } from './ui/Stepper.svelte';
 export { default as Switch } from './ui/Switch.svelte';
 export { default as TextArea } from './ui/TextArea.svelte';
 export { default as Time } from './ui/Time.svelte';
