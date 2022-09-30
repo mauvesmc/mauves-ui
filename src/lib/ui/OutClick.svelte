@@ -21,17 +21,17 @@
 		let status = false;
 
 		for (let i = 0; i < excludeByDOMNode.length; i++) {
+			if (status) break;
 			if (excludeByDOMNode[i] && excludeByDOMNode[i].contains(eventTarget)) {
 				status = true;
-				break;
 			}
 		}
 
 		for (let i = 0; i < excludeByQuerySelector.length; i++) {
+			if (status) break;
 			let el = document.querySelector(excludeByQuerySelector[i]);
 			if (el && el.contains(eventTarget)) {
 				status = true;
-				break;
 			}
 		}
 
