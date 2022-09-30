@@ -14,7 +14,7 @@
 		class={buildClass('drawer__wrapper', withBackdrop && 'drawer__wrapper-backdrop')}
 		transition:fade={{ duration: 150 }}
 	>
-		<OutClick on:outclick={() => (opened = false)}>
+		<OutClick excludeByQuerySelector={['.drawer']} on:outclick={() => (opened = false)}>
 			<div
 				{...$$restProps}
 				class={buildClass('drawer', $$restProps.class)}
