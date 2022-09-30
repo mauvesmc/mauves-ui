@@ -18,11 +18,11 @@
 	export let placeholder = '';
 	export let disabled = false;
 	export let readonly = false;
+	export let isOpened = false;
 
 	const dispatch = createEventDispatcher();
 
 	let ref: HTMLElement;
-	let isOpened = false;
 
 	const clearValue = (inputLabel: string) => {
 		if (label === inputLabel) return;
