@@ -84,7 +84,7 @@
 	}
 
 	.step_current .step__index {
-		background-color: var(--theme-base-2);
+		background-color: var(--theme-secondary-default);
 	}
 
 	.step_success {
