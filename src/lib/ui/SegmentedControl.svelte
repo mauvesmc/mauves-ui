@@ -80,8 +80,8 @@
 		height: 100%;
 		padding-left: 1rem;
 		padding-right: 1rem;
-		padding-top: 0.25em;
-		padding-bottom: 0.25em;
+		padding-top: 0.125em;
+		padding-bottom: 0.125em;
 		font-size: inherit;
 		line-height: inherit;
 	}
@@ -116,7 +116,6 @@
 	}
 
 	.segmented-control_size-sm {
-		height: 2rem;
 		padding: 0.25rem;
 		font-size: var(--theme-font-size-ht);
 		line-height: var(--theme-line-height-ht);
@@ -127,7 +126,6 @@
 	}
 
 	.segmented-control_size-md {
-		height: 2.5rem;
 		padding: 0.5rem;
 		font-size: var(--theme-font-size-b2);
 		line-height: var(--theme-line-height-b2);
@@ -138,7 +136,6 @@
 	}
 
 	.segmented-control_size-lg {
-		height: 3rem;
 		padding: 0.75rem;
 		font-size: var(--theme-font-size-st2);
 		line-height: var(--theme-line-height-st2);
@@ -149,7 +146,6 @@
 	}
 
 	.segmented-control_size-xl {
-		height: 3.5rem;
 		padding: 1rem;
 		font-size: var(--theme-font-size-h4);
 		line-height: var(--theme-line-height-h4);
