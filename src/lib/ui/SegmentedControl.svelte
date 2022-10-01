@@ -80,6 +80,8 @@
 		height: 100%;
 		padding-left: 1rem;
 		padding-right: 1rem;
+		padding-top: 0.25em;
+		padding-bottom: 0.25em;
 		font-size: inherit;
 		line-height: inherit;
 	}
