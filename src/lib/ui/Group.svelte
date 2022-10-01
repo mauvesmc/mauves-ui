@@ -37,7 +37,7 @@
 	}
 
 	.group_grow > :global(*) {
-		flex-grow: 1;
+		flex: 1;
 	}
 
 	.group_position-left {
