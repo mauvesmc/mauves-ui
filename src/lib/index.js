@@ -35,4 +35,5 @@ export { default as Tabs } from './ui/Tabs.svelte';
 export { default as TextArea } from './ui/TextArea.svelte';
 export { default as TextField } from './ui/TextField.svelte';
 export { default as Time } from './ui/Time.svelte';
+export { default as Toast } from './ui/Toast.svelte';
 export { default as getStyleElementFromTheme } from './utils/getStyleElementFromTheme';
