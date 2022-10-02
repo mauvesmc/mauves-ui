@@ -7,7 +7,7 @@
 	export let description = '';
 </script>
 
-<div {...$$restProps} class={buildClass('modal', $$restProps.class)}>
+<div {...$$restProps} class={buildClass('modal shadow-md', $$restProps.class)}>
 	<h4 class={buildClass('modal__title', !description && 'modal__padding')}>{title}</h4>
 	{#if description}
 		<p class="modal__description modal__padding typography-b2">{description}</p>
@@ -25,6 +25,7 @@
 		overscroll-behavior-y: contain;
 		padding: 2rem;
 		border-radius: 1.5rem;
+		border: 1px solid var(--theme-secondary-active);
 	}
 
 	.modal__title {
