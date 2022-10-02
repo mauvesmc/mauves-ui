@@ -27,6 +27,7 @@
 <style lang="postcss">
 	.column {
 		grid-column: var(--column);
+		max-width: 100%;
 	}
 
 	@media screen and (min-width: 480px) {

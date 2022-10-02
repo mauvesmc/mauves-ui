@@ -46,6 +46,13 @@
 		width: max-content;
 		overflow-x: auto;
 		border-bottom: 1px solid rgba(var(--theme-secondary-hover-rgb), 0.5);
+		overflow: scroll;
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+
+	.tabs::-webkit-scrollbar {
+		display: none;
 	}
 
 	.tabs[data-enabled='true'] {
@@ -79,6 +86,7 @@
 		border-left: 1px solid transparent;
 		border-top: 1px solid transparent;
 		border-right: 1px solid transparent;
+		min-width: max-content;
 	}
 
 	.tabs__button:enabled {
