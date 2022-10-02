@@ -12,8 +12,7 @@
 
 <div
 	{...$$restProps}
-	in:animation={{ delay: 150, ...options }}
-	out:animation={options}
+	transition:animation={options}
 	class={buildClass('modal shadow-md', $$restProps.class)}
 >
 	<h4 class={buildClass('modal__title', !description && 'modal__padding')}>{title}</h4>
@@ -34,6 +33,7 @@
 		padding: 2rem;
 		border-radius: 1.5rem;
 		border: 1px solid var(--theme-secondary-active);
+		position: absolute;
 	}
 
 	.modal__title {
