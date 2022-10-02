@@ -1,13 +1,20 @@
 <script lang="ts" context="module">
 	import buildClass from '$lib/core/buildClass';
+	import { fade, type TransitionConfig } from 'svelte/transition';
 </script>
 
 <script lang="ts">
+	export let animation: (node: Element, params: any) => TransitionConfig = fade;
+	export let options: any = { duration: 150 };
 	export let title: string;
 	export let description = '';
 </script>
 
-<div {...$$restProps} class={buildClass('modal shadow-md', $$restProps.class)}>
+<div
+	{...$$restProps}
+	transition:animation={options}
+	class={buildClass('modal shadow-md', $$restProps.class)}
+>
 	<h4 class={buildClass('modal__title', !description && 'modal__padding')}>{title}</h4>
 	{#if description}
 		<p class="modal__description modal__padding typography-b2">{description}</p>
