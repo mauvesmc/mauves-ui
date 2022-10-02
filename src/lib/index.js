@@ -21,6 +21,7 @@ export { default as IconButton } from './ui/IconButton.svelte';
 export { default as Input } from './ui/Input.svelte';
 export { default as Loader } from './ui/Loader.svelte';
 export { default as MediaQuery } from './ui/MediaQuery.svelte';
+export { default as Modal } from './ui/Modal.svelte';
 export { default as OutClick } from './ui/OutClick.svelte';
 export { default as Radio } from './ui/Radio.svelte';
 export { default as ScrollArea } from './ui/ScrollArea.svelte';
