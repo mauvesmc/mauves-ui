@@ -39,7 +39,8 @@
 		transition:animation={options}
 		style:top={!onTop ? '100%' : 'auto'}
 		style:bottom={onTop ? '100%' : 'auto'}
-		style:width={fullWidth ? '100%' : 'max-content'}
+		style:width={fullWidth ? 'auto' : 'max-content'}
+		style:min-width={fullWidth ? '100%' : 'max-content'}
 		style:z-index={zIndex}
 	>
 		<slot />
@@ -48,7 +49,6 @@
 
 <style lang="postcss">
 	.dropdown {
-		max-width: 100%;
 		max-height: 200px;
 		position: absolute;
 		left: 0;

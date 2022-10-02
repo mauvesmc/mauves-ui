@@ -19,6 +19,7 @@
 	export let disabled = false;
 	export let readonly = false;
 	export let isOpened = false;
+	export let fullWidthDrawer = false;
 
 	const dispatch = createEventDispatcher();
 
@@ -52,7 +53,7 @@
 		on:focus={() => (isOpened = true)}
 		style={$$restProps.style}
 	/>
-	<Dropdown {ref} opened={isOpened}>
+	<Dropdown {ref} fullWidth={fullWidthDrawer} opened={isOpened}>
 		<slot />
 	</Dropdown>
 </OutClick>
