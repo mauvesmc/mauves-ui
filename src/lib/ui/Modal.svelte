@@ -23,6 +23,8 @@
 		background-color: var(--theme-base-1);
 		color: var(--theme-text-default);
 		overscroll-behavior-y: contain;
+		padding: 2rem;
+		border-radius: 1.5rem;
 	}
 
 	.modal__title {
