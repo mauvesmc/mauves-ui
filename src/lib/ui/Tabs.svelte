@@ -9,10 +9,33 @@
 	export let radius = 'md';
 	export let disabled = false;
 	export let fullWidth = false;
+
+	let parent: HTMLDivElement;
+	let mouseDown = false;
+	let startX = 0;
+	let scrollLeft = 0;
+
+	const stopDragging = () => (mouseDown = false);
+
+	const startDragging = (e: any) => {
+		if (!parent) return;
+		mouseDown = true;
+		startX = e.pageX - parent.offsetLeft;
+		scrollLeft = parent.scrollLeft;
+	};
+
+	const handleMouseMove = (e: any) => {
+		e.preventDefault();
+		if (!mouseDown || !parent) return;
+		const x = e.pageX - parent.offsetLeft;
+		const scroll = x - startX;
+		parent.scrollLeft = scrollLeft - scroll;
+	};
 </script>
 
 <div
 	{...$$restProps}
+	bind:this={parent}
 	class={buildClass(
 		'tabs',
 		`tabs_size-${size}`,
@@ -21,6 +44,10 @@
 		$$restProps.class
 	)}
 	data-enabled={!disabled}
+	on:mousedown={startDragging}
+	on:mousemove={handleMouseMove}
+	on:mouseup={stopDragging}
+	on:mouseleave={stopDragging}
 >
 	{#each data as item (item.value)}
 		<button
