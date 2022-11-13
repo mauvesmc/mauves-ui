@@ -3,3 +3,4 @@ coverage
 *.yaml
 commitlint.config.js
 *.hbs
+postcss.config.js

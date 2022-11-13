@@ -1,8 +1,12 @@
-import { ComponentProps, ValidComponent } from "solid-js";
-import { CSSAttribute } from "solid-styled-components";
+import { ComponentProps, JSX, ValidComponent } from "solid-js";
 import { ThemeConfig } from "./theme";
 
-export type Props<T extends ValidComponent = "div"> = ComponentProps<T> & {
+export type PropsWithoutStyle<T extends ValidComponent = "div"> = Omit<
+  ComponentProps<T>,
+  "style"
+>;
+
+export type Props<T extends ValidComponent = "div"> = PropsWithoutStyle<T> & {
   as?: ValidComponent;
   w?: number;
   h?: number;
@@ -21,5 +25,7 @@ export type Props<T extends ValidComponent = "div"> = ComponentProps<T> & {
   pb?: number;
   pl?: number;
   elevation?: 1 | 2 | 3 | 4 | 5;
-  sx?: CSSAttribute | ((theme: ThemeConfig) => CSSAttribute);
+  style?: JSX.CSSProperties;
+  sx?: (theme: ThemeConfig) => JSX.CSSProperties;
+  [key: string]: any;
 };

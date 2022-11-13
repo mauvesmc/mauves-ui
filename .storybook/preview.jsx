@@ -1,7 +1,6 @@
-import { render } from "solid-js/web"
-import { ThemeProvider } from "solid-styled-components"
-import "../public/index.css"
-import { defaultThemeConfig } from "../src/lib/defaultTheme"
+import { render } from "solid-js/web";
+import { ThemeProvider } from "../src/context/ThemeProvider";
+import "../src/styles/index.css";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -11,7 +10,7 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+};
 
 // let disposeStory
 
@@ -21,20 +20,20 @@ export const decorators = [
     //   disposeStory()
     // }
 
-    const root = document.getElementById("root")
-    const solidRoot = document.createElement("div")
+    const root = document.getElementById("root");
+    const solidRoot = document.createElement("div");
 
-    solidRoot.setAttribute("id", "solid-root")
-    root.appendChild(solidRoot)
+    solidRoot.setAttribute("id", "solid-root");
+    root.appendChild(solidRoot);
 
     render(
-      <ThemeProvider theme={defaultThemeConfig}>
+      <ThemeProvider>
         <Story />
       </ThemeProvider>,
       solidRoot
-    )
+    );
 
-    return solidRoot
+    return solidRoot;
     // return createRoot(() => Story()); // do not work correctly https://github.com/solidjs/solid/issues/553
   },
-]
+];

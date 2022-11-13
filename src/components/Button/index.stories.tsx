@@ -1,33 +1,59 @@
 import { Meta, StoryFn } from "@storybook/html";
-import { Box, BoxProps } from ".";
+import { Button, ButtonProps } from ".";
 
 export default {
   /* 👇 The title prop is optional.
    * See https://storybook.js.org/docs/html/configure/overview#configure-story-loading
    * to learn how to generate automatic titles
    */
-  title: "UI/Box",
-  parameters: {
-    docs: {
-      description: "Уникальный компонент для основы всех остальных",
-    },
-  },
+  title: "UI/Button",
   argTypes: {
+    variant: {
+      name: "variant",
+      type: "string",
+      description: "Варианты кнопки",
+      defaultValue: "filled",
+      control: {
+        type: "select",
+        options: ["filled", "outlined", "text", "elevated", "tonal"],
+      },
+    },
+    loading: {
+      name: "loading",
+      type: "boolean",
+      description: "Статус загрузки?",
+      defaultValue: false,
+    },
+    center: {
+      name: "center",
+      type: "boolean",
+      description: "Контент по центру?",
+      defaultValue: false,
+    },
+    disabled: {
+      name: "disabled",
+      type: "boolean",
+      description: "Выключена?",
+      defaultValue: false,
+    },
+    leftIcon: {
+      name: "leftIcon",
+      description: "Иконка слева",
+    },
+    rightIcon: {
+      name: "rightIcon",
+      description: "Иконка справа",
+    },
     as: {
       name: "as",
       type: "string",
       description: "Компонент для ренедеринга",
-      defaultValue: "div",
+      defaultValue: "button",
     },
     children: {
       name: "children",
       type: "string",
       description: "Дочерний компонент",
-    },
-    elevation: {
-      name: "elevation",
-      type: "number",
-      description: "Тень. 1-5",
     },
     w: {
       name: "w",
@@ -110,11 +136,47 @@ export default {
       description: "Левый внутренний отступ компонента в пикселях",
     },
   },
-} as Meta<BoxProps>;
+} as Meta<ButtonProps>;
 
-const Template = ((args: BoxProps) => <Box {...args} />) as StoryFn<BoxProps>;
+const Template = ((args: ButtonProps) => (
+  <Button {...args} />
+)) as StoryFn<ButtonProps>;
 
 export const Default = Template.bind({});
 Default.args = {
-  children: "Я самый динамический компонент",
-} as BoxProps;
+  children: "Кнопка",
+} as ButtonProps;
+
+const Icon = () => (
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 18 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M15 9.75H9.75V15H8.25V9.75H3V8.25H8.25V3H9.75V8.25H15V9.75Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
+export const LeftIcon = Template.bind({});
+LeftIcon.args = {
+  children: "Кнопка",
+  leftIcon: <Icon />,
+} as ButtonProps;
+
+export const RightIcon = Template.bind({});
+RightIcon.args = {
+  children: "Кнопка",
+  rightIcon: <Icon />,
+} as ButtonProps;
+
+export const BothIcons = Template.bind({});
+BothIcons.args = {
+  children: "Кнопка",
+  leftIcon: <Icon />,
+  rightIcon: <Icon />,
+} as ButtonProps;

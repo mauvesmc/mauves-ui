@@ -4,10 +4,10 @@ import {
   themeFromSourceColor,
 } from "@material/material-color-utilities";
 import { Component } from "solid-js";
-import { ThemeProvider } from "solid-styled-components";
+import { Box } from "../components/Box";
+import { Typography } from "../components/Typography";
+import { useTheme } from "../context/ThemeProvider";
 import { defaultThemeConfig } from "../lib/defaultTheme";
-import { Box } from "./Box";
-import { Typography } from "./Typography";
 
 const Plate: Component<{ color: number; textColor: number; label: string }> = (
   props
@@ -15,10 +15,10 @@ const Plate: Component<{ color: number; textColor: number; label: string }> = (
   return (
     <Box
       p={16}
-      sx={{
-        backgroundColor: hexFromArgb(props.color),
+      style={{
+        "background-color": hexFromArgb(props.color),
         color: hexFromArgb(props.textColor),
-        aspectRatio: "4 / 3",
+        "aspect-ratio": "4 / 3",
       }}
     >
       <Typography>{props.label}</Typography>
@@ -27,20 +27,30 @@ const Plate: Component<{ color: number; textColor: number; label: string }> = (
 };
 
 export const ColorPalette: Component<{ color: string }> = (props) => {
+  const [, { setConfig }] = useTheme();
+
+  const generatedTheme = themeFromSourceColor(argbFromHex(props.color));
   const theme = {
     ...defaultThemeConfig,
     palettes: {
       ...defaultThemeConfig.palettes,
-      ...themeFromSourceColor(argbFromHex(props.color)).schemes,
+      ...generatedTheme.schemes,
     },
   };
+
+  setConfig(theme);
+
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <Box
+        p={32}
         sx={(t) => ({
           display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          backgroundColor: hexFromArgb(t.palettes.light.background),
+          "grid-template-columns": "repeat(4, 1fr)",
+          "background-color": hexFromArgb(t.palettes.light.background),
+          "border-width": "1px",
+          "border-style": "solid",
+          "border-color": hexFromArgb(t.palettes[t.current.name].outline),
         })}
       >
         <Plate
@@ -165,11 +175,13 @@ export const ColorPalette: Component<{ color: string }> = (props) => {
         />
       </Box>
       <Box
-        mt={64}
+        mt={32}
+        p={32}
         sx={(t) => ({
           display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          backgroundColor: hexFromArgb(t.palettes.light.background),
+          "grid-template-columns": "repeat(4, 1fr)",
+          "background-color": hexFromArgb(t.palettes.dark.background),
+          border: `1px solid ${t.palettes[t.current.name].outline}`,
         })}
       >
         <Plate
@@ -293,6 +305,6 @@ export const ColorPalette: Component<{ color: string }> = (props) => {
           label="Outline Variant"
         />
       </Box>
-    </ThemeProvider>
+    </>
   );
 };

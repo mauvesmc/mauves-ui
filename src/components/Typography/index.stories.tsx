@@ -46,7 +46,7 @@ export default {
       defaultValue: "p",
     },
     children: {
-      name: "w",
+      name: "children",
       type: "string",
       description: "Дочерний компонент",
     },

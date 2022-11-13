@@ -85,8 +85,14 @@ export type ThemeElevation = {
     5: string;
   };
 };
+
+export type ThemeCurrent = {
+  name: ThemePalettes | string;
+  mode: ThemePalettes;
+};
+
 export type ThemeConfig = {
-  current: { name: ThemePalettes | string; mode: ThemePalettes };
+  current: ThemeCurrent;
   palettes: {
     dark: ThemePalette;
     light: ThemePalette;

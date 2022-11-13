@@ -1,0 +1,183 @@
+:root {
+  --theme-primary: transparent;
+  --theme-primary-rgb: 0, 0, 0;
+  --theme-on-primary: transparent;
+  --theme-on-primary-rgb: 0, 0, 0;
+  --theme-primary-container: transparent;
+  --theme-primary-container-rgb: 0, 0, 0;
+  --theme-on-primary-container: transparent;
+  --theme-on-primary-container-rgb: 0, 0, 0;
+  --theme-secondary: transparent;
+  --theme-secondary-rgb: 0, 0, 0;
+  --theme-on-secondary: transparent;
+  --theme-on-secondary-rgb: 0, 0, 0;
+  --theme-secondary-container: transparent;
+  --theme-secondary-container-rgb: 0, 0, 0;
+  --theme-on-secondary-container: transparent;
+  --theme-on-secondary-container-rgb: 0, 0, 0;
+  --theme-tertiary: transparent;
+  --theme-tertiary-rgb: 0, 0, 0;
+  --theme-on-tertiary: transparent;
+  --theme-on-tertiary-rgb: 0, 0, 0;
+  --theme-tertiary-container: transparent;
+  --theme-tertiary-container-rgb: 0, 0, 0;
+  --theme-on-tertiary-container: transparent;
+  --theme-on-tertiary-container-rgb: 0, 0, 0;
+  --theme-error: transparent;
+  --theme-error-rgb: 0, 0, 0;
+  --theme-on-error: transparent;
+  --theme-on-error-rgb: 0, 0, 0;
+  --theme-error-container: transparent;
+  --theme-error-container-rgb: 0, 0, 0;
+  --theme-on-error-container: transparent;
+  --theme-on-error-container-rgb: 0, 0, 0;
+  --theme-background: transparent;
+  --theme-background-rgb: 0, 0, 0;
+  --theme-on-background: transparent;
+  --theme-on-background-rgb: 0, 0, 0;
+  --theme-surface: transparent;
+  --theme-surface-rgb: 0, 0, 0;
+  --theme-on-surface: transparent;
+  --theme-on-surface-rgb: 0, 0, 0;
+  --theme-surface-variant: transparent;
+  --theme-surface-variant-rgb: 0, 0, 0;
+  --theme-on-surface-variant: transparent;
+  --theme-on-surface-variant-rgb: 0, 0, 0;
+  --theme-outline: transparent;
+  --theme-outline-rgb: 0, 0, 0;
+  --theme-outline-variant: transparent;
+  --theme-outline-variant-rgb: 0, 0, 0;
+  --theme-shadow: transparent;
+  --theme-shadow-rgb: 0, 0, 0;
+  --theme-scrim: transparent;
+  --theme-scrim-rgb: 0, 0, 0;
+  --theme-inverse-surface: transparent;
+  --theme-inverse-surface-rgb: 0, 0, 0;
+  --theme-inverse-on-surface: transparent;
+  --theme-inverse-on-surface-rgb: 0, 0, 0;
+  --theme-inverse-primary: transparent;
+  --theme-inverse-primary-rgb: 0, 0, 0;
+  --theme-elevation-1: 0 1px 3px 1px #00000026, 0 1px 2px 0 #0000004d;
+  --theme-elevation-2: 0 2px 6px 2px #00000026, 0 1px 2px 0 #0000004d;
+  --theme-elevation-3: 0 1px 3px 0 #0000004d, 0 4px 8px 3px #00000026;
+  --theme-elevation-4: 0 2px 3px 0 #0000004d, 0 6px 10px 4px #00000026;
+  --theme-elevation-5: 0 4px 4px 0, 0 8px 12px 6px #00000026;
+  --theme-typography-display-large-face: Inter, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  --theme-typography-display-large-font-size: 57px;
+  --theme-typography-display-large-letter-spacing: 0;
+  --theme-typography-display-large-line-height: 64px;
+  --theme-typography-display-large-weight: 400;
+  --theme-typography-display-medium-face: Inter, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  --theme-typography-display-medium-font-size: 45px;
+  --theme-typography-display-medium-letter-spacing: 0;
+  --theme-typography-display-medium-line-height: 52px;
+  --theme-typography-display-medium-weight: 400;
+  --theme-typography-display-small-face: Inter, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  --theme-typography-display-small-font-size: 36px;
+  --theme-typography-display-small-letter-spacing: 0;
+  --theme-typography-display-small-line-height: 44px;
+  --theme-typography-display-small-weight: 400;
+  --theme-typography-headline-large-face: Inter, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  --theme-typography-headline-large-font-size: 32px;
+  --theme-typography-headline-large-letter-spacing: 0;
+  --theme-typography-headline-large-line-height: 40px;
+  --theme-typography-headline-large-weight: 400;
+  --theme-typography-headline-medium-face: Inter, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  --theme-typography-headline-medium-font-size: 28px;
+  --theme-typography-headline-medium-letter-spacing: 0;
+  --theme-typography-headline-medium-line-height: 36px;
+  --theme-typography-headline-medium-weight: 400;
+  --theme-typography-headline-small-face: Inter, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  --theme-typography-headline-small-font-size: 24px;
+  --theme-typography-headline-small-letter-spacing: 0;
+  --theme-typography-headline-small-line-height: 32px;
+  --theme-typography-headline-small-weight: 400;
+  --theme-typography-title-large-face: Inter, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  --theme-typography-title-large-font-size: 22px;
+  --theme-typography-title-large-letter-spacing: 0;
+  --theme-typography-title-large-line-height: 28px;
+  --theme-typography-title-large-weight: 500;
+  --theme-typography-title-medium-face: Inter, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  --theme-typography-title-medium-font-size: 16px;
+  --theme-typography-title-medium-letter-spacing: 0.15px;
+  --theme-typography-title-medium-line-height: 24px;
+  --theme-typography-title-medium-weight: 500;
+  --theme-typography-title-small-face: Inter, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  --theme-typography-title-small-font-size: 14px;
+  --theme-typography-title-small-letter-spacing: 0.1px;
+  --theme-typography-title-small-line-height: 20px;
+  --theme-typography-title-small-weight: 500;
+  --theme-typography-label-large-face: Inter, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  --theme-typography-label-large-font-size: 14px;
+  --theme-typography-label-large-letter-spacing: 0.1px;
+  --theme-typography-label-large-line-height: 20px;
+  --theme-typography-label-large-weight: 500;
+  --theme-typography-label-medium-face: Inter, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  --theme-typography-label-medium-font-size: 12px;
+  --theme-typography-label-medium-letter-spacing: 0.5px;
+  --theme-typography-label-medium-line-height: 16px;
+  --theme-typography-label-medium-weight: 500;
+  --theme-typography-label-small-face: Inter, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  --theme-typography-label-small-font-size: 11px;
+  --theme-typography-label-small-letter-spacing: 0.5px;
+  --theme-typography-label-small-line-height: 16px;
+  --theme-typography-label-small-weight: 500;
+  --theme-typography-body-large-face: Inter, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  --theme-typography-body-large-font-size: 16px;
+  --theme-typography-body-large-letter-spacing: 0.15px;
+  --theme-typography-body-large-line-height: 24px;
+  --theme-typography-body-large-weight: 400;
+  --theme-typography-body-medium-face: Inter, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  --theme-typography-body-medium-font-size: 14px;
+  --theme-typography-body-medium-letter-spacing: 0.25px;
+  --theme-typography-body-medium-line-height: 20px;
+  --theme-typography-body-medium-weight: 400;
+  --theme-typography-body-small-face: Inter, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  --theme-typography-body-small-font-size: 12px;
+  --theme-typography-body-small-letter-spacing: 0.4px;
+  --theme-typography-body-small-line-height: 16px;
+  --theme-typography-body-small-weight: 400;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}

@@ -1,15 +1,30 @@
+/* Components */
 export { Box } from "./components/Box";
 export type { BoxProps } from "./components/Box";
+export { Button } from "./components/Button";
+export type { ButtonProps, ButtonVariant } from "./components/Button";
 export { Typography } from "./components/Typography";
 export type { TypographyProps } from "./components/Typography";
+/* Context */
+export {
+  ThemeContext,
+  ThemeProvider,
+  useCurrentTheme,
+  useTheme,
+  useThemeConfig,
+} from "./context/ThemeProvider";
+/* Library */
+export { cssFromTheme } from "./lib/cssFromTheme";
 export { defaultThemeConfig } from "./lib/defaultTheme";
-export { useThemeConfig } from "./lib/useThemeConfig";
-export type { Props } from "./types";
+export { toKebabCase } from "./lib/toKebabCase";
+/* Types */
+export type { Props, PropsWithoutStyle } from "./types";
 export type {
   ThemeConfig,
+  ThemeCurrent,
+  ThemeElevation,
   ThemePalette,
   ThemePalettes,
-  ThemeSize,
   ThemeTypes,
   ThemeTypography,
   ThemeTypographyItem,

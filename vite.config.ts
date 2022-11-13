@@ -1,6 +1,6 @@
-import { defineConfig } from "vite"
-import dts from "vite-plugin-dts"
-import solidPlugin from "vite-plugin-solid"
+import { defineConfig } from "vite";
+import dts from "vite-plugin-dts";
+import solidPlugin from "vite-plugin-solid";
 
 export default defineConfig({
   plugins: [
@@ -25,4 +25,4 @@ export default defineConfig({
       external: ["solid-js"],
     },
   },
-})
+});
