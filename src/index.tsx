@@ -1,3 +1,4 @@
+import "./styles/index.css";
 /* Components */
 export { Box } from "./components/Box";
 export type { BoxProps } from "./components/Box";

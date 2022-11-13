@@ -1,62 +1,4 @@
 :root {
-  --theme-primary: transparent;
-  --theme-primary-rgb: 0, 0, 0;
-  --theme-on-primary: transparent;
-  --theme-on-primary-rgb: 0, 0, 0;
-  --theme-primary-container: transparent;
-  --theme-primary-container-rgb: 0, 0, 0;
-  --theme-on-primary-container: transparent;
-  --theme-on-primary-container-rgb: 0, 0, 0;
-  --theme-secondary: transparent;
-  --theme-secondary-rgb: 0, 0, 0;
-  --theme-on-secondary: transparent;
-  --theme-on-secondary-rgb: 0, 0, 0;
-  --theme-secondary-container: transparent;
-  --theme-secondary-container-rgb: 0, 0, 0;
-  --theme-on-secondary-container: transparent;
-  --theme-on-secondary-container-rgb: 0, 0, 0;
-  --theme-tertiary: transparent;
-  --theme-tertiary-rgb: 0, 0, 0;
-  --theme-on-tertiary: transparent;
-  --theme-on-tertiary-rgb: 0, 0, 0;
-  --theme-tertiary-container: transparent;
-  --theme-tertiary-container-rgb: 0, 0, 0;
-  --theme-on-tertiary-container: transparent;
-  --theme-on-tertiary-container-rgb: 0, 0, 0;
-  --theme-error: transparent;
-  --theme-error-rgb: 0, 0, 0;
-  --theme-on-error: transparent;
-  --theme-on-error-rgb: 0, 0, 0;
-  --theme-error-container: transparent;
-  --theme-error-container-rgb: 0, 0, 0;
-  --theme-on-error-container: transparent;
-  --theme-on-error-container-rgb: 0, 0, 0;
-  --theme-background: transparent;
-  --theme-background-rgb: 0, 0, 0;
-  --theme-on-background: transparent;
-  --theme-on-background-rgb: 0, 0, 0;
-  --theme-surface: transparent;
-  --theme-surface-rgb: 0, 0, 0;
-  --theme-on-surface: transparent;
-  --theme-on-surface-rgb: 0, 0, 0;
-  --theme-surface-variant: transparent;
-  --theme-surface-variant-rgb: 0, 0, 0;
-  --theme-on-surface-variant: transparent;
-  --theme-on-surface-variant-rgb: 0, 0, 0;
-  --theme-outline: transparent;
-  --theme-outline-rgb: 0, 0, 0;
-  --theme-outline-variant: transparent;
-  --theme-outline-variant-rgb: 0, 0, 0;
-  --theme-shadow: transparent;
-  --theme-shadow-rgb: 0, 0, 0;
-  --theme-scrim: transparent;
-  --theme-scrim-rgb: 0, 0, 0;
-  --theme-inverse-surface: transparent;
-  --theme-inverse-surface-rgb: 0, 0, 0;
-  --theme-inverse-on-surface: transparent;
-  --theme-inverse-on-surface-rgb: 0, 0, 0;
-  --theme-inverse-primary: transparent;
-  --theme-inverse-primary-rgb: 0, 0, 0;
   --theme-elevation-1: 0 1px 3px 1px #00000026, 0 1px 2px 0 #0000004d;
   --theme-elevation-2: 0 2px 6px 2px #00000026, 0 1px 2px 0 #0000004d;
   --theme-elevation-3: 0 1px 3px 0 #0000004d, 0 4px 8px 3px #00000026;
@@ -180,4 +122,14 @@
 html {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: var(--theme-background);
+  color: var(--theme-on-background);
+  font-family: var(--theme-typography-body-large-face);
+  font-size: var(--theme-typography-body-large-font-size);
+  letter-spacing: var(--theme-typography-body-large-letter-spacing);
+  line-height: var(--theme-typography-body-large-line-height);
+  font-weight: var(--theme-typography-body-large-weight);
 }

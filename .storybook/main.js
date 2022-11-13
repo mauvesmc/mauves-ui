@@ -1,4 +1,4 @@
-const Solid = require("vite-plugin-solid")
+const Solid = require("vite-plugin-solid");
 
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
@@ -6,6 +6,7 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    "@storybook/addon-toolbars",
   ],
   framework: "@storybook/html",
   core: {
@@ -15,8 +16,8 @@ module.exports = {
     storyStoreV7: true,
   },
   async viteFinal(config, { configType }) {
-    config.plugins.unshift(Solid({ hot: false }))
+    config.plugins.unshift(Solid({ hot: false }));
 
-    return config
+    return config;
   },
-}
+};

@@ -35,6 +35,7 @@ export const ThemeProvider: Component<{
   children: any;
   config?: ThemeConfig;
   current?: ThemeCurrent;
+  target?: HTMLElement;
 }> = (rawProps) => {
   const props = mergeProps(
     { config: defaultThemeConfig, current: defaultThemeConfig.current },
@@ -57,8 +58,12 @@ export const ThemeProvider: Component<{
   const css = createMemo(() => cssFromTheme(state.theme));
 
   createEffect(() => {
-    if (!document) return;
-    document.documentElement.setAttribute("style", css());
+    if (props.target) {
+      props.target.setAttribute("style", css());
+    } else {
+      if (!document) return;
+      document.documentElement.setAttribute("style", css());
+    }
   });
 
   return (
