@@ -45,13 +45,14 @@ export const Button: Component<ButtonProps> = (rawProps) => {
       {...rest}
       classList={{
         [styles.button]: true,
+        [styles.button_enabled]: !props.disabled,
+        [styles.button_disabled]: props.disabled,
         [styles[`button_variant-${props.variant}`]]: true,
         [styles["button_icon-left"]]: !!props.leftIcon,
         [styles["button_icon-right"]]: !!props.rightIcon,
         ...props.classList,
       }}
       disabled={props.disabled || props.loading}
-      data-enabled={!props.disabled}
     >
       {props.leftIcon}
       <Typography

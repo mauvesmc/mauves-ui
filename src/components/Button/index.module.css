@@ -50,11 +50,11 @@
   border-radius: 9999px;
 }
 
-.button[data-enabled="true"] {
+.button.button_enabled {
   cursor: pointer;
 }
 
-.button[data-enabled="false"] {
+.button.button_disabled {
   cursor: not-allowed;
 }
 
@@ -93,136 +93,136 @@
   padding-left: 16px;
 }
 
-.button_variant-filled[data-enabled="true"] {
+.button_variant-filled.button_enabled {
   color: var(--theme-on-primary);
   background-color: var(--theme-primary);
 }
 
-.button_variant-filled[data-enabled="true"]:hover {
+.button_variant-filled.button_enabled:hover {
   box-shadow: var(--theme-elevation-1);
 }
 
-.button_variant-filled[data-enabled="true"]:hover::after {
+.button_variant-filled.button_enabled:hover::after {
   background-color: rgba(var(--theme-on-primary-rgb), 0.08);
 }
 
-.button_variant-filled[data-enabled="true"]:focus {
+.button_variant-filled.button_enabled:focus {
   outline-color: rgba(var(--theme-primary-rgb), 0.38);
 }
 
-.button_variant-filled[data-enabled="true"]:active::after {
+.button_variant-filled.button_enabled:active::after {
   background-color: rgba(var(--theme-on-primary-rgb), 0.12);
 }
 
-.button_variant-filled[data-enabled="false"] {
+.button_variant-filled.button_disabled {
   color: rgba(var(--theme-on-surface-rgb), 0.38);
   background-color: rgba(var(--theme-on-surface-rgb), 0.12);
 }
 
-.button_variant-outlined[data-enabled="true"] {
+.button_variant-outlined.button_enabled {
   color: var(--theme-primary);
   border: 1px solid var(--theme-outline);
 }
 
-.button_variant-outlined[data-enabled="true"]:hover {
+.button_variant-outlined.button_enabled:hover {
   background-color: rgba(var(--theme-primary-rgb), 0.08);
 }
 
-.button_variant-outlined[data-enabled="true"]:focus {
+.button_variant-outlined.button_enabled:focus {
   outline-color: rgba(var(--theme-primary-rgb), 0.38);
 }
 
-.button_variant-outlined[data-enabled="true"]:active {
+.button_variant-outlined.button_enabled:active {
   border-color: var(--theme-primary);
   background-color: rgba(var(--theme-primary-rgb), 0.12);
 }
 
-.button_variant-outlined[data-enabled="false"] {
+.button_variant-outlined.button_disabled {
   color: rgba(var(--theme-on-surface-rgb), 0.38);
   border: 1px solid rgba(var(--theme-on-surface-rgb), 0.12);
 }
 
-.button_variant-text[data-enabled="true"] {
+.button_variant-text.button_enabled {
   color: var(--theme-primary);
 }
 
-.button_variant-text[data-enabled="true"]:hover {
+.button_variant-text.button_enabled:hover {
   background-color: rgba(var(--theme-primary-rgb), 0.08);
 }
 
-.button_variant-text[data-enabled="true"]:focus {
+.button_variant-text.button_enabled:focus {
   outline-color: rgba(var(--theme-primary-rgb), 0.38);
 }
 
-.button_variant-text[data-enabled="true"]:active {
+.button_variant-text.button_enabled:active {
   background-color: rgba(var(--theme-primary-rgb), 0.12);
 }
 
-.button_variant-text[data-enabled="false"] {
+.button_variant-text.button_disabled {
   color: rgba(var(--theme-on-surface-rgb), 0.38);
 }
 
-.button_variant-elevated[data-enabled="true"] {
+.button_variant-elevated.button_enabled {
   color: var(--theme-primary);
   background-color: var(--theme-surface);
   box-shadow: var(--theme-elevation-1);
 }
 
-.button_variant-elevated[data-enabled="true"]::after {
+.button_variant-elevated.button_enabled::after {
   background-color: rgba(var(--theme-primary-rgb), 0.05);
 }
 
-.button_variant-elevated[data-enabled="true"]:hover {
+.button_variant-elevated.button_enabled:hover {
   box-shadow: var(--theme-elevation-2);
 }
 
-.button_variant-elevated[data-enabled="true"]:hover::after {
+.button_variant-elevated.button_enabled:hover::after {
   background-color: rgba(var(--theme-primary-rgb), 0.08);
 }
 
-.button_variant-elevated[data-enabled="true"]:focus {
+.button_variant-elevated.button_enabled:focus {
   outline-color: rgba(var(--theme-primary-rgb), 0.38);
 }
 
-.button_variant-elevated[data-enabled="true"]:focus::after {
+.button_variant-elevated.button_enabled:focus::after {
   background-color: rgba(var(--theme-primary-rgb), 0.05);
 }
 
-.button_variant-elevated[data-enabled="true"]:active {
+.button_variant-elevated.button_enabled:active {
   box-shadow: var(--theme-elevation-1);
 }
 
-.button_variant-elevated[data-enabled="true"]:active::after {
+.button_variant-elevated.button_enabled:active::after {
   background-color: rgba(var(--theme-primary-rgb), 0.12);
 }
 
-.button_variant-elevated[data-enabled="false"] {
+.button_variant-elevated.button_disabled {
   background-color: rgba(var(--theme-on-surface-rgb), 0.12);
   color: rgba(var(--theme-on-surface-rgb), 0.38);
 }
 
-.button_variant-tonal[data-enabled="true"] {
+.button_variant-tonal.button_enabled {
   color: var(--theme-on-secondary-container);
   background-color: var(--theme-secondary-container);
 }
 
-.button_variant-tonal[data-enabled="true"]:hover {
+.button_variant-tonal.button_enabled:hover {
   box-shadow: var(--theme-elevation-1);
 }
 
-.button_variant-tonal[data-enabled="true"]:hover::after {
+.button_variant-tonal.button_enabled:hover::after {
   background-color: rgba(var(--theme-on-secondary-container-rgb), 0.08);
 }
 
-.button_variant-tonal[data-enabled="true"]:focus {
+.button_variant-tonal.button_enabled:focus {
   outline-color: rgba(var(--theme-primary-rgb), 0.38);
 }
 
-.button_variant-tonal[data-enabled="true"]:active::after {
+.button_variant-tonal.button_enabled:active::after {
   background-color: rgba(var(--theme-on-secondary-container-rgb), 0.12);
 }
 
-.button_variant-tonal[data-enabled="false"] {
+.button_variant-tonal.button_disabled {
   background-color: rgba(var(--theme-on-surface-rgb), 0.12);
   color: rgba(var(--theme-on-surface-rgb), 0.38);
 }
