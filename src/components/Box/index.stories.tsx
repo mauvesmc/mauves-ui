@@ -24,6 +24,11 @@ export default {
       type: "string",
       description: "Дочерний компонент",
     },
+    elevation: {
+      name: "elevation",
+      type: "number",
+      description: "Тень. 1-5",
+    },
     w: {
       name: "w",
       type: "number",

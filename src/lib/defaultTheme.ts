@@ -1,6 +1,7 @@
-import { ThemeConfig } from "../types/theme"
+import { ThemeConfig } from "../types/theme";
 
 export const defaultThemeConfig: ThemeConfig = {
+  current: { name: "light", mode: "light" },
   palettes: {
     light: {
       primary: 4283389609,
@@ -187,16 +188,20 @@ export const defaultThemeConfig: ThemeConfig = {
       weight: 400,
     },
   },
-  spacing: {
-    sm: 4,
-    md: 8,
-    lg: 16,
-    xl: 32,
+  elevation: {
+    dark: {
+      1: "0px 1px 2px 0px #0000004D, 0px 1px 3px 1px #00000026",
+      2: "0px 1px 2px 0px #0000004D, 0px 2px 6px 2px #00000026",
+      3: "0px 1px 3px 0px #0000004D, 0px 4px 8px 3px #00000026",
+      4: "0px 2px 3px 0px #0000004D, 0px 6px 10px 4px #00000026",
+      5: "0px 4px 4px 0px #0000004D, 0px 8px 12px 6px #00000026",
+    },
+    light: {
+      1: "0px 1px 3px 1px #00000026, 0px 1px 2px 0px #0000004D;",
+      2: "0px 2px 6px 2px #00000026, 0px 1px 2px 0px #0000004D",
+      3: "0px 1px 3px 0px #0000004D, 0px 4px 8px 3px #00000026",
+      4: "0px 2px 3px 0px #0000004D, 0px 6px 10px 4px #00000026",
+      5: "0px 4px 4px 0px, 0px 8px 12px 6px #00000026",
+    },
   },
-  radius: {
-    sm: 4,
-    md: 8,
-    lg: 12,
-    xl: 16,
-  },
-}
+};

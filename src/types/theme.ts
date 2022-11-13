@@ -1,5 +1,3 @@
-export type ThemeSize = "sm" | "md" | "lg" | "xl"
-
 export type ThemeTypes =
   | "0"
   | "10"
@@ -13,49 +11,49 @@ export type ThemeTypes =
   | "90"
   | "95"
   | "99"
-  | "100"
+  | "100";
 
-export type ThemePalettes = "dark" | "light"
+export type ThemePalettes = "dark" | "light";
 
 export type ThemePalette = {
-  primary: number
-  onPrimary: number
-  primaryContainer: number
-  onPrimaryContainer: number
-  secondary: number
-  onSecondary: number
-  secondaryContainer: number
-  onSecondaryContainer: number
-  tertiary: number
-  onTertiary: number
-  tertiaryContainer: number
-  onTertiaryContainer: number
-  error: number
-  onError: number
-  errorContainer: number
-  onErrorContainer: number
-  background: number
-  onBackground: number
-  surface: number
-  onSurface: number
-  surfaceVariant: number
-  onSurfaceVariant: number
-  outline: number
-  outlineVariant: number
-  shadow: number
-  scrim: number
-  inverseSurface: number
-  inverseOnSurface: number
-  inversePrimary: number
-}
+  primary: number;
+  onPrimary: number;
+  primaryContainer: number;
+  onPrimaryContainer: number;
+  secondary: number;
+  onSecondary: number;
+  secondaryContainer: number;
+  onSecondaryContainer: number;
+  tertiary: number;
+  onTertiary: number;
+  tertiaryContainer: number;
+  onTertiaryContainer: number;
+  error: number;
+  onError: number;
+  errorContainer: number;
+  onErrorContainer: number;
+  background: number;
+  onBackground: number;
+  surface: number;
+  onSurface: number;
+  surfaceVariant: number;
+  onSurfaceVariant: number;
+  outline: number;
+  outlineVariant: number;
+  shadow: number;
+  scrim: number;
+  inverseSurface: number;
+  inverseOnSurface: number;
+  inversePrimary: number;
+};
 
 export type ThemeTypographyItem = {
-  family: string
-  fontSize: number
-  weight: number
-  lineHeight: number
-  letterSpacing: number
-}
+  family: string;
+  fontSize: number;
+  weight: number;
+  lineHeight: number;
+  letterSpacing: number;
+};
 
 export type ThemeTypographyVariant =
   | "displayLarge"
@@ -72,23 +70,28 @@ export type ThemeTypographyVariant =
   | "labelSmall"
   | "bodyLarge"
   | "bodyMedium"
-  | "bodySmall"
+  | "bodySmall";
 
 export type ThemeTypography = {
-  [key in ThemeTypographyVariant]: ThemeTypographyItem
-}
+  [key in ThemeTypographyVariant]: ThemeTypographyItem;
+};
 
+export type ThemeElevation = {
+  [key in ThemePalettes]: {
+    1: string;
+    2: string;
+    3: string;
+    4: string;
+    5: string;
+  };
+};
 export type ThemeConfig = {
+  current: { name: ThemePalettes | string; mode: ThemePalettes };
   palettes: {
-    dark: ThemePalette
-    light: ThemePalette
-    [key: string]: ThemePalette
-  }
-  typography: ThemeTypography
-  spacing: {
-    [key in ThemeSize]: number
-  }
-  radius: {
-    [key in ThemeSize]: number
-  }
-}
+    dark: ThemePalette;
+    light: ThemePalette;
+    [key: string]: ThemePalette;
+  };
+  typography: ThemeTypography;
+  elevation: ThemeElevation;
+};

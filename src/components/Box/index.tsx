@@ -9,6 +9,7 @@ export type BoxProps = Props;
 export const Box: Component<BoxProps> = (rawProps) => {
   const mergedProps = mergeProps({ as: "div" }, rawProps);
   const [props, rest] = splitProps(mergedProps, [
+    "elevation",
     "as",
     "w",
     "h",
@@ -34,6 +35,9 @@ export const Box: Component<BoxProps> = (rawProps) => {
   const style = css({
     width: props.w ? `${props.w}px` : undefined,
     height: props.h ? `${props.h}px` : undefined,
+    boxShadow: props.elevation
+      ? theme.elevation[theme.current.mode][props.elevation]
+      : undefined,
     marginTop: props.mt
       ? `${props.mt}px`
       : props.my

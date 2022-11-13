@@ -1,5 +1,5 @@
-import { Meta, StoryFn } from "@storybook/html"
-import { Typography, TypographyProps } from "."
+import { Meta, StoryFn } from "@storybook/html";
+import { Typography, TypographyProps } from ".";
 
 export default {
   /* 👇 The title prop is optional.
@@ -49,6 +49,11 @@ export default {
       name: "w",
       type: "string",
       description: "Дочерний компонент",
+    },
+    elevation: {
+      name: "elevation",
+      type: "number",
+      description: "Тень. 1-5",
     },
     w: {
       name: "w",
@@ -131,103 +136,103 @@ export default {
       description: "Левый внутренний отступ компонента в пикселях",
     },
   },
-} as Meta<TypographyProps>
+} as Meta<TypographyProps>;
 
 const Template = ((args: TypographyProps) => (
   <Typography {...args} />
-)) as StoryFn<TypographyProps>
+)) as StoryFn<TypographyProps>;
 
-export const Default = Template.bind({})
+export const Default = Template.bind({});
 Default.args = {
   children: "Я большой текст",
-} as TypographyProps
+} as TypographyProps;
 
-export const DisplayLarge = Template.bind({})
+export const DisplayLarge = Template.bind({});
 DisplayLarge.args = {
   variant: "displayLarge",
   children: "Display Large - 57/64 . 0",
-} as TypographyProps
+} as TypographyProps;
 
-export const DisplayMedium = Template.bind({})
+export const DisplayMedium = Template.bind({});
 DisplayMedium.args = {
   variant: "displayMedium",
   children: "Display Medium - 45/52 .  0",
-} as TypographyProps
+} as TypographyProps;
 
-export const DisplaySmall = Template.bind({})
+export const DisplaySmall = Template.bind({});
 DisplaySmall.args = {
   variant: "displaySmall",
   children: "Display Small - 36/44 . 0",
-} as TypographyProps
+} as TypographyProps;
 
-export const HeadlineLarge = Template.bind({})
+export const HeadlineLarge = Template.bind({});
 HeadlineLarge.args = {
   variant: "headlineLarge",
   children: "Headline Large - 32/40 . 0",
-} as TypographyProps
+} as TypographyProps;
 
-export const HeadlineMedium = Template.bind({})
+export const HeadlineMedium = Template.bind({});
 HeadlineMedium.args = {
   variant: "headlineMedium",
   children: "Headline Medium - 28/36 . 0",
-} as TypographyProps
+} as TypographyProps;
 
-export const HeadlineSmall = Template.bind({})
+export const HeadlineSmall = Template.bind({});
 HeadlineSmall.args = {
   variant: "headlineSmall",
   children: "Headline Small - 24/32 . 0",
-} as TypographyProps
+} as TypographyProps;
 
-export const TitleLarge = Template.bind({})
+export const TitleLarge = Template.bind({});
 TitleLarge.args = {
   variant: "titleLarge",
   children: "Title Large - 22/28 . 0",
-} as TypographyProps
+} as TypographyProps;
 
-export const TitleMedium = Template.bind({})
+export const TitleMedium = Template.bind({});
 TitleMedium.args = {
   variant: "titleMedium",
   children: "Title Medium - 16/24 . +0.15",
-} as TypographyProps
+} as TypographyProps;
 
-export const TitleSmall = Template.bind({})
+export const TitleSmall = Template.bind({});
 TitleSmall.args = {
   variant: "titleSmall",
   children: "Title Small - 14/20 . +0.1",
-} as TypographyProps
+} as TypographyProps;
 
-export const LabelLarge = Template.bind({})
+export const LabelLarge = Template.bind({});
 LabelLarge.args = {
   variant: "labelLarge",
   children: "Label Large - 14/20 . +0.1",
-} as TypographyProps
+} as TypographyProps;
 
-export const LabelMedium = Template.bind({})
+export const LabelMedium = Template.bind({});
 LabelMedium.args = {
   variant: "labelMedium",
   children: "Label Medium - 12/16 . +0.5",
-} as TypographyProps
+} as TypographyProps;
 
-export const LabelSmall = Template.bind({})
+export const LabelSmall = Template.bind({});
 LabelSmall.args = {
   variant: "labelSmall",
   children: "Label Small - 11/16 . +0.5",
-} as TypographyProps
+} as TypographyProps;
 
-export const BodyLarge = Template.bind({})
+export const BodyLarge = Template.bind({});
 BodyLarge.args = {
   variant: "bodyLarge",
   children: "Body Large - 16/24 . +0.15",
-} as TypographyProps
+} as TypographyProps;
 
-export const BodyMedium = Template.bind({})
+export const BodyMedium = Template.bind({});
 BodyMedium.args = {
   variant: "bodyMedium",
   children: "Body Medium - 14/20 . +0.25",
-} as TypographyProps
+} as TypographyProps;
 
-export const BodySmall = Template.bind({})
+export const BodySmall = Template.bind({});
 BodySmall.args = {
   variant: "bodySmall",
   children: "Body Small - 12/16 . +0.4",
-} as TypographyProps
+} as TypographyProps;
