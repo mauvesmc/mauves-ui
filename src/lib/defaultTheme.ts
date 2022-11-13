@@ -1,0 +1,233 @@
+import { ThemeConfig } from "../types/theme"
+
+export const defaultThemeConfig: ThemeConfig = {
+  palette: {
+    mode: "dark",
+    colors: {
+      primary: {
+        0: "#ffffff",
+        10: "#ffffff",
+        20: "#ffffff",
+        30: "#ffffff",
+        40: "#ffffff",
+        50: "#ff00ff",
+        60: "#ffffff",
+        70: "#ffffff",
+        80: "#ffffff",
+        90: "#ffffff",
+        95: "#ffffff",
+        99: "#ffffff",
+        100: "#ffffff",
+      },
+      secondary: {
+        0: "#ffffff",
+        10: "#ffffff",
+        20: "#ffffff",
+        30: "#ffffff",
+        40: "#ffffff",
+        50: "#ffffff",
+        60: "#ffffff",
+        70: "#ffffff",
+        80: "#ffffff",
+        90: "#ffffff",
+        95: "#ffffff",
+        99: "#ffffff",
+        100: "#ffffff",
+      },
+      tertiary: {
+        0: "#ffffff",
+        10: "#ffffff",
+        20: "#ffffff",
+        30: "#ffffff",
+        40: "#ffffff",
+        50: "#ffffff",
+        60: "#ffffff",
+        70: "#ffffff",
+        80: "#ffffff",
+        90: "#ffffff",
+        95: "#ffffff",
+        99: "#ffffff",
+        100: "#ffffff",
+      },
+      error: {
+        0: "#ffffff",
+        10: "#ffffff",
+        20: "#ffffff",
+        30: "#ffffff",
+        40: "#ffffff",
+        50: "#ffffff",
+        60: "#ffffff",
+        70: "#ffffff",
+        80: "#ffffff",
+        90: "#ffffff",
+        95: "#ffffff",
+        99: "#ffffff",
+        100: "#ffffff",
+      },
+      neutral: {
+        0: "#ffffff",
+        10: "#ffffff",
+        20: "#ffffff",
+        30: "#ffffff",
+        40: "#ffffff",
+        50: "#ffffff",
+        60: "#ffffff",
+        70: "#ffffff",
+        80: "#ffffff",
+        90: "#ffffff",
+        95: "#ffffff",
+        99: "#ffffff",
+        100: "#ffffff",
+      },
+      neutralVariant: {
+        0: "#ffffff",
+        10: "#ffffff",
+        20: "#ffffff",
+        30: "#ffffff",
+        40: "#ffffff",
+        50: "#ffffff",
+        60: "#ffffff",
+        70: "#ffffff",
+        80: "#ffffff",
+        90: "#ffffff",
+        95: "#ffffff",
+        99: "#ffffff",
+        100: "#ffffff",
+      },
+    },
+  },
+  typography: {
+    displayLarge: {
+      family:
+        "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      fontSize: 57,
+      lineHeight: 64,
+      letterSpacing: 0,
+      weight: 400,
+    },
+    displayMedium: {
+      family:
+        "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      fontSize: 45,
+      lineHeight: 52,
+      letterSpacing: 0,
+      weight: 400,
+    },
+    displaySmall: {
+      family:
+        "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      fontSize: 36,
+      lineHeight: 44,
+      letterSpacing: 0,
+      weight: 400,
+    },
+    headlineLarge: {
+      family:
+        "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      fontSize: 32,
+      lineHeight: 40,
+      letterSpacing: 0,
+      weight: 400,
+    },
+    headlineMedium: {
+      family:
+        "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      fontSize: 28,
+      lineHeight: 36,
+      letterSpacing: 0,
+      weight: 400,
+    },
+    headlineSmall: {
+      family:
+        "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      fontSize: 24,
+      lineHeight: 32,
+      letterSpacing: 0,
+      weight: 400,
+    },
+    titleLarge: {
+      family:
+        "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      fontSize: 22,
+      lineHeight: 28,
+      letterSpacing: 0,
+      weight: 500,
+    },
+    titleMedium: {
+      family:
+        "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      fontSize: 16,
+      lineHeight: 24,
+      letterSpacing: 0.15,
+      weight: 500,
+    },
+    titleSmall: {
+      family:
+        "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      fontSize: 14,
+      lineHeight: 20,
+      letterSpacing: 0.1,
+      weight: 500,
+    },
+    labelLarge: {
+      family:
+        "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      fontSize: 14,
+      lineHeight: 20,
+      letterSpacing: 0.1,
+      weight: 500,
+    },
+    labelMedium: {
+      family:
+        "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      fontSize: 12,
+      lineHeight: 16,
+      letterSpacing: 0.5,
+      weight: 500,
+    },
+    labelSmall: {
+      family:
+        "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      fontSize: 11,
+      lineHeight: 16,
+      letterSpacing: 0.5,
+      weight: 500,
+    },
+    bodyLarge: {
+      family:
+        "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      fontSize: 16,
+      lineHeight: 24,
+      letterSpacing: 0.15,
+      weight: 400,
+    },
+    bodyMedium: {
+      family:
+        "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      fontSize: 14,
+      lineHeight: 20,
+      letterSpacing: 0.25,
+      weight: 400,
+    },
+    bodySmall: {
+      family:
+        "Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      fontSize: 12,
+      lineHeight: 16,
+      letterSpacing: 0.4,
+      weight: 400,
+    },
+  },
+  spacing: {
+    sm: 0,
+    md: 0,
+    lg: 0,
+    xl: 0,
+  },
+  radius: {
+    sm: 0,
+    md: 0,
+    lg: 0,
+    xl: 0,
+  },
+}

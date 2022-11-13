@@ -1,16 +1,14 @@
-import type { Component } from "solid-js";
-/* @refresh reload */
-import { render } from 'solid-js/web';
-
-import { MauvesUi } from './MauvesUi'
-
-const App: Component = () => {
-  return (
-    <>
-      <p>MauvesUi</p>
-      <MauvesUi />
-    </>
-  );
-};
-
-render(() => <App />, document.getElementById("root") as HTMLElement);
+export { Box } from "./components/Box"
+export type { BoxProps } from "./components/Box"
+export { defaultThemeConfig } from "./lib/defaultTheme"
+export type { Props } from "./types"
+export type {
+  ThemeColors,
+  ThemeConfig,
+  ThemePalette,
+  ThemeSize,
+  ThemeTypes,
+  ThemeTypography,
+  ThemeTypographyItem,
+  ThemeTypographyVariant,
+} from "./types/theme"

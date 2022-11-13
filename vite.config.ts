@@ -1,6 +1,6 @@
-import { defineConfig } from "vite";
-import solidPlugin from "vite-plugin-solid";
-import dts from "vite-plugin-dts";
+import { defineConfig } from "vite"
+import dts from "vite-plugin-dts"
+import solidPlugin from "vite-plugin-solid"
 
 export default defineConfig({
   plugins: [
@@ -16,7 +16,7 @@ export default defineConfig({
   build: {
     target: "esnext",
     lib: {
-      entry: "./src/MauvesUi.tsx",
+      entry: "./src/index.tsx",
       name: "MauvesUi",
       fileName: (format) => `mauves-ui.${format}.js`,
       formats: ["es", "umd"],
@@ -25,4 +25,4 @@ export default defineConfig({
       external: ["solid-js"],
     },
   },
-});
+})
