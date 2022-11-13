@@ -1,5 +1,5 @@
-import { Meta, StoryFn } from "@storybook/html"
-import { Box, BoxProps } from "."
+import { Meta, StoryFn } from "@storybook/html";
+import { Box, BoxProps } from ".";
 
 export default {
   /* 👇 The title prop is optional.
@@ -105,11 +105,11 @@ export default {
       description: "Левый внутренний отступ компонента в пикселях",
     },
   },
-} as Meta<BoxProps>
+} as Meta<BoxProps>;
 
-const Template = ((args: BoxProps) => <Box {...args} />) as StoryFn<BoxProps>
+const Template = ((args: BoxProps) => <Box {...args} />) as StoryFn<BoxProps>;
 
-export const Default = Template.bind({})
+export const Default = Template.bind({});
 Default.args = {
   children: "Я самый динамический компонент",
-} as BoxProps
+} as BoxProps;

@@ -15,19 +15,38 @@ export type ThemeTypes =
   | "99"
   | "100"
 
-export type ThemeColors = {
-  primary: { [key in ThemeTypes]: string }
-  secondary: { [key in ThemeTypes]: string }
-  tertiary: { [key in ThemeTypes]: string }
-  error: { [key in ThemeTypes]: string }
-  neutral: { [key in ThemeTypes]: string }
-  neutralVariant: { [key in ThemeTypes]: string }
-  [key: string]: any
-}
+export type ThemePalettes = "dark" | "light"
 
 export type ThemePalette = {
-  mode: "light" | "dark"
-  colors: ThemeColors
+  primary: number
+  onPrimary: number
+  primaryContainer: number
+  onPrimaryContainer: number
+  secondary: number
+  onSecondary: number
+  secondaryContainer: number
+  onSecondaryContainer: number
+  tertiary: number
+  onTertiary: number
+  tertiaryContainer: number
+  onTertiaryContainer: number
+  error: number
+  onError: number
+  errorContainer: number
+  onErrorContainer: number
+  background: number
+  onBackground: number
+  surface: number
+  onSurface: number
+  surfaceVariant: number
+  onSurfaceVariant: number
+  outline: number
+  outlineVariant: number
+  shadow: number
+  scrim: number
+  inverseSurface: number
+  inverseOnSurface: number
+  inversePrimary: number
 }
 
 export type ThemeTypographyItem = {
@@ -60,7 +79,11 @@ export type ThemeTypography = {
 }
 
 export type ThemeConfig = {
-  palette: ThemePalette
+  palettes: {
+    dark: ThemePalette
+    light: ThemePalette
+    [key: string]: ThemePalette
+  }
   typography: ThemeTypography
   spacing: {
     [key in ThemeSize]: number

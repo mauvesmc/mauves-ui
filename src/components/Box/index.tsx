@@ -1,13 +1,13 @@
-import { Component, mergeProps, splitProps } from "solid-js"
-import { classList, Dynamic } from "solid-js/web"
-import { css, useTheme } from "solid-styled-components"
-import { Props } from "../../types"
-import { ThemeConfig } from "../../types/theme"
+import { Component, mergeProps, splitProps } from "solid-js";
+import { classList, Dynamic } from "solid-js/web";
+import { css } from "solid-styled-components";
+import { useThemeConfig } from "../../lib/useThemeConfig";
+import { Props } from "../../types";
 
-export type BoxProps = Props
+export type BoxProps = Props;
 
 export const Box: Component<BoxProps> = (rawProps) => {
-  const mergedProps = mergeProps({ as: "div" }, rawProps)
+  const mergedProps = mergeProps({ as: "div" }, rawProps);
   const [props, rest] = splitProps(mergedProps, [
     "as",
     "w",
@@ -28,8 +28,8 @@ export const Box: Component<BoxProps> = (rawProps) => {
     "pl",
     "sx",
     "classList",
-  ])
-  const theme = useTheme() as ThemeConfig
+  ]);
+  const theme = useThemeConfig();
 
   const style = css({
     width: props.w ? `${props.w}px` : undefined,
@@ -91,7 +91,7 @@ export const Box: Component<BoxProps> = (rawProps) => {
       ? `${props.p}px`
       : undefined,
     ...(typeof props.sx === "function" ? props.sx(theme) : props.sx),
-  })
+  });
 
   return (
     <Dynamic
@@ -102,5 +102,5 @@ export const Box: Component<BoxProps> = (rawProps) => {
         ...classList,
       }}
     />
-  )
-}
+  );
+};

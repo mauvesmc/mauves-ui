@@ -18,6 +18,7 @@ export const Typography: Component<TypographyProps> = (rawProps) => {
         fontSize: `${theme.typography[props.variant].fontSize}px`,
         lineHeight: `${theme.typography[props.variant].lineHeight}px`,
         letterSpacing: `${theme.typography[props.variant].letterSpacing}px`,
+        fontWeight: theme.typography[props.variant].weight,
       })}
     />
   )
