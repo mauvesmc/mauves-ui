@@ -203,7 +203,7 @@ LargeLabelAllColors.args = {
   children: "999+",
 } as BadgeProps;
 
-const TemplateWithIcon = ((args: BadgeProps) => (
+const TemplateOnIcon = ((args: BadgeProps) => (
   <Box style={{ display: "flex" }}>
     <Box
       style={{
@@ -280,7 +280,7 @@ const TemplateWithIcon = ((args: BadgeProps) => (
   </Box>
 )) as StoryFn<BadgeProps>;
 
-export const WithIcon = TemplateWithIcon.bind({});
-WithIcon.args = {
+export const OnIcon = TemplateOnIcon.bind({});
+OnIcon.args = {
   defaultPosition: true,
 } as BadgeProps;
