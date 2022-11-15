@@ -10,7 +10,10 @@ export default {
   title: "UI/IconButton",
   parameters: {
     docs: {
-      description: { component: "IconButton" },
+      description: {
+        component:
+          "IconButton помогают людям выполнять дополнительные действия одним нажатием.<br/><br/>[Ссылка на Material You](https://m3.material.io/components/icon-buttons/overview)",
+      },
     },
   },
   argTypes: {
