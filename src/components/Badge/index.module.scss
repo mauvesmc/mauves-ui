@@ -12,6 +12,7 @@
   font-size: var(--theme-typography-label-small-font-size);
   font-family: var(--theme-typography-label-small-face);
   letter-spacing: var(--theme-typography-label-small-letter-spacing);
+  user-select: none;
 
   &_size {
     &-small {

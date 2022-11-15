@@ -1,5 +1,6 @@
 import { Component, mergeProps, splitProps } from "solid-js";
-import { Box, BoxProps } from "../Box";
+import { Props } from "../../types";
+import { Box } from "../Box";
 import styles from "./index.module.scss";
 
 export type BadgeColor =
@@ -16,7 +17,7 @@ export type BadgeColor =
   | "error"
   | "error-container";
 export type BadgeSize = "small" | "large" | "large-label";
-export type BadgeProps = BoxProps & {
+export type BadgeProps = Props<"div"> & {
   size?: BadgeSize;
   color?: BadgeColor;
   defaultPosition?: boolean;

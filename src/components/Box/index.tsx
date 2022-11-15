@@ -3,11 +3,31 @@ import { Dynamic } from "solid-js/web";
 import { useTheme } from "../../context/ThemeProvider";
 import { Props } from "../../types";
 
-export type BoxProps = Props;
+export type BoxProps = Props & {
+  w?: number;
+  h?: number;
+  m?: number;
+  mx?: number;
+  my?: number;
+  mt?: number;
+  mr?: number;
+  mb?: number;
+  ml?: number;
+  p?: number;
+  px?: number;
+  py?: number;
+  pt?: number;
+  pr?: number;
+  pb?: number;
+  pl?: number;
+  shape?: "none" | "extra-small" | "small" | "large" | "extra-large" | "full";
+  elevation?: 1 | 2 | 3 | 4 | 5;
+};
 
 export const Box: Component<BoxProps> = (rawProps) => {
   const mergedProps = mergeProps({ as: "div" }, rawProps);
   const [props, rest] = splitProps(mergedProps, [
+    "shape",
     "elevation",
     "w",
     "h",
@@ -96,6 +116,9 @@ export const Box: Component<BoxProps> = (rawProps) => {
           ? `${props.px}px`
           : props.p
           ? `${props.p}px`
+          : undefined,
+        "border-radius": props.shape
+          ? `var(--theme-shape-${props.shape})`
           : undefined,
         ...props.style,
         ...props.sx?.(theme.palettes[theme.current], theme),

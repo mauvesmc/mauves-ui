@@ -9,7 +9,9 @@ export default {
   title: "UI/Box",
   parameters: {
     docs: {
-      description: "Уникальный компонент для основы всех остальных",
+      description: {
+        component: "Уникальный компонент для основы всех остальных",
+      },
     },
   },
   argTypes: {
@@ -27,7 +29,28 @@ export default {
     elevation: {
       name: "elevation",
       type: "number",
-      description: "Тень. 1-5",
+      description: "Тень",
+      control: {
+        type: "select",
+        options: [1, 2, 3, 4, 5],
+      },
+    },
+    shape: {
+      name: "shape",
+      type: "string",
+      description: "Форма",
+      control: {
+        type: "select",
+        options: [
+          "none",
+          "extra-small",
+          "small",
+          "medium",
+          "large",
+          "extra-large",
+          "full",
+        ],
+      },
     },
     w: {
       name: "w",
