@@ -22,6 +22,11 @@ module.exports = (
         path: "../src/components/{{pascalCase name}}/index.stories.tsx",
         templateFile: "./templates/component/stories.tsx.hbs",
       },
+      {
+        type: "add",
+        path: "../src/components/{{pascalCase name}}/index.module.scss",
+        templateFile: "./templates/styles.scss.hbs",
+      },
     ],
-  })
-}
+  });
+};

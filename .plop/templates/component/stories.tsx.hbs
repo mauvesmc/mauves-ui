@@ -1,5 +1,5 @@
-import { Meta, StoryFn } from "@storybook/html"
-import { {{pascalCase name}}, {{pascalCase name}}Props } from "."
+import { Meta, StoryFn } from "@storybook/html";
+import { {{pascalCase name}}, {{pascalCase name}}Props } from ".";
 
 export default {
   /* 👇 The title prop is optional.
@@ -7,6 +7,11 @@ export default {
    * to learn how to generate automatic titles
    */
   title: "UI/{{pascalCase name}}",
+  parameters: {
+    docs: {
+      description: "{{pascalCase name}}",
+    },
+  },
   argTypes: {
     as: {
       name: "as",
@@ -18,6 +23,11 @@ export default {
       name: "children",
       type: "string",
       description: "Дочерний компонент",
+    },
+    elevation: {
+      name: "elevation",
+      type: "number",
+      description: "Тень. 1-5",
     },
     w: {
       name: "w",
@@ -100,9 +110,9 @@ export default {
       description: "Левый внутренний отступ компонента в пикселях",
     },
   },
-} as Meta<{{pascalCase name}}Props>
+} as Meta<{{pascalCase name}}Props>;
 
-const Template = ((args: {{pascalCase name}}Props) => <{{pascalCase name}} {...args} />) as StoryFn<{{pascalCase name}}Props>
+const Template = ((args: {{pascalCase name}}Props) => <{{pascalCase name}} {...args} />) as StoryFn<{{pascalCase name}}Props>;
 
-export const Default = Template.bind({})
-Default.args = {} as {{pascalCase name}}Props
+export const Default = Template.bind({});
+Default.args = {} as {{pascalCase name}}Props;

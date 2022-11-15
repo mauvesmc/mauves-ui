@@ -1,3 +1,5 @@
+import mqpacker from "@lipemat/css-mqpacker";
+import autoprefixer from "autoprefixer";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import solidPlugin from "vite-plugin-solid";
@@ -10,6 +12,11 @@ export default defineConfig({
       exclude: ["node_modules/**", "test-project/node_modules/**"],
     }),
   ],
+  css: {
+    postcss: {
+      plugins: [autoprefixer, mqpacker],
+    },
+  },
   server: {
     port: 3000,
   },

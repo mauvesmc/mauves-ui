@@ -1,6 +1,6 @@
 import { render } from "solid-js/web";
 import { ThemeProvider } from "../src/context/ThemeProvider";
-import "../src/styles/index.css";
+import "../src/styles/index.scss";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -12,13 +12,13 @@ export const parameters = {
   },
 };
 
-// let disposeStory
+let disposeStory;
 
 export const decorators = [
   (Story, ctx) => {
-    // if (disposeStory) {
-    //   disposeStory()
-    // }
+    if (disposeStory) {
+      disposeStory();
+    }
 
     const root = document.getElementById("root");
     const solidRoot = document.createElement("div");
@@ -29,7 +29,7 @@ export const decorators = [
     root.appendChild(solidRoot);
 
     render(
-      <ThemeProvider current={{ mode: theme, name: theme }}>
+      <ThemeProvider current={theme} target={document.body}>
         <Story />
       </ThemeProvider>,
       solidRoot

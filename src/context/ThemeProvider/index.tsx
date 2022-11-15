@@ -3,24 +3,26 @@ import {
   createContext,
   createEffect,
   createMemo,
+  Match,
   mergeProps,
+  Switch,
   useContext,
 } from "solid-js";
 import { createStore } from "solid-js/store";
 import { cssFromTheme } from "../../lib/cssFromTheme";
-import { defaultThemeConfig } from "../../lib/defaultTheme";
-import { ThemeConfig, ThemeCurrent } from "../../types/theme";
+import { defaultTheme } from "../../lib/defaultTheme";
+import { Theme } from "../../types/theme";
 
 type ThemeContextType = [
-  { theme: ThemeConfig },
+  { theme: Theme },
   {
-    setTheme: (current: ThemeCurrent) => void;
-    setConfig: (config: ThemeConfig) => void;
+    setTheme: (current: "light" | "dark" | string) => void;
+    setConfig: (config: Theme) => void;
   }
 ];
 
 export const ThemeContext = createContext<ThemeContextType>([
-  { theme: defaultThemeConfig },
+  { theme: defaultTheme },
   {
     setTheme: (current) => {
       console.log("set theme to", JSON.stringify(current));
@@ -33,12 +35,17 @@ export const ThemeContext = createContext<ThemeContextType>([
 
 export const ThemeProvider: Component<{
   children: any;
-  config?: ThemeConfig;
-  current?: ThemeCurrent;
-  target?: HTMLElement;
+  config?: Theme;
+  current?: "light" | "dark" | string;
+  target?: HTMLElement | null;
 }> = (rawProps) => {
   const props = mergeProps(
-    { config: defaultThemeConfig, current: defaultThemeConfig.current },
+    {
+      config: defaultTheme,
+      current: defaultTheme.current,
+      target:
+        typeof window !== "undefined" ? document.documentElement : undefined,
+    },
     rawProps
   );
   const [state, setState] = createStore({
@@ -47,7 +54,7 @@ export const ThemeProvider: Component<{
   const store: ThemeContextType = [
     state,
     {
-      setTheme(current: ThemeCurrent) {
+      setTheme(current) {
         setState("theme", (t) => ({ ...t, current }));
       },
       setConfig(config) {
@@ -58,33 +65,37 @@ export const ThemeProvider: Component<{
   const css = createMemo(() => cssFromTheme(state.theme));
 
   createEffect(() => {
-    if (props.target) {
-      props.target.setAttribute("style", css());
-    } else {
-      if (!document) return;
-      document.documentElement.setAttribute("style", css());
-    }
+    if (!props.target) return;
+    props.target.setAttribute("style", css());
+    props.target.setAttribute("data-theme", state.theme.current);
   });
 
   return (
     <ThemeContext.Provider value={store}>
-      {props.children}
+      <Switch>
+        <Match when={props.target}>{props.children}</Match>
+        <Match when={!props.target}>
+          <div style={css()} data-theme={state.theme.current}>
+            {props.children}
+          </div>
+        </Match>
+      </Switch>
     </ThemeContext.Provider>
   );
 };
 
-export const useTheme = () => {
+export const useThemeContext = () => {
   return useContext(ThemeContext);
 };
 
-export const useThemeConfig = () => {
-  const [store] = useTheme();
+export const useTheme = () => {
+  const [store] = useThemeContext();
 
   return store.theme;
 };
 
 export const useCurrentTheme = () => {
-  const theme = useThemeConfig();
+  const theme = useTheme();
 
-  return theme.current;
+  return theme.palettes[theme.current];
 };

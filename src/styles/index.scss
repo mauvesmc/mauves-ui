@@ -1,0 +1,38 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--theme-sys-background);
+  color: var(--theme-sys-on-background);
+  line-height: var(--theme-typography-body-large-line-height);
+  font-weight: var(--theme-typography-body-large-weight);
+  font-size: var(--theme-typography-body-large-font-size);
+  font-family: var(--theme-typography-body-large-face);
+  letter-spacing: var(--theme-typography-body-large-letter-spacing);
+}
+
+::selection {
+  background-color: rgb(var(--theme-sys-primary-rgb) 0.38);
+}
+
+.visually-hidden {
+  position: absolute;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+}

@@ -1,8 +1,13 @@
-import { Component } from "solid-js"
-import { Box, BoxProps } from "../Box"
+import { Component } from "solid-js";
+import { Box, BoxProps } from "../Box";
+import styles from "./index.module.scss";
 
-export type {{pascalCase name}}Props = BoxProps
+export type {{pascalCase name}}Props = BoxProps;
 
 export const {{pascalCase name}}: Component<{{pascalCase name}}Props> = (props) => {
-  return <Box {...props}>{{pascalCase name}} component</Box>
-}
+  return (
+    <Box {...props} class={styles["{{pascalCase name}}"]}>
+      {{pascalCase name}} component
+    </Box>
+  );
+};

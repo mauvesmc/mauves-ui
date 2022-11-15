@@ -1,5 +1,5 @@
 import { ComponentProps, JSX, ValidComponent } from "solid-js";
-import { ThemeConfig } from "./theme";
+import { Theme, ThemePalette } from "./theme";
 
 export type PropsWithoutStyle<T extends ValidComponent = "div"> = Omit<
   ComponentProps<T>,
@@ -26,6 +26,6 @@ export type Props<T extends ValidComponent = "div"> = PropsWithoutStyle<T> & {
   pl?: number;
   elevation?: 1 | 2 | 3 | 4 | 5;
   style?: JSX.CSSProperties;
-  sx?: (theme: ThemeConfig) => JSX.CSSProperties;
+  sx?: (palette: ThemePalette, theme?: Theme) => JSX.CSSProperties;
   [key: string]: any;
 };

@@ -1,344 +1,235 @@
-import {
-  argbFromHex,
-  hexFromArgb,
-  themeFromSourceColor,
-} from "@material/material-color-utilities";
 import { Component } from "solid-js";
 import { Box } from "../components/Box";
-import { Button } from "../components/Button";
-import { Typography } from "../components/Typography";
-import { ThemeProvider, useTheme } from "../context/ThemeProvider";
-import { defaultThemeConfig } from "../lib/defaultTheme";
+import { ThemeProvider } from "../context/ThemeProvider";
+import { buildPalette } from "../lib/buildPalette";
+import { defaultTheme } from "../lib/defaultTheme";
+import { ThemePalette } from "../types/theme";
 
-const Plate: Component<{ color: number; textColor: number; label: string }> = (
-  props
-) => {
+const Plate: Component<{
+  bg: (palette: ThemePalette) => string;
+  txt: (palette: ThemePalette) => string;
+  label: string;
+}> = (props) => {
   return (
     <Box
       p={16}
-      style={{
-        "background-color": hexFromArgb(props.color),
-        color: hexFromArgb(props.textColor),
-        "aspect-ratio": "4 / 3",
-      }}
+      sx={(t) => ({
+        "background-color": props.bg(t),
+        color: props.txt(t),
+        "aspect-ratio": "6 / 3",
+        display: "flex",
+        "flex-direction": "column",
+      })}
     >
-      <Typography>{props.label}</Typography>
+      <p>{props.label}</p>
     </Box>
   );
 };
 
-export const ColorPalette: Component<{ color: string }> = (props) => {
-  const [, { setConfig }] = useTheme();
+const BasePlates: Component<{
+  color: (palette: ThemePalette) => string;
+  onColor: (palette: ThemePalette) => string;
+  colorContainer: (palette: ThemePalette) => string;
+  onColorContainer: (palette: ThemePalette) => string;
+  label: string;
+}> = (props) => {
+  return (
+    <>
+      <Plate bg={props.color} txt={props.onColor} label={props.label} />
+      <Plate bg={props.onColor} txt={props.color} label={`On ${props.label}`} />
+      <Plate
+        bg={props.colorContainer}
+        txt={props.onColorContainer}
+        label={`${props.label} Container`}
+      />
+      <Plate
+        bg={props.onColorContainer}
+        txt={props.colorContainer}
+        label={`On ${props.label} Container`}
+      />
+    </>
+  );
+};
 
-  const generatedTheme = themeFromSourceColor(argbFromHex(props.color));
-  const theme = {
-    ...defaultThemeConfig,
-    palettes: {
-      ...defaultThemeConfig.palettes,
-      ...generatedTheme.schemes,
-    },
-  };
+const Plates = () => {
+  return (
+    <>
+      <BasePlates
+        color={(t) => t.system.primary}
+        onColor={(t) => t.system.onPrimary}
+        colorContainer={(t) => t.system.primaryContainer}
+        onColorContainer={(t) => t.system.onPrimaryContainer}
+        label="Primary"
+      />
+      <BasePlates
+        color={(t) => t.system.secondary}
+        onColor={(t) => t.system.onSecondary}
+        colorContainer={(t) => t.system.secondaryContainer}
+        onColorContainer={(t) => t.system.onSecondaryContainer}
+        label="Secondary"
+      />
+      <BasePlates
+        color={(t) => t.system.tertiary}
+        onColor={(t) => t.system.onTertiary}
+        colorContainer={(t) => t.system.tertiaryContainer}
+        onColorContainer={(t) => t.system.onTertiaryContainer}
+        label="Tertiary"
+      />
+      <BasePlates
+        color={(t) => t.system.success}
+        onColor={(t) => t.system.onSuccess}
+        colorContainer={(t) => t.system.successContainer}
+        onColorContainer={(t) => t.system.onSuccessContainer}
+        label="Success"
+      />
+      <BasePlates
+        color={(t) => t.system.warning}
+        onColor={(t) => t.system.onWarning}
+        colorContainer={(t) => t.system.warningContainer}
+        onColorContainer={(t) => t.system.onWarningContainer}
+        label="Warning"
+      />
+      <BasePlates
+        color={(t) => t.system.error}
+        onColor={(t) => t.system.onError}
+        colorContainer={(t) => t.system.errorContainer}
+        onColorContainer={(t) => t.system.onErrorContainer}
+        label="Error"
+      />
+      <Plate
+        label="Background"
+        bg={(t) => t.system.background}
+        txt={(t) => t.system.onBackground}
+      />
+      <Plate
+        label="On Background"
+        bg={(t) => t.system.onBackground}
+        txt={(t) => t.system.background}
+      />
+      <Plate
+        label="Surface"
+        bg={(t) => t.system.surface}
+        txt={(t) => t.system.onSurface}
+      />
+      <Plate
+        label="On Surface"
+        bg={(t) => t.system.onSurface}
+        txt={(t) => t.system.surface}
+      />
+      <Plate
+        label="Surface Variant"
+        bg={(t) => t.system.surfaceVariant}
+        txt={(t) => t.system.onSurfaceVariant}
+      />
+      <Plate
+        label="On Surface Variant"
+        bg={(t) => t.system.onSurfaceVariant}
+        txt={(t) => t.system.surfaceVariant}
+      />
+      <Plate
+        label="Outline"
+        bg={(t) => t.system.outline}
+        txt={(t) => t.system.outlineVariant}
+      />
+      <Plate
+        label="Outline Variant"
+        bg={(t) => t.system.outlineVariant}
+        txt={(t) => t.system.outline}
+      />
+      <Plate
+        label="Shadow"
+        bg={(t) => t.system.shadow}
+        txt={(t) => t.ref.neutral[100]}
+      />
+      <Plate
+        label="Surface Tint"
+        bg={(t) => t.system.surfaceTint}
+        txt={(t) => t.system.onPrimary}
+      />
+      <Plate
+        label="Inverse Surface"
+        bg={(t) => t.system.inverseSurface}
+        txt={(t) => t.system.inverseOnSurface}
+      />
+      <Plate
+        label="Inverse On Surface"
+        bg={(t) => t.system.inverseOnSurface}
+        txt={(t) => t.system.inverseSurface}
+      />
+      <Plate
+        label="Inverse Primary"
+        bg={(t) => t.system.inversePrimary}
+        txt={(t) => t.system.scrim}
+      />
+      <Plate
+        label="Scrim"
+        bg={(t) => t.system.scrim}
+        txt={(t) => t.ref.neutral[100]}
+      />
+    </>
+  );
+};
 
-  setConfig(theme);
-
+export const ColorPalette: Component<{
+  color: string;
+  success: string;
+  warning: string;
+  error: string;
+}> = (props) => {
   const copy = (text: string) => {
     window.navigator.clipboard.writeText(text);
   };
 
+  const palette = buildPalette(props.color, {
+    success: props.success,
+    warning: props.warning,
+    error: props.error,
+  });
+
   return (
     <>
+      <Box
+        style={{
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "center",
+          "grid-column": "1 / -1",
+        }}
+      >
+        <button onClick={() => copy(JSON.stringify(palette.ref))}>
+          Скопировать Ref
+        </button>
+      </Box>
       <ThemeProvider
-        target={document.querySelector("#light-theme")}
-        config={theme}
-        current={{ mode: "light", name: "light" }}
+        current="light"
+        config={{
+          ...defaultTheme,
+          palettes: {
+            ...defaultTheme.palettes,
+            light: {
+              ...defaultTheme.palettes.light,
+              ref: palette.ref,
+              system: palette.light,
+            },
+          },
+        }}
       >
         <Box
-          id="light-theme"
-          p={32}
-          sx={(t) => ({
-            display: "grid",
-            "grid-template-columns": "repeat(4, 1fr)",
-            "background-color": hexFromArgb(t.palettes.light.background),
-            "border-width": "1px",
-            "border-style": "solid",
-            "border-color": hexFromArgb(t.palettes[t.current.name].outline),
-          })}
-        >
-          <Plate
-            color={theme.palettes.light.primary}
-            textColor={theme.palettes.light.onPrimary}
-            label="Primary"
-          />
-          <Plate
-            color={theme.palettes.light.onPrimary}
-            textColor={theme.palettes.light.primary}
-            label="On Primary"
-          />
-          <Plate
-            color={theme.palettes.light.primaryContainer}
-            textColor={theme.palettes.light.onPrimaryContainer}
-            label="Primary Container"
-          />
-          <Plate
-            color={theme.palettes.light.onPrimaryContainer}
-            textColor={theme.palettes.light.primaryContainer}
-            label="On Primary Container"
-          />
-          <Plate
-            color={theme.palettes.light.secondary}
-            textColor={theme.palettes.light.onSecondary}
-            label="Secondary"
-          />
-          <Plate
-            color={theme.palettes.light.onSecondary}
-            textColor={theme.palettes.light.secondary}
-            label="On Secondary"
-          />
-          <Plate
-            color={theme.palettes.light.secondaryContainer}
-            textColor={theme.palettes.light.onSecondaryContainer}
-            label="Secondary Container"
-          />
-          <Plate
-            color={theme.palettes.light.onSecondaryContainer}
-            textColor={theme.palettes.light.secondaryContainer}
-            label="On Secondary Container"
-          />
-          <Plate
-            color={theme.palettes.light.tertiary}
-            textColor={theme.palettes.light.onTertiary}
-            label="Tertiary"
-          />
-          <Plate
-            color={theme.palettes.light.onTertiary}
-            textColor={theme.palettes.light.tertiary}
-            label="On Tertiary"
-          />
-          <Plate
-            color={theme.palettes.light.tertiaryContainer}
-            textColor={theme.palettes.light.onTertiaryContainer}
-            label="Tertiary Container"
-          />
-          <Plate
-            color={theme.palettes.light.onTertiaryContainer}
-            textColor={theme.palettes.light.tertiaryContainer}
-            label="On Tertiary Container"
-          />
-          <Plate
-            color={theme.palettes.light.error}
-            textColor={theme.palettes.light.onError}
-            label="Error"
-          />
-          <Plate
-            color={theme.palettes.light.onError}
-            textColor={theme.palettes.light.error}
-            label="On Error"
-          />
-          <Plate
-            color={theme.palettes.light.errorContainer}
-            textColor={theme.palettes.light.onErrorContainer}
-            label="Error Container"
-          />
-          <Plate
-            color={theme.palettes.light.onErrorContainer}
-            textColor={theme.palettes.light.errorContainer}
-            label="On Error Container"
-          />
-          <Plate
-            color={theme.palettes.light.background}
-            textColor={theme.palettes.light.onBackground}
-            label="Background"
-          />
-          <Plate
-            color={theme.palettes.light.onBackground}
-            textColor={theme.palettes.light.background}
-            label="On Background"
-          />
-          <Plate
-            color={theme.palettes.light.surface}
-            textColor={theme.palettes.light.onSurface}
-            label="Surface"
-          />
-          <Plate
-            color={theme.palettes.light.onSurface}
-            textColor={theme.palettes.light.surface}
-            label="On Surface"
-          />
-          <Plate
-            color={theme.palettes.light.surfaceVariant}
-            textColor={theme.palettes.light.onSurfaceVariant}
-            label="Surface Variant"
-          />
-          <Plate
-            color={theme.palettes.light.onSurfaceVariant}
-            textColor={theme.palettes.light.surfaceVariant}
-            label="On Surface Variant"
-          />
-          <Plate
-            color={theme.palettes.light.outline}
-            textColor={theme.palettes.light.outlineVariant}
-            label="Outline"
-          />
-          <Plate
-            color={theme.palettes.light.outlineVariant}
-            textColor={theme.palettes.light.outline}
-            label="Outline Variant"
-          />
-          <Box
-            style={{
-              display: "flex",
-              "align-items": "center",
-              "justify-content": "center",
-              "grid-column": "1 / -1",
-            }}
-          >
-            <Button
-              variant="tonal"
-              onClick={() => copy(JSON.stringify(theme.palettes.light))}
-            >
-              Скопировать
-            </Button>
-          </Box>
-        </Box>
-      </ThemeProvider>
-
-      <ThemeProvider
-        target={document.querySelector("#dark-theme")}
-        config={theme}
-        current={{ mode: "dark", name: "dark" }}
-      >
-        <Box
-          id="dark-theme"
           mt={32}
           p={32}
           sx={(t) => ({
             display: "grid",
             "grid-template-columns": "repeat(4, 1fr)",
-            "background-color": hexFromArgb(t.palettes.dark.background),
-            border: `1px solid ${t.palettes[t.current.name].outline}`,
+            "background-color": t.system.background,
+            "border-width": "1px",
+            "border-style": "solid",
+            "border-color": t.system.outline,
+            "border-radius": "var(--theme-shape-extra-large)",
           })}
         >
-          <Plate
-            color={theme.palettes.dark.primary}
-            textColor={theme.palettes.dark.onPrimary}
-            label="Primary"
-          />
-          <Plate
-            color={theme.palettes.dark.onPrimary}
-            textColor={theme.palettes.dark.primary}
-            label="On Primary"
-          />
-          <Plate
-            color={theme.palettes.dark.primaryContainer}
-            textColor={theme.palettes.dark.onPrimaryContainer}
-            label="Primary Container"
-          />
-          <Plate
-            color={theme.palettes.dark.onPrimaryContainer}
-            textColor={theme.palettes.dark.primaryContainer}
-            label="On Primary Container"
-          />
-          <Plate
-            color={theme.palettes.dark.secondary}
-            textColor={theme.palettes.dark.onSecondary}
-            label="Secondary"
-          />
-          <Plate
-            color={theme.palettes.dark.onSecondary}
-            textColor={theme.palettes.dark.secondary}
-            label="On Secondary"
-          />
-          <Plate
-            color={theme.palettes.dark.secondaryContainer}
-            textColor={theme.palettes.dark.onSecondaryContainer}
-            label="Secondary Container"
-          />
-          <Plate
-            color={theme.palettes.dark.onSecondaryContainer}
-            textColor={theme.palettes.dark.secondaryContainer}
-            label="On Secondary Container"
-          />
-          <Plate
-            color={theme.palettes.dark.tertiary}
-            textColor={theme.palettes.dark.onTertiary}
-            label="Tertiary"
-          />
-          <Plate
-            color={theme.palettes.dark.onTertiary}
-            textColor={theme.palettes.dark.tertiary}
-            label="On Tertiary"
-          />
-          <Plate
-            color={theme.palettes.dark.tertiaryContainer}
-            textColor={theme.palettes.dark.onTertiaryContainer}
-            label="Tertiary Container"
-          />
-          <Plate
-            color={theme.palettes.dark.onTertiaryContainer}
-            textColor={theme.palettes.dark.tertiaryContainer}
-            label="On Tertiary Container"
-          />
-          <Plate
-            color={theme.palettes.dark.error}
-            textColor={theme.palettes.dark.onError}
-            label="Error"
-          />
-          <Plate
-            color={theme.palettes.dark.onError}
-            textColor={theme.palettes.dark.error}
-            label="On Error"
-          />
-          <Plate
-            color={theme.palettes.dark.errorContainer}
-            textColor={theme.palettes.dark.onErrorContainer}
-            label="Error Container"
-          />
-          <Plate
-            color={theme.palettes.dark.onErrorContainer}
-            textColor={theme.palettes.dark.errorContainer}
-            label="On Error Container"
-          />
-          <Plate
-            color={theme.palettes.dark.background}
-            textColor={theme.palettes.dark.onBackground}
-            label="Background"
-          />
-          <Plate
-            color={theme.palettes.dark.onBackground}
-            textColor={theme.palettes.dark.background}
-            label="On Background"
-          />
-          <Plate
-            color={theme.palettes.dark.surface}
-            textColor={theme.palettes.dark.onSurface}
-            label="Surface"
-          />
-          <Plate
-            color={theme.palettes.dark.onSurface}
-            textColor={theme.palettes.dark.surface}
-            label="On Surface"
-          />
-          <Plate
-            color={theme.palettes.dark.surfaceVariant}
-            textColor={theme.palettes.dark.onSurfaceVariant}
-            label="Surface Variant"
-          />
-          <Plate
-            color={theme.palettes.dark.onSurfaceVariant}
-            textColor={theme.palettes.dark.surfaceVariant}
-            label="On Surface Variant"
-          />
-          <Plate
-            color={theme.palettes.dark.outline}
-            textColor={theme.palettes.dark.outlineVariant}
-            label="Outline"
-          />
-          <Plate
-            color={theme.palettes.dark.outlineVariant}
-            textColor={theme.palettes.dark.outline}
-            label="Outline Variant"
-          />
+          <Plates />
           <Box
+            mt={16}
             style={{
               display: "flex",
               "align-items": "center",
@@ -346,12 +237,53 @@ export const ColorPalette: Component<{ color: string }> = (props) => {
               "grid-column": "1 / -1",
             }}
           >
-            <Button
-              variant="tonal"
-              onClick={() => copy(JSON.stringify(theme.palettes.dark))}
-            >
-              Скопировать
-            </Button>
+            <button onClick={() => copy(JSON.stringify(palette.light))}>
+              Скопировать Light
+            </button>
+          </Box>
+        </Box>
+      </ThemeProvider>
+      <ThemeProvider
+        current="dark"
+        config={{
+          ...defaultTheme,
+          palettes: {
+            ...defaultTheme.palettes,
+            dark: {
+              ...defaultTheme.palettes.dark,
+              ref: palette.ref,
+              system: palette.dark,
+            },
+          },
+        }}
+      >
+        <Box
+          mt={32}
+          p={32}
+          sx={(t) => ({
+            display: "grid",
+            "grid-template-columns": "repeat(4, 1fr)",
+            "background-color": t.system.background,
+            "border-width": "1px",
+            "border-style": "solid",
+            "border-color": t.system.outline,
+            "border-radius": "var(--theme-shape-extra-large)",
+          })}
+        >
+          <Plates />
+
+          <Box
+            mt={16}
+            style={{
+              display: "flex",
+              "align-items": "center",
+              "justify-content": "center",
+              "grid-column": "1 / -1",
+            }}
+          >
+            <button onClick={() => copy(JSON.stringify(palette.dark))}>
+              Скопировать Dark
+            </button>
           </Box>
         </Box>
       </ThemeProvider>

@@ -1,6 +1,6 @@
 import { Component, mergeProps, splitProps } from "solid-js";
 import { Dynamic } from "solid-js/web";
-import { useThemeConfig } from "../../context/ThemeProvider";
+import { useTheme } from "../../context/ThemeProvider";
 import { Props } from "../../types";
 
 export type BoxProps = Props;
@@ -29,7 +29,7 @@ export const Box: Component<BoxProps> = (rawProps) => {
     "as",
     "style",
   ]);
-  const theme = useThemeConfig();
+  const theme = useTheme();
 
   return (
     <Dynamic
@@ -39,7 +39,7 @@ export const Box: Component<BoxProps> = (rawProps) => {
         width: props.w ? `${props.w}px` : undefined,
         height: props.h ? `${props.h}px` : undefined,
         "box-shadow": props.elevation
-          ? theme.elevation[theme.current.mode][props.elevation]
+          ? `var(--theme-elevation-${props.elevation})`
           : undefined,
         "margin-top": props.mt
           ? `${props.mt}px`
@@ -98,7 +98,7 @@ export const Box: Component<BoxProps> = (rawProps) => {
           ? `${props.p}px`
           : undefined,
         ...props.style,
-        ...props.sx?.(theme),
+        ...props.sx?.(theme.palettes[theme.current], theme),
       }}
     />
   );
