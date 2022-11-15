@@ -1,0 +1,602 @@
+.icon-button {
+  --icon-button-color: inherit;
+  --icon-button-background: transparent;
+  --icon-button-state-layer: transparent;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  border-radius: var(--theme-shape-full);
+  background: none;
+  background: var(--icon-button-background);
+  color: var(--icon-button-color);
+  transition-property: background, color, border;
+  transition-duration: 150ms;
+  transition-timing-function: var(--theme-motion-standard);
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: var(--theme-shape-full);
+    background: var(--icon-button-state-layer);
+    transition-property: background, color, border;
+    transition-duration: 150ms;
+    transition-timing-function: var(--theme-motion-standard);
+  }
+
+  & > svg,
+  & * {
+    width: 1.5rem;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    min-height: 1.5rem;
+  }
+
+  &_state {
+    &-enabled {
+      cursor: pointer;
+
+      &.icon-button_selected.icon-button_variant {
+        &-filled.icon-button_color {
+          &-primary {
+            --icon-button-color: var(--theme-sys-on-primary);
+            --icon-button-background: var(--theme-sys-primary);
+
+            &:hover {
+              --icon-button-state-layer: var(--theme-state-on-primary-8);
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(--theme-state-on-primary-12);
+            }
+
+            &:active {
+              --icon-button-state-layer: var(--theme-state-on-primary-16);
+            }
+          }
+
+          &-secondary {
+            --icon-button-color: var(--theme-sys-on-secondary);
+            --icon-button-background: var(--theme-sys-secondary);
+
+            &:hover {
+              --icon-button-state-layer: var(--theme-state-on-secondary-8);
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(--theme-state-on-secondary-12);
+            }
+
+            &:active {
+              --icon-button-state-layer: var(--theme-state-on-secondary-16);
+            }
+          }
+
+          &-tertiary {
+            --icon-button-color: var(--theme-sys-on-tertiary);
+            --icon-button-background: var(--theme-sys-tertiary);
+
+            &:hover {
+              --icon-button-state-layer: var(--theme-state-on-tertiary-8);
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(--theme-state-on-tertiary-12);
+            }
+
+            &:active {
+              --icon-button-state-layer: var(--theme-state-on-tertiary-16);
+            }
+          }
+
+          &-success {
+            --icon-button-color: var(--theme-sys-on-success);
+            --icon-button-background: var(--theme-sys-success);
+
+            &:hover {
+              --icon-button-state-layer: var(--theme-state-on-success-8);
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(--theme-state-on-success-12);
+            }
+
+            &:active {
+              --icon-button-state-layer: var(--theme-state-on-success-16);
+            }
+          }
+
+          &-warning {
+            --icon-button-color: var(--theme-sys-on-warning);
+            --icon-button-background: var(--theme-sys-warning);
+
+            &:hover {
+              --icon-button-state-layer: var(--theme-state-on-warning-8);
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(--theme-state-on-warning-12);
+            }
+
+            &:active {
+              --icon-button-state-layer: var(--theme-state-on-warning-16);
+            }
+          }
+
+          &-error {
+            --icon-button-color: var(--theme-sys-on-error);
+            --icon-button-background: var(--theme-sys-error);
+
+            &:hover {
+              --icon-button-state-layer: var(--theme-state-on-error-8);
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(--theme-state-on-error-12);
+            }
+
+            &:active {
+              --icon-button-state-layer: var(--theme-state-on-error-16);
+            }
+          }
+        }
+
+        &-tonal.icon-button_color {
+          &-primary {
+            --icon-button-color: var(--theme-sys-on-primary-container);
+            --icon-button-background: var(--theme-sys-primary-container);
+
+            &:hover {
+              --icon-button-state-layer: var(
+                --theme-state-on-primary-container-8
+              );
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(
+                --theme-state-on-primary-container-12
+              );
+            }
+
+            &:active {
+              --icon-button-state-layer: var(
+                --theme-state-on-primary-container-16
+              );
+            }
+          }
+
+          &-secondary {
+            --icon-button-color: var(--theme-sys-on-secondary-container);
+            --icon-button-background: var(--theme-sys-secondary-container);
+
+            &:hover {
+              --icon-button-state-layer: var(
+                --theme-state-on-secondary-container-8
+              );
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(
+                --theme-state-on-secondary-container-12
+              );
+            }
+
+            &:active {
+              --icon-button-state-layer: var(
+                --theme-state-on-secondary-container-16
+              );
+            }
+          }
+
+          &-tertiary {
+            --icon-button-color: var(--theme-sys-on-tertiary-container);
+            --icon-button-background: var(--theme-sys-tertiary-container);
+
+            &:hover {
+              --icon-button-state-layer: var(
+                --theme-state-on-tertiary-container-8
+              );
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(
+                --theme-state-on-tertiary-container-12
+              );
+            }
+
+            &:active {
+              --icon-button-state-layer: var(
+                --theme-state-on-tertiary-container-16
+              );
+            }
+          }
+
+          &-success {
+            --icon-button-color: var(--theme-sys-on-success-container);
+            --icon-button-background: var(--theme-sys-success-container);
+
+            &:hover {
+              --icon-button-state-layer: var(
+                --theme-state-on-success-container-8
+              );
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(
+                --theme-state-on-success-container-12
+              );
+            }
+
+            &:active {
+              --icon-button-state-layer: var(
+                --theme-state-on-success-container-16
+              );
+            }
+          }
+
+          &-warning {
+            --icon-button-color: var(--theme-sys-on-warning-container);
+            --icon-button-background: var(--theme-sys-warning-container);
+
+            &:hover {
+              --icon-button-state-layer: var(
+                --theme-state-on-warning-container-8
+              );
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(
+                --theme-state-on-warning-container-12
+              );
+            }
+
+            &:active {
+              --icon-button-state-layer: var(
+                --theme-state-on-warning-container-16
+              );
+            }
+          }
+
+          &-error {
+            --icon-button-color: var(--theme-sys-on-error-container);
+            --icon-button-background: var(--theme-sys-error-container);
+
+            &:hover {
+              --icon-button-state-layer: var(
+                --theme-state-on-error-container-8
+              );
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(
+                --theme-state-on-error-container-12
+              );
+            }
+
+            &:active {
+              --icon-button-state-layer: var(
+                --theme-state-on-error-container-16
+              );
+            }
+          }
+        }
+
+        &-outlined {
+          --icon-button-color: var(--theme-sys-inverse-on-surface);
+          --icon-button-background: var(--theme-sys-inverse-surface);
+          border: 1px solid transparent;
+
+          &:hover {
+            --icon-button-state-layer: var(--theme-state-inverse-on-surface-8);
+          }
+
+          &:focus {
+            --icon-button-state-layer: var(--theme-state-inverse-on-surface-12);
+          }
+
+          &:active {
+            --icon-button-state-layer: var(--theme-state-inverse-on-surface-16);
+          }
+        }
+
+        &-standard.icon-button_color {
+          &-primary {
+            --icon-button-color: var(--theme-sys-primary);
+
+            &:hover {
+              --icon-button-state-layer: var(--theme-state-primary-8);
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(--theme-state-primary-12);
+            }
+
+            &:active {
+              --icon-button-state-layer: var(--theme-state-primary-16);
+            }
+          }
+
+          &-secondary {
+            --icon-button-color: var(--theme-sys-secondary);
+
+            &:hover {
+              --icon-button-state-layer: var(--theme-state-secondary-8);
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(--theme-state-secondary-12);
+            }
+
+            &:active {
+              --icon-button-state-layer: var(--theme-state-secondary-16);
+            }
+          }
+
+          &-tertiary {
+            --icon-button-color: var(--theme-sys-tertiary);
+
+            &:hover {
+              --icon-button-state-layer: var(--theme-state-tertiary-8);
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(--theme-state-tertiary-12);
+            }
+
+            &:active {
+              --icon-button-state-layer: var(--theme-state-tertiary-16);
+            }
+          }
+
+          &-success {
+            --icon-button-color: var(--theme-sys-success);
+
+            &:hover {
+              --icon-button-state-layer: var(--theme-state-success-8);
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(--theme-state-success-12);
+            }
+
+            &:active {
+              --icon-button-state-layer: var(--theme-state-success-16);
+            }
+          }
+
+          &-warning {
+            --icon-button-color: var(--theme-sys-warning);
+
+            &:hover {
+              --icon-button-state-layer: var(--theme-state-warning-8);
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(--theme-state-warning-12);
+            }
+
+            &:active {
+              --icon-button-state-layer: var(--theme-state-warning-16);
+            }
+          }
+
+          &-error {
+            --icon-button-color: var(--theme-sys-error);
+
+            &:hover {
+              --icon-button-state-layer: var(--theme-state-error-8);
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(--theme-state-error-12);
+            }
+
+            &:active {
+              --icon-button-state-layer: var(--theme-state-error-16);
+            }
+          }
+        }
+      }
+
+      &.icon-button_not-selected.icon-button_variant {
+        &-filled.icon-button_color {
+          &-primary {
+            --icon-button-color: var(--theme-sys-primary);
+            --icon-button-background: var(--theme-sys-surface-variant);
+
+            &:hover {
+              --icon-button-state-layer: var(--theme-state-primary-8);
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(--theme-state-primary-12);
+            }
+
+            &:active {
+              --icon-button-state-layer: var(--theme-state-primary-16);
+            }
+          }
+
+          &-secondary {
+            --icon-button-color: var(--theme-sys-secondary);
+            --icon-button-background: var(--theme-sys-surface-variant);
+
+            &:hover {
+              --icon-button-state-layer: var(--theme-state-secondary-8);
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(--theme-state-secondary-12);
+            }
+
+            &:active {
+              --icon-button-state-layer: var(--theme-state-secondary-16);
+            }
+          }
+
+          &-tertiary {
+            --icon-button-color: var(--theme-sys-tertiary);
+            --icon-button-background: var(--theme-sys-surface-variant);
+
+            &:hover {
+              --icon-button-state-layer: var(--theme-state-tertiary-8);
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(--theme-state-tertiary-12);
+            }
+
+            &:active {
+              --icon-button-state-layer: var(--theme-state-tertiary-16);
+            }
+          }
+
+          &-success {
+            --icon-button-color: var(--theme-sys-success);
+            --icon-button-background: var(--theme-sys-surface-variant);
+
+            &:hover {
+              --icon-button-state-layer: var(--theme-state-success-8);
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(--theme-state-success-12);
+            }
+
+            &:active {
+              --icon-button-state-layer: var(--theme-state-success-16);
+            }
+          }
+
+          &-warning {
+            --icon-button-color: var(--theme-sys-warning);
+            --icon-button-background: var(--theme-sys-surface-variant);
+
+            &:hover {
+              --icon-button-state-layer: var(--theme-state-warning-8);
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(--theme-state-warning-12);
+            }
+
+            &:active {
+              --icon-button-state-layer: var(--theme-state-warning-16);
+            }
+          }
+
+          &-error {
+            --icon-button-color: var(--theme-sys-error);
+            --icon-button-background: var(--theme-sys-surface-variant);
+
+            &:hover {
+              --icon-button-state-layer: var(--theme-state-error-8);
+            }
+
+            &:focus {
+              --icon-button-state-layer: var(--theme-state-error-12);
+            }
+
+            &:active {
+              --icon-button-state-layer: var(--theme-state-error-16);
+            }
+          }
+        }
+
+        &-tonal {
+          --icon-button-color: var(--theme-sys-on-surface-variant);
+          --icon-button-background: var(--theme-sys-surface-variant);
+
+          &:hover {
+            --icon-button-state-layer: var(--theme-state-on-surface-variant-8);
+          }
+
+          &:focus {
+            --icon-button-state-layer: var(--theme-state-on-surface-variant-12);
+          }
+
+          &:active {
+            --icon-button-state-layer: var(--theme-state-on-surface-variant-16);
+          }
+        }
+
+        &-outlined {
+          --icon-button-color: var(--theme-sys-on-surface-variant);
+          border: 1px solid var(--theme-sys-outline);
+
+          &:hover {
+            --icon-button-state-layer: var(--theme-state-on-surface-variant-8);
+          }
+
+          &:focus {
+            --icon-button-state-layer: var(--theme-state-on-surface-variant-12);
+          }
+
+          &:active {
+            --icon-button-state-layer: var(--theme-state-on-surface-variant-16);
+          }
+        }
+
+        &-standard {
+          --icon-button-color: var(--theme-sys-on-surface-variant);
+
+          &:hover {
+            --icon-button-state-layer: var(--theme-state-on-surface-variant-8);
+          }
+
+          &:focus {
+            --icon-button-state-layer: var(--theme-state-on-surface-variant-12);
+          }
+
+          &:active {
+            --icon-button-state-layer: var(--theme-state-on-surface-variant-16);
+          }
+        }
+      }
+    }
+
+    &-disabled {
+      cursor: not-allowed;
+
+      &.icon-button_variant {
+        &-filled {
+          --icon-button-color: rgba(var(--theme-sys-on-surface-rgb), 0.38);
+          --icon-button-background: var(--theme-state-on-surface-12);
+        }
+
+        &-tonal {
+          --icon-button-color: rgba(var(--theme-sys-on-surface-rgb), 0.38);
+          --icon-button-background: var(--theme-state-on-surface-12);
+        }
+
+        &-outlined {
+          border: 1px solid transparent;
+
+          &.icon-button_selected {
+            --icon-button-color: rgba(var(--theme-sys-on-surface-rgb), 0.38);
+            --icon-button-background: var(--theme-state-on-surface-12);
+            border-color: var(--theme-state-on-surface-12);
+          }
+
+          &.icon-button_not-selected {
+            --icon-button-color: rgba(var(--theme-sys-on-surface-rgb), 0.38);
+            border-color: var(--theme-state-on-surface-12);
+          }
+        }
+
+        &-standard {
+          --icon-button-color: rgba(var(--theme-sys-on-surface-rgb), 0.38);
+        }
+      }
+    }
+  }
+}

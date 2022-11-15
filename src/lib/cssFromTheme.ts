@@ -134,19 +134,19 @@ const generateStateLayerVariables = (system: ThemeSystem) => {
     .filter((v) => v !== "scrim")
     .forEach((colorName) => {
       variables.push(
-        `${themeKebabCase(`state-${colorName}-8`)}:rgba(${themeKebabCase(
+        `${themeKebabCase(`state-${colorName}-8`)}:rgba(var(${themeKebabCase(
           `sys-${colorName}-rgb`
-        )},0.08)`
+        )}),0.08)`
       );
       variables.push(
-        `${themeKebabCase(`state-${colorName}-12`)}:rgba(${themeKebabCase(
+        `${themeKebabCase(`state-${colorName}-12`)}:rgba(var(${themeKebabCase(
           `sys-${colorName}-rgb`
-        )},0.12)`
+        )}),0.12)`
       );
       variables.push(
-        `${themeKebabCase(`state-${colorName}-16`)}:rgba(${themeKebabCase(
+        `${themeKebabCase(`state-${colorName}-16`)}:rgba(var(${themeKebabCase(
           `sys-${colorName}-rgb`
-        )},0.16)`
+        )}),0.16)`
       );
     });
 
