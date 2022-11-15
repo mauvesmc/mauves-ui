@@ -1,0 +1,116 @@
+.badge {
+  --badge-background: transparent;
+  --badge-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--theme-shape-full);
+  background-color: var(--badge-background);
+  color: var(--badge-color);
+  line-height: var(--theme-typography-label-small-line-height);
+  font-weight: var(--theme-typography-label-small-weight);
+  font-size: var(--theme-typography-label-small-font-size);
+  font-family: var(--theme-typography-label-small-face);
+  letter-spacing: var(--theme-typography-label-small-letter-spacing);
+
+  &_size {
+    &-small {
+      width: 0.375rem;
+      height: 0.375rem;
+    }
+
+    &-large {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    &-large-label {
+      padding-right: 0.25rem;
+      padding-left: 0.25rem;
+      width: max-content;
+      height: 1rem;
+    }
+  }
+
+  &_color {
+    &-primary {
+      --badge-background: var(--theme-sys-primary);
+      --badge-color: var(--theme-sys-on-primary);
+    }
+
+    &-primary-container {
+      --badge-background: var(--theme-sys-primary-container);
+      --badge-color: var(--theme-sys-on-primary-container);
+    }
+
+    &-secondary {
+      --badge-background: var(--theme-sys-secondary);
+      --badge-color: var(--theme-sys-on-secondary);
+    }
+
+    &-secondary-container {
+      --badge-background: var(--theme-sys-secondary-container);
+      --badge-color: var(--theme-sys-on-secondary-container);
+    }
+
+    &-tertiary {
+      --badge-background: var(--theme-sys-tertiary);
+      --badge-color: var(--theme-sys-on-tertiary);
+    }
+
+    &-tertiary-container {
+      --badge-background: var(--theme-sys-tertiary-container);
+      --badge-color: var(--theme-sys-on-tertiary-container);
+    }
+
+    &-success {
+      --badge-background: var(--theme-sys-success);
+      --badge-color: var(--theme-sys-on-success);
+    }
+
+    &-success-container {
+      --badge-background: var(--theme-sys-success-container);
+      --badge-color: var(--theme-sys-on-success-container);
+    }
+
+    &-warning {
+      --badge-background: var(--theme-sys-warning);
+      --badge-color: var(--theme-sys-on-warning);
+    }
+
+    &-warning-container {
+      --badge-background: var(--theme-sys-warning-container);
+      --badge-color: var(--theme-sys-on-warning-container);
+    }
+
+    &-error {
+      --badge-background: var(--theme-sys-error);
+      --badge-color: var(--theme-sys-on-error);
+    }
+
+    &-error-container {
+      --badge-background: var(--theme-sys-error-container);
+      --badge-color: var(--theme-sys-on-error-container);
+    }
+  }
+
+  &_default-position {
+    &.badge_size-small {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    &.badge_size-large {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+    }
+
+    &.badge_size-large-label {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+    }
+  }
+}
