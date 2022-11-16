@@ -4,8 +4,8 @@ import { Props } from "../../types";
 import { Box, BoxMarginProps } from "../Box";
 import styles from "./index.module.scss";
 
-export type IconButtonSize = "small" | "medium" | "large";
-export type IconButtonColor =
+export type FabSize = "small" | "medium" | "large";
+export type FabColor =
   | "surface"
   | "primary"
   | "secondary"
@@ -16,8 +16,8 @@ export type IconButtonColor =
 
 export type FabProps = Props<"button"> &
   BoxMarginProps & {
-    size?: IconButtonSize;
-    color?: IconButtonColor;
+    size?: FabSize;
+    color?: FabColor;
   };
 
 export const Fab: Component<FabProps> = (rawProps) => {

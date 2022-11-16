@@ -4,7 +4,7 @@ import { Box } from "../Box";
 import styles from "./index.module.scss";
 
 export type BottomAppBarProps = Props<"div"> & {
-  fab?: JSX.FunctionElement;
+  fab?: JSX.Element;
 };
 
 export const BottomAppBar: Component<BottomAppBarProps> = (rawProps) => {

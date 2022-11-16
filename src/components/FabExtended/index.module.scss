@@ -1,0 +1,160 @@
+.fab-extended {
+  --fab-color: inherit;
+  --fab-background: transparent;
+  --fab-state-layer: transparent;
+  --ripple-color: transparent;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: max-content;
+  min-width: 5rem;
+  height: 3.5rem;
+  overflow: hidden;
+  box-shadow: var(--theme-elevation-3);
+  outline: none;
+  border: none;
+  border-radius: var(--theme-shape-large);
+  background: var(--fab-background);
+  color: var(--fab-color);
+  transition-property: background, color, border;
+  transition-duration: 150ms;
+  transition-timing-function: var(--theme-motion-standard);
+  cursor: pointer;
+
+  &:active {
+    box-shadow: var(--theme-elevation-3) !important;
+  }
+
+  &:hover {
+    box-shadow: var(--theme-elevation-4);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--fab-state-layer);
+    content: "";
+  }
+
+  &__icon-wrapper {
+    margin-right: 0.75rem;
+
+    &,
+    & > *,
+    & svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  &_color {
+    &-surface {
+      --fab-color: var(--theme-sys-primary);
+      --fab-background: var(--theme-sys-surface-3);
+      --ripple-color: var(--theme-state-primary-16);
+
+      &:hover {
+        --fab-background: var(--theme-sys-surface-4);
+        --fab-state-layer: var(--theme-state-primary-8);
+      }
+
+      &:focus {
+        --fab-background: var(--theme-sys-surface-3);
+        --fab-state-layer: var(--theme-state-primary-12);
+      }
+    }
+
+    &-primary {
+      --fab-color: var(--theme-sys-on-primary-container);
+      --fab-background: var(--theme-sys-primary-container);
+      --ripple-color: var(--theme-state-on-primary-container-16);
+
+      &:hover {
+        --fab-state-layer: var(--theme-state-on-primary-container-8);
+      }
+
+      &:focus {
+        --fab-state-layer: var(--theme-state-on-primary-container-12);
+      }
+    }
+
+    &-secondary {
+      --fab-color: var(--theme-sys-on-secondary-container);
+      --fab-background: var(--theme-sys-secondary-container);
+      --ripple-color: var(--theme-state-on-secondary-container-16);
+
+      &:hover {
+        --fab-state-layer: var(--theme-state-on-secondary-container-8);
+      }
+
+      &:focus {
+        --fab-state-layer: var(--theme-state-on-secondary-container-12);
+      }
+    }
+
+    &-tertiary {
+      --fab-color: var(--theme-sys-on-tertiary-container);
+      --fab-background: var(--theme-sys-tertiary-container);
+      --ripple-color: var(--theme-state-on-tertiary-container-16);
+
+      &:hover {
+        --fab-state-layer: var(--theme-state-on-tertiary-container-8);
+      }
+
+      &:focus {
+        --fab-state-layer: var(--theme-state-on-tertiary-container-12);
+      }
+    }
+
+    &-success {
+      --fab-color: var(--theme-sys-on-success-container);
+      --fab-background: var(--theme-sys-success-container);
+      --ripple-color: var(--theme-state-on-success-container-16);
+
+      &:hover {
+        --fab-state-layer: var(--theme-state-on-success-container-8);
+      }
+
+      &:focus {
+        --fab-state-layer: var(--theme-state-on-success-container-12);
+      }
+    }
+
+    &-warning {
+      --fab-color: var(--theme-sys-on-warning-container);
+      --fab-background: var(--theme-sys-warning-container);
+      --ripple-color: var(--theme-state-on-warning-container-16);
+
+      &:hover {
+        --fab-state-layer: var(--theme-state-on-warning-container-8);
+      }
+
+      &:focus {
+        --fab-state-layer: var(--theme-state-on-warning-container-12);
+      }
+    }
+
+    &-error {
+      --fab-color: var(--theme-sys-on-error-container);
+      --fab-background: var(--theme-sys-error-container);
+      --ripple-color: var(--theme-state-on-error-container-16);
+
+      &:hover {
+        --fab-state-layer: var(--theme-state-on-error-container-8);
+      }
+
+      &:focus {
+        --fab-state-layer: var(--theme-state-on-error-container-12);
+      }
+    }
+  }
+}

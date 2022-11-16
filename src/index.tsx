@@ -18,7 +18,9 @@ export type {
 export { Display } from "./components/Display";
 export type { DisplayProps } from "./components/Display";
 export { Fab } from "./components/Fab";
-export type { FabProps } from "./components/Fab";
+export type { FabColor, FabProps, FabSize } from "./components/Fab";
+export { FabExtended } from "./components/FabExtended";
+export type { FabExtendedProps } from "./components/FabExtended";
 export { Headline } from "./components/Headline";
 export type { HeadlineProps } from "./components/Headline";
 export { IconButton } from "./components/IconButton";
