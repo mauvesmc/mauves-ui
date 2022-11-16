@@ -1,8 +1,29 @@
 import { render } from "solid-js/web";
 import { ThemeProvider } from "../src/context/ThemeProvider";
+import { defaultTheme } from "../src/lib/defaultTheme";
 import "../src/styles/index.scss";
 
+const customViewports = Object.fromEntries(
+  Object.entries({ ...defaultTheme.breakpoints, xs: 360 }).map(
+    ([key, val], idx) => {
+      return [
+        key,
+        {
+          name: key,
+          styles: {
+            width: `${val}px`,
+            height: `${Math.max((idx + 5) * 10, 60)}vh`,
+          },
+        },
+      ];
+    }
+  )
+);
+
 export const parameters = {
+  backgrounds: {
+    disable: true,
+  },
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
@@ -10,6 +31,7 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  viewport: { viewports: customViewports },
 };
 
 let disposeStory;

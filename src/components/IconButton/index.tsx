@@ -38,22 +38,35 @@ export const IconButton: Component<IconButtonProps> = (rawProps) => {
     "loading",
     "selected",
     "color",
+    "children",
   ]);
 
   return (
     <Box
       {...rest}
       classList={{
-        [styles["icon-button"]]: true,
+        [styles["icon-button__wrapper"]]: true,
         [styles["icon-button_state-enabled"]]: !props.disabled,
         [styles["icon-button_state-disabled"]]: props.disabled,
-        [styles["icon-button_selected"]]: props.selected,
-        [styles["icon-button_not-selected"]]: !props.selected,
-        [styles[`icon-button_variant-${props.variant}`]]: true,
-        [styles[`icon-button_color-${props.color}`]]: true,
         ...props.classList,
       }}
       disabled={props.disabled || props.loading}
-    />
+    >
+      <Box
+        as="span"
+        classList={{
+          [styles["icon-button"]]: true,
+          [styles["icon-button_state-enabled"]]: !props.disabled,
+          [styles["icon-button_state-disabled"]]: props.disabled,
+          [styles["icon-button_selected"]]: props.selected,
+          [styles["icon-button_not-selected"]]: !props.selected,
+          [styles[`icon-button_variant-${props.variant}`]]: true,
+          [styles[`icon-button_color-${props.color}`]]: true,
+          ...props.classList,
+        }}
+      >
+        {props.children}
+      </Box>
+    </Box>
   );
 };

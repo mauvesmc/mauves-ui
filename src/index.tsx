@@ -4,6 +4,8 @@ export { Badge } from "./components/Badge";
 export type { BadgeColor, BadgeProps, BadgeSize } from "./components/Badge";
 export { Body } from "./components/Body";
 export type { BodyProps } from "./components/Body";
+export { BottomAppBar } from "./components/BottomAppBar";
+export type { BottomAppBarProps } from "./components/BottomAppBar";
 export { Box } from "./components/Box";
 export type {
   BoxElevationProps,

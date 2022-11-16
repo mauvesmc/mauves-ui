@@ -1,0 +1,28 @@
+.bottom-app-bar {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem 0.75rem 0.25rem;
+  height: 5rem;
+  box-shadow: var(--theme-elevation-2);
+  border-radius: var(--theme-shape-none);
+  background: var(--theme-sys-surface-2);
+
+  &__icon-buttons {
+    display: flex;
+    flex: 1;
+    align-items: center;
+
+    & > * {
+      margin-right: 0.5rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

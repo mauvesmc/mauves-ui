@@ -18,6 +18,27 @@
   transition-duration: 150ms;
   transition-timing-function: var(--theme-motion-standard);
 
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    outline: none;
+    border: none;
+    background: none;
+
+    &.icon-button_state {
+      &-enabled {
+        cursor: pointer;
+      }
+
+      &-disabled {
+        cursor: not-allowed;
+      }
+    }
+  }
+
   &::after {
     position: absolute;
     content: "";
@@ -32,8 +53,8 @@
     transition-timing-function: var(--theme-motion-standard);
   }
 
-  & > svg,
-  & * {
+  & svg,
+  & > * {
     width: 1.5rem;
     min-width: 1.5rem;
     height: 1.5rem;
@@ -42,8 +63,6 @@
 
   &_state {
     &-enabled {
-      cursor: pointer;
-
       &.icon-button_selected.icon-button_variant {
         &-filled.icon-button_color {
           &-primary {
@@ -563,38 +582,34 @@
       }
     }
 
-    &-disabled {
-      cursor: not-allowed;
+    &-disabled.icon-button_variant {
+      &-filled {
+        --icon-button-color: rgba(var(--theme-sys-on-surface-rgb), 0.38);
+        --icon-button-background: var(--theme-state-on-surface-12);
+      }
 
-      &.icon-button_variant {
-        &-filled {
+      &-tonal {
+        --icon-button-color: rgba(var(--theme-sys-on-surface-rgb), 0.38);
+        --icon-button-background: var(--theme-state-on-surface-12);
+      }
+
+      &-outlined {
+        border: 1px solid transparent;
+
+        &.icon-button_selected {
           --icon-button-color: rgba(var(--theme-sys-on-surface-rgb), 0.38);
           --icon-button-background: var(--theme-state-on-surface-12);
+          border-color: var(--theme-state-on-surface-12);
         }
 
-        &-tonal {
+        &.icon-button_not-selected {
           --icon-button-color: rgba(var(--theme-sys-on-surface-rgb), 0.38);
-          --icon-button-background: var(--theme-state-on-surface-12);
+          border-color: var(--theme-state-on-surface-12);
         }
+      }
 
-        &-outlined {
-          border: 1px solid transparent;
-
-          &.icon-button_selected {
-            --icon-button-color: rgba(var(--theme-sys-on-surface-rgb), 0.38);
-            --icon-button-background: var(--theme-state-on-surface-12);
-            border-color: var(--theme-state-on-surface-12);
-          }
-
-          &.icon-button_not-selected {
-            --icon-button-color: rgba(var(--theme-sys-on-surface-rgb), 0.38);
-            border-color: var(--theme-state-on-surface-12);
-          }
-        }
-
-        &-standard {
-          --icon-button-color: rgba(var(--theme-sys-on-surface-rgb), 0.38);
-        }
+      &-standard {
+        --icon-button-color: rgba(var(--theme-sys-on-surface-rgb), 0.38);
       }
     }
   }
