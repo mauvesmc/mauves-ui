@@ -6,7 +6,7 @@ export default {
    * See https://storybook.js.org/docs/html/configure/overview#configure-story-loading
    * to learn how to generate automatic titles
    */
-  title: "UI/Label",
+  title: "UI/Typography/Label",
   parameters: {
     docs: {
       description: {

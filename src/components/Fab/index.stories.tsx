@@ -6,7 +6,7 @@ export default {
    * See https://storybook.js.org/docs/html/configure/overview#configure-story-loading
    * to learn how to generate automatic titles
    */
-  title: "UI/Fab",
+  title: "UI/Buttons/Fab",
   parameters: {
     docs: {
       description: {

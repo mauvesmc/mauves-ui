@@ -7,7 +7,7 @@ export default {
    * See https://storybook.js.org/docs/html/configure/overview#configure-story-loading
    * to learn how to generate automatic titles
    */
-  title: "UI/IconButton",
+  title: "UI/Buttons/IconButton",
   parameters: {
     docs: {
       description: {
