@@ -1,5 +1,5 @@
 import { Component, mergeProps, splitProps } from "solid-js";
-import { Props } from "types";
+import { Props } from "../../types";
 import { Box, BoxMarginProps } from "../Box";
 import styles from "./index.module.scss";
 

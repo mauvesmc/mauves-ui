@@ -1,6 +1,6 @@
 import { Component, createSignal, mergeProps, splitProps } from "solid-js";
-import { Props } from "types";
 import { useRipple } from "../../hooks/useRipple";
+import { Props } from "../../types";
 import { Box, BoxMarginProps } from "../Box";
 import styles from "./index.module.scss";
 
