@@ -1,5 +1,6 @@
 import { Component, mergeProps, splitProps } from "solid-js";
-import { Box, BoxProps } from "../Box";
+import { Props } from "types";
+import { Box, BoxMarginProps } from "../Box";
 import styles from "./index.module.scss";
 
 export type IconButtonVariant = "filled" | "tonal" | "outlined" | "standard";
@@ -10,25 +11,13 @@ export type IconButtonColor =
   | "success"
   | "warning"
   | "error";
-export type IconButtonProps = Omit<
-  BoxProps,
-  | "p"
-  | "px"
-  | "py"
-  | "pt"
-  | "pr"
-  | "pb"
-  | "pl"
-  | "shape"
-  | "elevation"
-  | "w"
-  | "h"
-> & {
-  variant?: IconButtonVariant;
-  color?: IconButtonColor;
-  loading?: boolean;
-  selected?: boolean;
-};
+export type IconButtonProps = Props<"button"> &
+  BoxMarginProps & {
+    variant?: IconButtonVariant;
+    color?: IconButtonColor;
+    loading?: boolean;
+    selected?: boolean;
+  };
 
 export const IconButton: Component<IconButtonProps> = (rawProps) => {
   const mergedProps = mergeProps(

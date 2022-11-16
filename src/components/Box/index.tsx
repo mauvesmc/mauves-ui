@@ -3,9 +3,12 @@ import { Dynamic } from "solid-js/web";
 import { useTheme } from "../../context/ThemeProvider";
 import { Props } from "../../types";
 
-export type BoxProps = Props & {
+export type BoxSizeProps = {
   w?: number;
   h?: number;
+};
+
+export type BoxMarginProps = {
   m?: number;
   mx?: number;
   my?: number;
@@ -13,6 +16,9 @@ export type BoxProps = Props & {
   mr?: number;
   mb?: number;
   ml?: number;
+};
+
+export type BoxPaddingProps = {
   p?: number;
   px?: number;
   py?: number;
@@ -20,9 +26,22 @@ export type BoxProps = Props & {
   pr?: number;
   pb?: number;
   pl?: number;
+};
+
+export type BoxShapeProps = {
   shape?: "none" | "extra-small" | "small" | "large" | "extra-large" | "full";
+};
+
+export type BoxElevationProps = {
   elevation?: 1 | 2 | 3 | 4 | 5;
 };
+
+export type BoxProps = Props &
+  BoxSizeProps &
+  BoxMarginProps &
+  BoxPaddingProps &
+  BoxShapeProps &
+  BoxElevationProps;
 
 export const Box: Component<BoxProps> = (rawProps) => {
   const mergedProps = mergeProps({ as: "div" }, rawProps);
