@@ -1,7 +1,34 @@
 import "./styles/index.scss";
 /* Components */
+export { Badge } from "./components/Badge";
+export type { BadgeColor, BadgeProps, BadgeSize } from "./components/Badge";
+export { Body } from "./components/Body";
+export type { BodyProps } from "./components/Body";
 export { Box } from "./components/Box";
-export type { BoxProps } from "./components/Box";
+export type {
+  BoxElevationProps,
+  BoxMarginProps,
+  BoxPaddingProps,
+  BoxProps,
+  BoxShapeProps,
+  BoxSizeProps,
+} from "./components/Box";
+export { Display } from "./components/Display";
+export type { DisplayProps } from "./components/Display";
+export { Fab } from "./components/Fab";
+export type { FabProps } from "./components/Fab";
+export { Headline } from "./components/Headline";
+export type { HeadlineProps } from "./components/Headline";
+export { IconButton } from "./components/IconButton";
+export type {
+  IconButtonColor,
+  IconButtonProps,
+  IconButtonVariant,
+} from "./components/IconButton";
+export { Label } from "./components/Label";
+export type { LabelProps } from "./components/Label";
+export { Title } from "./components/Title";
+export type { TitleProps } from "./components/Title";
 /* Context */
 export {
   ThemeContext,
@@ -10,6 +37,8 @@ export {
   useTheme,
   useThemeContext,
 } from "./context/ThemeProvider";
+/* Hooks */
+export { useRipple } from "./hooks/useRipple";
 /* Library */
 export { buildPalette } from "./lib/buildPalette";
 export { cssFromTheme } from "./lib/cssFromTheme";

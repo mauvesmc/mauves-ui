@@ -1,4 +1,5 @@
 import {
+  Accessor,
   Component,
   createContext,
   createEffect,
@@ -21,7 +22,7 @@ type ThemeContextType = [
   }
 ];
 
-export const ThemeContext = createContext<ThemeContextType>([
+export const ThemeContext = createContext<Accessor<ThemeContextType>>(() => [
   { theme: defaultTheme },
   {
     setTheme: (current) => {
@@ -37,21 +38,27 @@ export const ThemeProvider: Component<{
   children: any;
   config?: Theme;
   current?: "light" | "dark" | string;
+  fallback?: "light" | "dark";
   target?: HTMLElement | null;
 }> = (rawProps) => {
   const props = mergeProps(
     {
       config: defaultTheme,
       current: defaultTheme.current,
+      fallback: "dark",
       target:
         typeof window !== "undefined" ? document.documentElement : undefined,
     },
     rawProps
   );
   const [state, setState] = createStore({
-    theme: { ...props.config, current: props.current },
+    theme: {
+      ...props.config,
+      current:
+        props.current in defaultTheme.palettes ? props.current : props.fallback,
+    },
   });
-  const store: ThemeContextType = [
+  const store = createMemo<ThemeContextType>(() => [
     state,
     {
       setTheme(current) {
@@ -61,13 +68,24 @@ export const ThemeProvider: Component<{
         setState("theme", () => config);
       },
     },
-  ];
+  ]);
   const css = createMemo(() => cssFromTheme(state.theme));
 
   createEffect(() => {
     if (!props.target) return;
     props.target.setAttribute("style", css());
-    props.target.setAttribute("data-theme", state.theme.current);
+  });
+
+  createEffect(() => {
+    setState({
+      theme: {
+        ...props.config,
+        current:
+          props.current in defaultTheme.palettes
+            ? props.current
+            : props.fallback,
+      },
+    });
   });
 
   return (
@@ -75,9 +93,7 @@ export const ThemeProvider: Component<{
       <Switch>
         <Match when={props.target}>{props.children}</Match>
         <Match when={!props.target}>
-          <div style={css()} data-theme={state.theme.current}>
-            {props.children}
-          </div>
+          <div style={css()}>{props.children}</div>
         </Match>
       </Switch>
     </ThemeContext.Provider>
@@ -89,9 +105,9 @@ export const useThemeContext = () => {
 };
 
 export const useTheme = () => {
-  const [store] = useThemeContext();
+  const store = useThemeContext();
 
-  return store.theme;
+  return store()[0].theme;
 };
 
 export const useCurrentTheme = () => {
