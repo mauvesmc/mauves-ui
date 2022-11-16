@@ -1,0 +1,25 @@
+.body_size {
+  &-small {
+    line-height: var(--theme-typography-body-small-line-height);
+    font-weight: var(--theme-typography-body-small-weight);
+    font-size: var(--theme-typography-body-small-font-size);
+    font-family: var(--theme-typography-body-small-face);
+    letter-spacing: var(--theme-typography-body-small-letter-spacing);
+  }
+
+  &-medium {
+    line-height: var(--theme-typography-body-medium-line-height);
+    font-weight: var(--theme-typography-body-medium-weight);
+    font-size: var(--theme-typography-body-medium-font-size);
+    font-family: var(--theme-typography-body-medium-face);
+    letter-spacing: var(--theme-typography-body-medium-letter-spacing);
+  }
+
+  &-large {
+    line-height: var(--theme-typography-body-large-line-height);
+    font-weight: var(--theme-typography-body-large-weight);
+    font-size: var(--theme-typography-body-large-font-size);
+    font-family: var(--theme-typography-body-large-face);
+    letter-spacing: var(--theme-typography-body-large-letter-spacing);
+  }
+}

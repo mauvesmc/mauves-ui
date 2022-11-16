@@ -1,0 +1,25 @@
+.label_size {
+  &-small {
+    line-height: var(--theme-typography-label-small-line-height);
+    font-weight: var(--theme-typography-label-small-weight);
+    font-size: var(--theme-typography-label-small-font-size);
+    font-family: var(--theme-typography-label-small-face);
+    letter-spacing: var(--theme-typography-label-small-letter-spacing);
+  }
+
+  &-medium {
+    line-height: var(--theme-typography-label-medium-line-height);
+    font-weight: var(--theme-typography-label-medium-weight);
+    font-size: var(--theme-typography-label-medium-font-size);
+    font-family: var(--theme-typography-label-medium-face);
+    letter-spacing: var(--theme-typography-label-medium-letter-spacing);
+  }
+
+  &-large {
+    line-height: var(--theme-typography-label-large-line-height);
+    font-weight: var(--theme-typography-label-large-weight);
+    font-size: var(--theme-typography-label-large-font-size);
+    font-family: var(--theme-typography-label-large-face);
+    letter-spacing: var(--theme-typography-label-large-letter-spacing);
+  }
+}
