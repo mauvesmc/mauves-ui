@@ -1,6 +1,7 @@
-import { Component, mergeProps, splitProps } from "solid-js";
+import { Component, mergeProps, Show, splitProps } from "solid-js";
 import { Props } from "../../types";
 import { Box } from "../Box";
+import { Label } from "../Label";
 import styles from "./index.module.scss";
 
 export type BadgeColor =
@@ -33,6 +34,7 @@ export const Badge: Component<BadgeProps> = (rawProps) => {
     "color",
     "defaultPosition",
     "classList",
+    "children",
   ]);
   return (
     <Box
@@ -44,6 +46,12 @@ export const Badge: Component<BadgeProps> = (rawProps) => {
         [styles[`badge_default-position`]]: props.defaultPosition,
         ...props.classList,
       }}
-    />
+    >
+      <Show when={props.children && props.size !== "small"}>
+        <Label size="small" as="span">
+          {props.children}
+        </Label>
+      </Show>
+    </Box>
   );
 };

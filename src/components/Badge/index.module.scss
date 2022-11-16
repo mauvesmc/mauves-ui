@@ -7,11 +7,6 @@
   border-radius: var(--theme-shape-full);
   background-color: var(--badge-background);
   color: var(--badge-color);
-  line-height: var(--theme-typography-label-small-line-height);
-  font-weight: var(--theme-typography-label-small-weight);
-  font-size: var(--theme-typography-label-small-font-size);
-  font-family: var(--theme-typography-label-small-face);
-  letter-spacing: var(--theme-typography-label-small-letter-spacing);
   user-select: none;
 
   &_size {
