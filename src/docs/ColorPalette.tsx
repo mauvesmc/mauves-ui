@@ -226,7 +226,7 @@ export const ColorPalette: Component<{
           p={32}
           sx={(t) => ({
             display: "grid",
-            "grid-template-columns": "repeat(4, 1fr)",
+            "grid-template-columns": "repeat(auto-fill, minmax(200px,1fr))",
             "background-color": t.system.background,
             "border-width": "1px",
             "border-style": "solid",
@@ -274,7 +274,7 @@ export const ColorPalette: Component<{
           p={32}
           sx={(t) => ({
             display: "grid",
-            "grid-template-columns": "repeat(4, 1fr)",
+            "grid-template-columns": "repeat(auto-fill, minmax(200px,1fr))",
             "background-color": t.system.background,
             "border-width": "1px",
             "border-style": "solid",
