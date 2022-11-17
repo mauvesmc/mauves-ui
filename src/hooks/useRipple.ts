@@ -1,11 +1,6 @@
 import { createEffect, createSignal, onCleanup } from "solid-js";
 import { useTheme } from "../context/ThemeProvider";
-
-const getShiftCoordinates = (e: MouseEvent, bounding: DOMRect) => {
-  const [clientX, clientY] = [e.clientX, e.clientY];
-  const [boundingX, boundingY] = [bounding.left, bounding.top];
-  return [clientX - boundingX, clientY - boundingY];
-};
+import { getShiftCoordinates } from "../lib/getShiftCoordinates";
 
 const createCircle = (x: number, y: number, size: number, color: string) => {
   const circle = document.createElement("span");

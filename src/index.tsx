@@ -6,6 +6,8 @@ export { Body } from "./components/Body";
 export type { BodyProps } from "./components/Body";
 export { BottomAppBar } from "./components/BottomAppBar";
 export type { BottomAppBarProps } from "./components/BottomAppBar";
+export { BottomSheet } from "./components/BottomSheet";
+export type { BottomSheetProps } from "./components/BottomSheet";
 export { Box } from "./components/Box";
 export type {
   BoxElevationProps,
@@ -47,6 +49,7 @@ export { useRipple } from "./hooks/useRipple";
 export { buildPalette } from "./lib/buildPalette";
 export { cssFromTheme } from "./lib/cssFromTheme";
 export { defaultTheme } from "./lib/defaultTheme";
+export { getShiftCoordinates } from "./lib/getShiftCoordinates";
 export { randomId } from "./lib/randomId";
 export { toKebabCase } from "./lib/toKebabCase";
 /* Types */
