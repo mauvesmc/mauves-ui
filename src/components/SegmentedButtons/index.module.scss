@@ -1,0 +1,224 @@
+.segmented-button {
+  --segmented-button-color: inherit;
+  --segmented-button-background: transparent;
+  --segmented-button-state-layer: transparent;
+  --ripple-color: transparent;
+  position: relative;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  min-width: max-content;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  background: var(--segmented-button-background);
+  color: var(--segmented-button-color);
+  transition-property: background, color, border, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: var(--theme-motion-standard);
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--segmented-button-state-layer);
+    transition-property: background, color, border, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: var(--theme-motion-standard);
+  }
+
+  &_state-enabled {
+    --segmented-button-color: var(--theme-sys-on-surface);
+    cursor: pointer;
+
+    &.segmented-button_selected {
+      --segmented-button-color: var(--segmented-buttons-color);
+      --segmented-button-background: var(--segmented-buttons-background);
+      --ripple-color: var(--segmented-buttons-state-layer-active);
+
+      &:hover {
+        --segmented-button-state-layer: var(
+          --segmented-buttons-state-layer-hover
+        );
+      }
+
+      &:focus {
+        --segmented-button-state-layer: var(
+          --segmented-buttons-state-layer-focus
+        );
+      }
+
+      &:active {
+        --segmented-button-state-layer: var(
+          --segmented-buttons-state-layer-active
+        );
+      }
+    }
+
+    &.segmented-button_not-selected {
+      --segmented-button-color: var(--theme-sys-on-surface);
+      --ripple-color: var(--theme-state-on-surface-16);
+
+      &:hover {
+        --segmented-button-state-layer: var(--theme-state-on-surface-8);
+      }
+
+      &:focus {
+        --segmented-button-state-layer: var(--theme-state-on-surface-12);
+      }
+
+      &:active {
+        --segmented-button-state-layer: var(--theme-state-on-surface-16);
+      }
+    }
+  }
+
+  &_state-disabled {
+    --segmented-button-background: rgba(var(--theme-sys-on-surface-rgb), 0.12);
+    --segmented-button-color: rgba(var(--theme-sys-on-surface-rgb), 0.38);
+    cursor: not-allowed;
+  }
+
+  &__icon-wrapper {
+    margin-right: 0.5rem;
+
+    &,
+    & > *,
+    & svg {
+      width: 1.125rem;
+      height: 1.125rem;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    overflow: hidden;
+    border: 1px solid var(--theme-sys-outline);
+    border-radius: var(--theme-shape-full);
+
+    &_color {
+      &-primary {
+        --segmented-buttons-color: var(--theme-sys-on-primary-container);
+        --segmented-buttons-background: var(--theme-sys-primary-container);
+        --segmented-buttons-state-layer-hover: var(
+          --theme-state-on-primary-container-8
+        );
+        --segmented-buttons-state-layer-focus: var(
+          --theme-state-on-primary-container-12
+        );
+        --segmented-buttons-state-layer-active: var(
+          --theme-state-on-primary-container-16
+        );
+      }
+
+      &-secondary {
+        --segmented-buttons-color: var(--theme-sys-on-secondary-container);
+        --segmented-buttons-background: var(--theme-sys-secondary-container);
+        --segmented-buttons-state-layer-hover: var(
+          --theme-state-on-secondary-container-8
+        );
+        --segmented-buttons-state-layer-focus: var(
+          --theme-state-on-secondary-container-12
+        );
+        --segmented-buttons-state-layer-active: var(
+          --theme-state-on-secondary-container-16
+        );
+      }
+
+      &-tertiary {
+        --segmented-buttons-color: var(--theme-sys-on-tertiary-container);
+        --segmented-buttons-background: var(--theme-sys-tertiary-container);
+        --segmented-buttons-state-layer-hover: var(
+          --theme-state-on-tertiary-container-8
+        );
+        --segmented-buttons-state-layer-focus: var(
+          --theme-state-on-tertiary-container-12
+        );
+        --segmented-buttons-state-layer-active: var(
+          --theme-state-on-tertiary-container-16
+        );
+      }
+
+      &-success {
+        --segmented-buttons-color: var(--theme-sys-on-success-container);
+        --segmented-buttons-background: var(--theme-sys-success-container);
+        --segmented-buttons-state-layer-hover: var(
+          --theme-state-on-success-container-8
+        );
+        --segmented-buttons-state-layer-focus: var(
+          --theme-state-on-success-container-12
+        );
+        --segmented-buttons-state-layer-active: var(
+          --theme-state-on-success-container-16
+        );
+      }
+
+      &-warning {
+        --segmented-buttons-color: var(--theme-sys-on-warning-container);
+        --segmented-buttons-background: var(--theme-sys-warning-container);
+        --segmented-buttons-state-layer-hover: var(
+          --theme-state-on-warning-container-8
+        );
+        --segmented-buttons-state-layer-focus: var(
+          --theme-state-on-warning-container-12
+        );
+        --segmented-buttons-state-layer-active: var(
+          --theme-state-on-warning-container-16
+        );
+      }
+
+      &-error {
+        --segmented-buttons-color: var(--theme-sys-on-error-container);
+        --segmented-buttons-background: var(--theme-sys-error-container);
+        --segmented-buttons-state-layer-hover: var(
+          --theme-state-on-error-container-8
+        );
+        --segmented-buttons-state-layer-focus: var(
+          --theme-state-on-error-container-12
+        );
+        --segmented-buttons-state-layer-active: var(
+          --theme-state-on-error-container-16
+        );
+      }
+    }
+
+    &_density {
+      &-0 {
+        height: 2.5rem;
+      }
+
+      &--1 {
+        height: 2.25rem;
+      }
+
+      &--2 {
+        height: 2rem;
+      }
+
+      &--3 {
+        height: 1.75rem;
+      }
+    }
+
+    & > * {
+      &:first-child {
+        border-top-left-radius: var(--theme-shape-full);
+        border-bottom-left-radius: var(--theme-shape-full);
+      }
+
+      &:last-child {
+        border-top-right-radius: var(--theme-shape-full);
+        border-bottom-right-radius: var(--theme-shape-full);
+      }
+    }
+  }
+}

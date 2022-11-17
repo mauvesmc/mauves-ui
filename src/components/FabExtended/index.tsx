@@ -43,7 +43,9 @@ export const FabExtended: Component<FabExtendedProps> = (rawProps) => {
       <Show when={props.icon}>
         <Box class={styles["fab-extended__icon-wrapper"]}>{props.icon}</Box>
       </Show>
-      <Label size="large">{props.children}</Label>
+      <Label size="large" style={{ "white-space": "nowrap" }}>
+        {props.children}
+      </Label>
     </Box>
   );
 };

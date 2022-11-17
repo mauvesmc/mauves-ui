@@ -4,14 +4,6 @@ import { Box, BoxMarginProps } from "../Box";
 import { Label } from "../Label";
 import styles from "./index.module.scss";
 
-/**
- * . Elevated button
-2. Filled button
-3. Filled tonal button
-4. Outlined button
-5. Text button
- */
-
 export type ButtonVariant =
   | "elevated"
   | "filled"

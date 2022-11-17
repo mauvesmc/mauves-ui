@@ -1,0 +1,43 @@
+.divider {
+  background: var(--theme-sys-outline-variant);
+
+  &_orientation {
+    &-vertical {
+      width: 1px;
+
+      &.divider_variant {
+        &-full {
+          height: 100%;
+        }
+
+        &-inset {
+          margin-top: 1rem;
+        }
+
+        &-middle-inset {
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    &-horizontal {
+      height: 1px;
+
+      &.divider_variant {
+        &-full {
+          width: 100%;
+        }
+
+        &-inset {
+          margin-left: 1rem;
+        }
+
+        &-middle-inset {
+          margin-right: 1rem;
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}

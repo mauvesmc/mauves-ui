@@ -39,6 +39,8 @@ export type {
 } from "./components/IconButton";
 export { Label } from "./components/Label";
 export type { LabelProps } from "./components/Label";
+export { SegmentedButtons } from "./components/SegmentedButtons";
+export type { SegmentedButtonProps } from "./components/SegmentedButtons";
 export { Title } from "./components/Title";
 export type { TitleProps } from "./components/Title";
 /* Context */
