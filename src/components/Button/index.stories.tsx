@@ -9,7 +9,10 @@ export default {
   title: "UI/Buttons/Button",
   parameters: {
     docs: {
-      description: { component: "Button" },
+      description: {
+        component:
+          "Кнопки помогают людям инициировать действия, от отправки электронного письма до совместного использования документа и отметки «Нравится» публикации.<br/><br/>[Ссылка на Material You](https://m3.material.io/components/buttons/overview)",
+      },
     },
   },
   argTypes: {
