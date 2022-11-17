@@ -11,6 +11,7 @@ html {
 }
 
 body {
+  overscroll-behavior: contain;
   background-color: var(--theme-sys-background);
   color: var(--theme-sys-on-background);
   line-height: var(--theme-typography-body-large-line-height);
