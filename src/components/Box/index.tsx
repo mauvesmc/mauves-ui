@@ -67,6 +67,8 @@ export const Box: Component<BoxProps> = (rawProps) => {
     "sx",
     "as",
     "style",
+    "class",
+    "classList",
   ]);
   const theme = useTheme();
 
@@ -74,6 +76,7 @@ export const Box: Component<BoxProps> = (rawProps) => {
     <Dynamic
       {...rest}
       component={props.as}
+      classList={{ [props.class]: true, ...props.classList }}
       style={{
         width: props.w ? `${props.w}px` : undefined,
         height: props.h ? `${props.h}px` : undefined,

@@ -17,6 +17,12 @@ export type {
   BoxShapeProps,
   BoxSizeProps,
 } from "./components/Box";
+export { Button } from "./components/Button";
+export type {
+  ButtonColor,
+  ButtonProps,
+  ButtonVariant,
+} from "./components/Button";
 export { Display } from "./components/Display";
 export type { DisplayProps } from "./components/Display";
 export { Fab } from "./components/Fab";

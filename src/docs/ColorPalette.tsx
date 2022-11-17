@@ -1,5 +1,6 @@
 import { Component } from "solid-js";
 import { Box } from "../components/Box";
+import { Button } from "../components/Button";
 import { ThemeProvider } from "../context/ThemeProvider";
 import { buildPalette } from "../lib/buildPalette";
 import { defaultTheme } from "../lib/defaultTheme";
@@ -196,9 +197,13 @@ export const ColorPalette: Component<{
           "grid-column": "1 / -1",
         }}
       >
-        <button onClick={() => copy(JSON.stringify(palette.ref))}>
+        <Button
+          color="primary"
+          variant="tonal"
+          onClick={() => copy(JSON.stringify(palette.ref))}
+        >
           Скопировать Ref
-        </button>
+        </Button>
       </Box>
       <ThemeProvider
         current="light"
@@ -213,6 +218,7 @@ export const ColorPalette: Component<{
             },
           },
         }}
+        target={null}
       >
         <Box
           mt={32}
@@ -237,9 +243,13 @@ export const ColorPalette: Component<{
               "grid-column": "1 / -1",
             }}
           >
-            <button onClick={() => copy(JSON.stringify(palette.light))}>
+            <Button
+              variant="tonal"
+              color="secondary"
+              onClick={() => copy(JSON.stringify(palette.light))}
+            >
               Скопировать Light
-            </button>
+            </Button>
           </Box>
         </Box>
       </ThemeProvider>
@@ -256,6 +266,7 @@ export const ColorPalette: Component<{
             },
           },
         }}
+        target={null}
       >
         <Box
           mt={32}
@@ -281,9 +292,13 @@ export const ColorPalette: Component<{
               "grid-column": "1 / -1",
             }}
           >
-            <button onClick={() => copy(JSON.stringify(palette.dark))}>
+            <Button
+              variant="tonal"
+              color="secondary"
+              onClick={() => copy(JSON.stringify(palette.dark))}
+            >
               Скопировать Dark
-            </button>
+            </Button>
           </Box>
         </Box>
       </ThemeProvider>
