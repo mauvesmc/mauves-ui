@@ -1,6 +1,7 @@
 import { Component } from "solid-js";
 import { Box } from "../components/Box";
 import { Button } from "../components/Button";
+import { Label } from "../components/Label";
 import { ThemeProvider } from "../context/ThemeProvider";
 import { buildPalette } from "../lib/buildPalette";
 import { defaultTheme } from "../lib/defaultTheme";
@@ -22,7 +23,7 @@ const Plate: Component<{
         "flex-direction": "column",
       })}
     >
-      <p>{props.label}</p>
+      <Label size="large">{props.label}</Label>
     </Box>
   );
 };
