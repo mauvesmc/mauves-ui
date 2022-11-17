@@ -7,10 +7,13 @@ export default {
    * See https://storybook.js.org/docs/html/configure/overview#configure-story-loading
    * to learn how to generate automatic titles
    */
-  title: "UI/Buttons/SegmenetedButtons",
+  title: "UI/Buttons/SegmentedButtons",
   parameters: {
     docs: {
-      description: { component: "SegmenetedButtons" },
+      description: {
+        component:
+          "Сегментированные кнопки помогают людям выбирать параметры, переключать представления или сортировать элементы.<br/><br/>[Ссылка на Material You](https://m3.material.io/components/segmented-buttons/overview)",
+      },
     },
   },
   argTypes: {
