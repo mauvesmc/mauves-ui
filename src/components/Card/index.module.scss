@@ -1,0 +1,37 @@
+.card {
+  --card-color: inherit;
+  --card-background: transparent;
+  --card-elevation: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--card-elevation);
+  outline: none;
+  border: none;
+  border-radius: var(--theme-shape-medium);
+  background: none;
+  background: var(--card-background);
+  color: var(--card-color);
+  text-align: start;
+  transition-property: background, color, border, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: var(--theme-motion-standard);
+
+  &_variant {
+    &-elevated {
+      --card-background: var(--theme-sys-surface-1);
+      --card-color: var(--theme-sys-on-surface);
+      --card-elevation: var(--theme-elevation-2);
+    }
+
+    &-filled {
+      --card-background: var(--theme-sys-surface-variant);
+      --card-color: var(--theme-sys-on-surface-variant);
+    }
+
+    &-outlined {
+      --card-background: var(--theme-sys-surface);
+      --card-color: var(--theme-sys-on-surface);
+      border: 1px solid var(--theme-sys-outline-variant);
+    }
+  }
+}

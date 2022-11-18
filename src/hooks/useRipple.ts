@@ -1,4 +1,4 @@
-import { createEffect, createSignal, onCleanup } from "solid-js";
+import { Accessor, createEffect, createSignal, onCleanup } from "solid-js";
 import { useTheme } from "../context/ThemeProvider";
 import { getShiftCoordinates } from "../lib/getShiftCoordinates";
 
@@ -27,7 +27,7 @@ type RippleOptions = {
 };
 
 type useRippleHook = (
-  ref: () => HTMLElement | null,
+  ref: Accessor<HTMLElement>,
   options?: Partial<RippleOptions>
 ) => void;
 
@@ -55,7 +55,6 @@ export const useRipple: useRippleHook = (ref, opts = {}) => {
     if (typeof window === "undefined" || !ref()) {
       return;
     }
-
     const clickHandler = (e: MouseEvent) => {
       const bounding = ref().getBoundingClientRect();
       const [x, y] = getShiftCoordinates(e, bounding);
@@ -88,6 +87,7 @@ export const useRipple: useRippleHook = (ref, opts = {}) => {
       }, options().duration);
     };
 
+    ref().removeEventListener("mousedown", clickHandler);
     ref().addEventListener("mousedown", clickHandler);
     onCleanup(() => {
       ref().removeEventListener("mousedown", clickHandler);

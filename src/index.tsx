@@ -23,8 +23,16 @@ export type {
   ButtonProps,
   ButtonVariant,
 } from "./components/Button";
+export { Card } from "./components/Card";
+export type { CardProps, CardVariant } from "./components/Card";
 export { Display } from "./components/Display";
 export type { DisplayProps } from "./components/Display";
+export { Divider } from "./components/Divider";
+export type {
+  DividerOrientation,
+  DividerProps,
+  DividerVariant,
+} from "./components/Divider";
 export { Fab } from "./components/Fab";
 export type { FabColor, FabProps, FabSize } from "./components/Fab";
 export { FabExtended } from "./components/FabExtended";
