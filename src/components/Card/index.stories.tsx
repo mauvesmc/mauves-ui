@@ -1,6 +1,9 @@
 import { Meta, StoryFn } from "@storybook/html";
 import { Card, CardProps } from ".";
 import { Body } from "../Body";
+import { Box } from "../Box";
+import { Button } from "../Button";
+import { IconButton } from "../IconButton";
 import { Title } from "../Title";
 
 export default {
@@ -118,12 +121,92 @@ const Template = ((args: CardProps) => (
 
 export const Filled = Template.bind({});
 Filled.args = {
-  p: 16,
-  style: { "max-width": "max-content" },
+  style: { width: "360px" },
   children: (
     <>
-      <Title mb={4}>Заголовок</Title>
-      <Body>Большой и нудный текст</Body>
+      <Box
+        pl={16}
+        p={12}
+        pr={4}
+        style={{
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "space-between",
+        }}
+      >
+        <Box style={{ flex: "1", display: "flex", "align-items": "center" }}>
+          <Box
+            style={{
+              background: "var(--theme-sys-primary)",
+              color: "var(--theme-sys-on-primary)",
+              display: "flex",
+              "align-items": "center",
+              "justify-content": "center",
+            }}
+            shape="full"
+            w={40}
+            h={40}
+            mr={16}
+          >
+            <Title size="medium">А</Title>
+          </Box>
+          <Box style={{ color: "var(--theme-sys-on-surface)" }}>
+            <Title size="medium">Заголовок</Title>
+            <Body size="medium">Подзаголовок</Body>
+          </Box>
+        </Box>
+        <IconButton variant="standard">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-dots-vertical"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="12" cy="12" r="1" />
+            <circle cx="12" cy="19" r="1" />
+            <circle cx="12" cy="5" r="1" />
+          </svg>
+        </IconButton>
+      </Box>
+      <Box
+        style={{
+          background: "var(--theme-sys-surface-3)",
+          "aspect-ratio": "16 / 9",
+        }}
+      />
+      <Box p={16}>
+        <Body size="large" style={{ color: "var(--theme-sys-on-surface)" }}>
+          Заголовок
+        </Body>
+        <Body
+          size="medium"
+          mb={16}
+          style={{ color: "var(--theme-sys-on-surface-variant)" }}
+        >
+          Подзаголовок
+        </Body>
+        <Body
+          size="medium"
+          mb={16}
+          style={{ color: "var(--theme-sys-on-surface-variant)" }}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor
+        </Body>
+        <Box style={{ display: "flex", "justify-content": "flex-end" }}>
+          <Button variant="outlined" mr={8}>
+            Кнопка
+          </Button>
+          <Button variant="filled">Кнопка</Button>
+        </Box>
+      </Box>
     </>
   ),
 } as CardProps;
@@ -131,12 +214,92 @@ Filled.args = {
 export const Outlined = Template.bind({});
 Outlined.args = {
   variant: "outlined",
-  p: 16,
-  style: { "max-width": "max-content" },
+  style: { width: "360px" },
   children: (
     <>
-      <Title mb={4}>Заголовок</Title>
-      <Body>Большой и нудный текст</Body>
+      <Box
+        pl={16}
+        p={12}
+        pr={4}
+        style={{
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "space-between",
+        }}
+      >
+        <Box style={{ flex: "1", display: "flex", "align-items": "center" }}>
+          <Box
+            style={{
+              background: "var(--theme-sys-primary)",
+              color: "var(--theme-sys-on-primary)",
+              display: "flex",
+              "align-items": "center",
+              "justify-content": "center",
+            }}
+            shape="full"
+            w={40}
+            h={40}
+            mr={16}
+          >
+            <Title size="medium">А</Title>
+          </Box>
+          <Box style={{ color: "var(--theme-sys-on-surface)" }}>
+            <Title size="medium">Заголовок</Title>
+            <Body size="medium">Подзаголовок</Body>
+          </Box>
+        </Box>
+        <IconButton variant="standard">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-dots-vertical"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="12" cy="12" r="1" />
+            <circle cx="12" cy="19" r="1" />
+            <circle cx="12" cy="5" r="1" />
+          </svg>
+        </IconButton>
+      </Box>
+      <Box
+        style={{
+          background: "var(--theme-sys-surface-3)",
+          "aspect-ratio": "16 / 9",
+        }}
+      />
+      <Box p={16}>
+        <Body size="large" style={{ color: "var(--theme-sys-on-surface)" }}>
+          Заголовок
+        </Body>
+        <Body
+          size="medium"
+          mb={16}
+          style={{ color: "var(--theme-sys-on-surface-variant)" }}
+        >
+          Подзаголовок
+        </Body>
+        <Body
+          size="medium"
+          mb={16}
+          style={{ color: "var(--theme-sys-on-surface-variant)" }}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor
+        </Body>
+        <Box style={{ display: "flex", "justify-content": "flex-end" }}>
+          <Button variant="outlined" mr={8}>
+            Кнопка
+          </Button>
+          <Button variant="filled">Кнопка</Button>
+        </Box>
+      </Box>
     </>
   ),
 } as CardProps;
@@ -144,12 +307,92 @@ Outlined.args = {
 export const Elevated = Template.bind({});
 Elevated.args = {
   variant: "elevated",
-  p: 16,
-  style: { "max-width": "max-content" },
+  style: { width: "360px" },
   children: (
     <>
-      <Title mb={4}>Заголовок</Title>
-      <Body>Большой и нудный текст</Body>
+      <Box
+        pl={16}
+        p={12}
+        pr={4}
+        style={{
+          display: "flex",
+          "align-items": "center",
+          "justify-content": "space-between",
+        }}
+      >
+        <Box style={{ flex: "1", display: "flex", "align-items": "center" }}>
+          <Box
+            style={{
+              background: "var(--theme-sys-primary)",
+              color: "var(--theme-sys-on-primary)",
+              display: "flex",
+              "align-items": "center",
+              "justify-content": "center",
+            }}
+            shape="full"
+            w={40}
+            h={40}
+            mr={16}
+          >
+            <Title size="medium">А</Title>
+          </Box>
+          <Box style={{ color: "var(--theme-sys-on-surface)" }}>
+            <Title size="medium">Заголовок</Title>
+            <Body size="medium">Подзаголовок</Body>
+          </Box>
+        </Box>
+        <IconButton variant="standard">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-dots-vertical"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="12" cy="12" r="1" />
+            <circle cx="12" cy="19" r="1" />
+            <circle cx="12" cy="5" r="1" />
+          </svg>
+        </IconButton>
+      </Box>
+      <Box
+        style={{
+          background: "var(--theme-sys-surface-3)",
+          "aspect-ratio": "16 / 9",
+        }}
+      />
+      <Box p={16}>
+        <Body size="large" style={{ color: "var(--theme-sys-on-surface)" }}>
+          Заголовок
+        </Body>
+        <Body
+          size="medium"
+          mb={16}
+          style={{ color: "var(--theme-sys-on-surface-variant)" }}
+        >
+          Подзаголовок
+        </Body>
+        <Body
+          size="medium"
+          mb={16}
+          style={{ color: "var(--theme-sys-on-surface-variant)" }}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor
+        </Body>
+        <Box style={{ display: "flex", "justify-content": "flex-end" }}>
+          <Button variant="outlined" mr={8}>
+            Кнопка
+          </Button>
+          <Button variant="filled">Кнопка</Button>
+        </Box>
+      </Box>
     </>
   ),
 } as CardProps;

@@ -51,7 +51,7 @@ export const decorators = [
     root.appendChild(solidRoot);
 
     render(
-      <ThemeProvider current={theme} target={document.body}>
+      <ThemeProvider current={theme} target={document.documentElement}>
         <Story />
       </ThemeProvider>,
       solidRoot
