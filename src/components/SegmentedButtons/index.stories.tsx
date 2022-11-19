@@ -1,6 +1,7 @@
 import { Meta, StoryFn } from "@storybook/html";
 import { createSignal } from "solid-js";
 import { SegmentedButtons, SegmentedButtonsProps } from ".";
+import { IconCircle } from "../Icon/iconCircle";
 
 export default {
   /* 👇 The title prop is optional.
@@ -105,93 +106,29 @@ const Template = ((args: SegmentedButtonsProps) => {
   return (
     <SegmentedButtons {...args}>
       <SegmentedButtons.Button
-        icon={
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-circle"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <circle cx="12" cy="12" r="9" />
-          </svg>
-        }
+        icon={<IconCircle />}
         selected={selected().includes("e1")}
         onClick={() => toggle("e1")}
       >
         Кнопка
       </SegmentedButtons.Button>
       <SegmentedButtons.Button
-        icon={
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-circle"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <circle cx="12" cy="12" r="9" />
-          </svg>
-        }
+        icon={<IconCircle />}
         selected={selected().includes("e2")}
+        disabled
         onClick={() => toggle("e2")}
       >
         Кнопка
       </SegmentedButtons.Button>
       <SegmentedButtons.Button
-        icon={
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-circle"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <circle cx="12" cy="12" r="9" />
-          </svg>
-        }
-        disabled
+        icon={<IconCircle />}
         selected={selected().includes("e3")}
         onClick={() => toggle("e3")}
       >
         Кнопка
       </SegmentedButtons.Button>
       <SegmentedButtons.Button
-        icon={
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-circle"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <circle cx="12" cy="12" r="9" />
-          </svg>
-        }
+        icon={<IconCircle />}
         selected={selected().includes("e4")}
         onClick={() => toggle("e4")}
       >

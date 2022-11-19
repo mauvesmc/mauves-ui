@@ -1,5 +1,7 @@
 import { Meta, StoryFn } from "@storybook/html";
 import { Button, ButtonProps } from ".";
+import { IconChevronRight } from "../Icon/iconChevronRight";
+import { IconCircle } from "../Icon/iconCircle";
 
 export default {
   /* 👇 The title prop is optional.
@@ -116,82 +118,18 @@ Default.args = {
 export const LeftIcon = Template.bind({});
 LeftIcon.args = {
   children: "Кнопка",
-  leftIcon: (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="icon icon-tabler icon-tabler-circle"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      stroke-width="2"
-      stroke="currentColor"
-      fill="none"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <circle cx="12" cy="12" r="9" />
-    </svg>
-  ),
+  leftIcon: <IconCircle />,
 } as ButtonProps;
 
 export const RightIcon = Template.bind({});
 RightIcon.args = {
   children: "Кнопка",
-  rightIcon: (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="icon icon-tabler icon-tabler-chevron-right"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      stroke-width="2"
-      stroke="currentColor"
-      fill="none"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <polyline points="9 6 15 12 9 18" />
-    </svg>
-  ),
+  rightIcon: <IconChevronRight />,
 } as ButtonProps;
 
 export const BothIcons = Template.bind({});
 BothIcons.args = {
   children: "Кнопка",
-  leftIcon: (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="icon icon-tabler icon-tabler-circle"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      stroke-width="2"
-      stroke="currentColor"
-      fill="none"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <circle cx="12" cy="12" r="9" />
-    </svg>
-  ),
-  rightIcon: (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="icon icon-tabler icon-tabler-chevron-right"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      stroke-width="2"
-      stroke="currentColor"
-      fill="none"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <polyline points="9 6 15 12 9 18" />
-    </svg>
-  ),
+  leftIcon: <IconCircle />,
+  rightIcon: <IconChevronRight />,
 } as ButtonProps;
