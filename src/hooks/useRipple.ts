@@ -88,9 +88,12 @@ export const useRipple: useRippleHook = (ref, opts = {}) => {
     };
 
     ref().removeEventListener("mousedown", clickHandler);
+    ref().removeEventListener("touchstart", clickHandler);
     ref().addEventListener("mousedown", clickHandler);
+    ref().addEventListener("touchstart", clickHandler);
     onCleanup(() => {
       ref().removeEventListener("mousedown", clickHandler);
+      ref().removeEventListener("touchstart", clickHandler);
     });
   });
 };
